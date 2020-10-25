@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 100%;
+}
+
+#title{
+    text-align: center;
+    margin: 20px;
+}
+
+#search{
+    text-align: center;
+}
+
+#search table, th, td {
+    border: 1px solid black;
+}
+
+#search table{
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 20px;
+}
+
+#delete{
+    margin-top: 20px;
+    text-align: center;
+}
