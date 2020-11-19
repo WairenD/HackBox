@@ -101,6 +101,7 @@ nbdist/
 .nb-gradle/
 
 ### vscode ###
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -135,4 +136,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/netbeans,vscode,intellij+all,windows
-.vscode/launch.json

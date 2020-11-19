@@ -10,7 +10,7 @@
                 <h1>Challenge 4</h1>
             </div>
             <div id='search'>
-                <form action='test.php' method='post'>
+                <form action='index.php' method='post'>
                     <p>
                         <input type='text' name='search' placeholder='Search'>
                         <input type="submit" name='submit' value="Search">
