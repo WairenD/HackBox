@@ -1,0 +1,1 @@
+This folder is only for images shared on all pages, such as logo, or header and footer stuff.
