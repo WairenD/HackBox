@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 okt. 2020, 11:00:55
+    Author     : thomas
+*/
+*{
+    margin:0px;
+    padding:0px;
+    font-family: "Arial", "Helvetica Neue", sans-serif;
+}
+
+p, h1, h2{
+    color:white;
+    
+}
+
+h1, h2{
+    font-family: "Agency FB", "Arial", sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 120px;
+}
+
+h2{
+    font-size: 72px;
+}
+
+.header{
+    width: 100%;
+    height:150px;
+    background-color: darkgreen;
+}
+.logo, .name{
+    float: left;
+}
+.name{
+    margin-left: 500px;
+}
+.main{
+    margin-left: 15%;
+    margin-right: 15%;
+    width:70%;
+    height:860px;
+    background-color: gray;
+}
+
+
+
+.signInChoice{
+    float:left;
+    width: 50%;
+}
