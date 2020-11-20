@@ -1,8 +1,9 @@
 <html>
     <head>
-        <title>Example</title>
+        <title>HackBOx Main Page</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     </head>
     <body>
-        <p>This is an example of a simple HTML page with one paragraph.</p>
+        <p>Main Page</p>
     </body>
 </html>

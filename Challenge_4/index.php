@@ -3,6 +3,7 @@
     <head>
         <title>Challenge 4</title>
         <link rel="stylesheet" type="text/css" href="style.css?<?php echo time(); ?>">
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     </head>
     <body>
         <div id="container">

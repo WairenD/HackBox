@@ -29,40 +29,6 @@ body {
     font-size: 0.9em;
 }
 
-#noScript {
-    margin: 16px;
-    color: Black;
-}
-
-:lang(en-GB) {
-    quotes: '\2018' '\2019' '\201C' '\201D';
-}
-
-:lang(zh) {
-    font-family: 微软雅黑;
-}
-
-@-ms-viewport {
-    width: device-width;
-}
-
-@-moz-viewport {
-    width: device-width;
-}
-
-@-o-viewport {
-    width: device-width;
-}
-
-@-webkit-viewport {
-    width: device-width;
-}
-
-@viewport {
-    width: device-width;
-}
-
-
 /* Theme layout styles */
 
 #fullPage,
@@ -119,7 +85,7 @@ body {
 }
 
 #header img {
-    /* Logo image recommended dimension: 60x60 (square) or 350X35 (elongated), 4 kB average, 10 kB maximum. Transparent PNG strongly recommended. */
+    /* someo image recommended dimension: 60x60 (square) or 350X35 (elongated), 4 kB average, 10 kB maximum. Transparent PNG strongly recommended. */
     width: auto;
     height: auto;
     max-width: 100%;
@@ -133,10 +99,6 @@ body {
 
 #workArea {
     margin-bottom: 90px;
-}
-
-#footerPlaceholder {
-    height: 40px;
 }
 
 #footer {
@@ -156,18 +118,6 @@ body {
     color: #696969;
 }
 
-.pageLink {
-    color: #000000;
-    padding-left: 16px;
-}
-
-
-/* Common content styles */
-
-.clear {
-    clear: both;
-}
-
 .float {
     float: left;
 }
@@ -176,54 +126,10 @@ body {
     float: right;
 }
 
-.indent {
-    margin-left: 16px;
-}
-
-.indentNonCollapsible {
-    padding-left: 16px;
-}
-
-.hidden {
-    display: none;
-}
-
-.notHidden {
-    display: inherit;
-}
-
-.error {
-    color: #c85305;
-}
-
-.actionLink {
-    margin-bottom: 8px;
-    display: block;
-}
-
 a {
     color: #2672ec;
     text-decoration: none;
     background-color: transparent;
-}
-
-ul {
-    list-style-type: disc;
-}
-
-ul,
-ol,
-dd {
-    padding: 0 0 0 16px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-label {
-    margin-bottom: 8px;
 }
 
 .submitMargin {
@@ -231,72 +137,18 @@ label {
     margin-bottom: 30px;
 }
 
-.topFieldMargin {
-    margin-top: 8px;
-}
-
-.fieldMargin {
-    margin-bottom: 8px;
-}
-
 .groupMargin {
     margin-bottom: 30px;
-}
-
-.sectionMargin {
-    margin-bottom: 64px;
-}
-
-.block {
-    display: block;
-}
-
-.autoWidth {
-    width: auto;
 }
 
 .fullWidth {
     width: 342px;
 }
 
-.fullWidthIndent {
-    width: 326px;
-}
-
-.smallTopSpacing {
-    margin-top: 15px;
-}
-
-.mediumTopSpacing {
-    margin-top: 25px;
-}
-
-.largeTopSpacing {
-    margin-top: 35px;
-}
-
-.smallBottomSpacing {
-    margin-bottom: 5px;
-}
-
-.mediumBottomSpacing {
-    margin-bottom: 15px;
-}
-
-.largeBottomSpacing {
-    margin-bottom: 25px;
-}
-
 input {
     max-width: 100%;
     font-family: inherit;
     margin-bottom: 8px;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    vertical-align: middle;
-    margin-bottom: 0px;
 }
 
 span.submit,
@@ -325,109 +177,12 @@ input[type="submit"] {
     user-select: none;
 }
 
-input[type="submit"]:hover,
-span.submit:hover {
-    background: rgb(212, 227, 251);
-}
-
 input.text {
     height: 28px;
     padding: 0px 3px 0px 3px;
     border: solid 1px #BABABA;
     font-size: 1.0em;
 }
-
-input.text:focus {
-    border: 1px solid #6B6B6B;
-}
-
-select {
-    height: 28px;
-    min-width: 60px;
-    max-width: 100%;
-    margin-bottom: 8px;
-    white-space: nowrap;
-    overflow: hidden;
-    box-shadow: none;
-    padding: 2px;
-    font-family: inherit;
-}
-
-h1,
-.giantText {
-    font-size: 2.0em;
-    font-weight: lighter;
-}
-
-h2,
-.bigText {
-    font-size: 1.33em;
-    font-weight: lighter;
-}
-
-h3,
-.normalText {
-    font-size: 1.0em;
-    font-weight: normal;
-}
-
-h4,
-.smallText {
-    font-size: 0.9em;
-    font-weight: normal;
-}
-
-h5,
-.tinyText {
-    font-size: 0.8em;
-    font-weight: normal;
-}
-
-.hint {
-    color: #999999;
-}
-
-.emphasis {
-    font-weight: 700;
-    color: #2F2F2F;
-}
-
-.smallIcon {
-    height: 20px;
-    padding-right: 12px;
-    vertical-align: middle;
-}
-
-.largeIcon {
-    height: 48px;
-    /* width:48px; */
-    vertical-align: middle;
-}
-
-.largeTextNoWrap {
-    height: 48px;
-    display: table-cell;
-    /* needed when in float*/
-    vertical-align: middle;
-    white-space: nowrap;
-    font-size: 1.2em;
-}
-
-.idp {
-    height: 48px;
-    clear: both;
-    padding: 8px;
-    overflow: hidden;
-}
-
-.idp:hover {
-    background-color: #cccccc;
-}
-
-.idpDescription {
-    width: 80%;
-}
-
 
 /* Form factor: intermediate height layout. Reduce space of the header. */
 
@@ -452,81 +207,5 @@ h5,
     }
     #workArea {
         margin-bottom: 40px;
-    }
-}
-
-
-/* Form factor: intermediate layout (WAB in non-snapped view falls in here) */
-
-@media only screen and (max-width: 600px) {
-    html,
-    body {
-        min-width: 260px;
-    }
-    #brandingWrapper {
-        display: none;
-    }
-    #contentWrapper {
-        float: none;
-        width: 100%;
-        margin: 0px auto;
-    }
-    #content,
-    #footer,
-    #header {
-        width: 400px;
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #workArea {
-        width: 100%;
-    }
-    .fullWidth {
-        width: 392px;
-    }
-    .fullWidthIndent {
-        width: 376px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    body {
-        font-size: 0.8em;
-    }
-    #content,
-    #footer {
-        width: auto;
-        margin-right: 33px;
-        margin-left: 25px;
-    }
-    #header {
-        width: auto;
-    }
-    span.submit,
-    input[type="submit"] {
-        font-size: 0.9em;
-    }
-    .fullWidth {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .fullWidthIndent {
-        width: 85%;
-    }
-    .idpDescription {
-        width: 70%;
-    }
-}
-
-Form factor: snapped WAB (for WAB to work in snapped view, the content wrapper width has to be set to 260px) @media only screen and (max-width:280px) {
-    #contentWrapper {
-        width: 260px;
-    }
-    .idpDescription {
-        max-width: 160px;
-        min-width: 100px;
     }
 }

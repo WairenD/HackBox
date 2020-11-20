@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Big Brain Inc.</title>
         <link href="css/sortableTest.css" type="text/css" rel="stylesheet"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
         <script src="js/sortable.complete.esm.js"></script>
     </head>
     <body>
