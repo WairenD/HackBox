@@ -3,6 +3,7 @@
     <head>
         <title>Challenge 4</title>
         <link rel="stylesheet" type="text/css" href="style.css?<?php echo time(); ?>">
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     </head>
     <body>
         <div id="container">
@@ -10,7 +11,7 @@
                 <h1>Challenge 4</h1>
             </div>
             <div id='search'>
-                <form action='test.php' method='post'>
+                <form action='index.php' method='post'>
                     <p>
                         <input type='text' name='search' placeholder='Search'>
                         <input type="submit" name='submit' value="Search">
