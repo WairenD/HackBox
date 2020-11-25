@@ -18,10 +18,10 @@
                 </form>
                 <?php 
                 if(isset($_POST['submit'])){
-                    $db = new mysqli('127.0.0.1', 'root', '', 'test');
+                    $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
                     $search = $_POST['search'];
                     $q = (
-                        'SELECT * FROM hacker WHERE HackerName LIKE "%'.$search.'%" '
+                        'SELECT * FROM bb_users WHERE name LIKE "%'.$search.'%" '
                     );
                     //1"; DELETE FROM hacker; --
                     if ($db->multi_query($q)) {
@@ -32,7 +32,6 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Password</th>
-                            <th>PrivilageLevel</th>
                         </tr>
                         <?php
                         do {
@@ -43,7 +42,6 @@
                                     echo '<td>'.$row[1].'</td>';
                                     echo '<td>'.$row[2].'</td>';
                                     echo '<td>'.$row[3].'</td>';
-                                    echo '<td>'.$row[4].'</td>';
                                     echo '</tr>';
                                 }
                                 $result->free();
