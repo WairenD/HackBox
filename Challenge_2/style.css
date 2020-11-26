@@ -1,41 +1,46 @@
-body{
+body {
     background-color: black;
 }
-.formContent{
+
+.formContent {
     color: #2afafa;
 }
-h2,.text{
+
+h2, .text {
     text-align: center;
     color: #2afafa;
     font-family: Verdana, sans-serif
 }
-.errorText{
+
+.errorText {
     font-family: Verdana, sans-serif;
-    color:red;
-    font-weight:bold;
+    color: red;
+    font-weight: bold;
     font-size: calc(3px + 6 * ((100vw - 320px) / 680));
 }
 
-.text{
+.text {
     font-size: calc(8px + 6 * ((100vw - 320px) / 680));
 }
-header{
+
+header {
     height: 70px;
     width: 100%;
     background-color: black;
     border-bottom: 3px solid white;
-    float:left;
+    float: left;
 }
 
-main{
-    display:flex;
+main {
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
     background-color: black;
-    float:left;
+    float: left;
 }
-footer{
+
+footer {
     width: 100%;
     height: 70px;
     position: fixed;
@@ -43,104 +48,119 @@ footer{
     bottom: 0;
     background-color: black;
     border-top: 3px solid white;
-    float:left;
+    float: left;
 }
-.loginBox,.textInfo,.aboutBox{
 
-    border:solid 2px white;
+.loginBox, .textInfo, .aboutBox {
+
+    border: solid 2px white;
     background-color: #1b2c5a;
 }
-.container{
+
+.container {
     display: flex;
     margin: 0 auto;
     width: 85%;
     height: 60%;
 }
-.loginBox{
+
+.loginBox {
     width: 42vh;
     height: 471px;
-    float:left;
+    float: left;
     margin-top: 1%;
 
 }
-.imgContainer{
-    margin-top:2%;
+
+.imgContainer {
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     width: 35%;
 }
-.loginPage{
-    margin-top:2%;
+
+.loginPage {
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     height: 300px;
 
 }
-.form-inline{
-    margin:0 auto;
+
+.form-inline {
+    margin: 0 auto;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     align-items: center;
 }
+
 .form-inline input {
     width: 95%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: black;
-    color:#2afafa;
+    color: #2afafa;
 
 }
-.form-inline input[type=submit]
-{
+
+.form-inline input[type=submit] {
     width: 100%;
     padding: 12px;
     background-color: black;
-    color:#2afafa;
+    color: #2afafa;
     border: 1px solid #2afafa;
 }
-img{
+
+img {
     width: 100%;
 }
-.textInfo{
-    width:90vh;
+
+.textInfo {
+    width: 90vh;
     height: 450px;
     margin: auto;
     padding: 1%;
-    float:left;
-    margin:1%;
+    float: left;
+    margin: 1%;
 }
-.aboutBox{
+
+.aboutBox {
     width: 45vh;
     height: 471px;
-    float:left;
+    float: left;
     margin-top: 1%
 }
-.toDoList{
+
+.toDoList {
     overflow: auto;
     width: 100%;
     height: 230px;
 
     border-bottom: 2px solid white;
 }
-.finding:hover{
-    color:red;
+
+.finding:hover {
+    color: red;
     cursor: pointer;
 }
-.images{
+
+.images {
     width: 100%;
-    float:left;
+    float: left;
     background-color: #1b2c5a;
     margin-left: auto;
     margin-right: auto;
 }
-#img-box{
+
+#img-box {
     width: 100%;
     height: 200px;
 }
+
 /* The Modal (background) */
 .modal {
     display: none;
@@ -152,18 +172,21 @@ img{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
 }
-.alert{
+
+.alert {
     color: red;
     font-size: 13px;
     font-family: Verdana, sans-serif
 }
-.inLine:hover{
+
+.inLine:hover {
     color: red;
     cursor: pointer;
 }
+
 .modal-content {
     margin: auto;
     display: block;
@@ -194,66 +217,78 @@ img{
     text-decoration: none;
     cursor: pointer;
 }
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
     }
 }
 
 /* Optimize the leinght */
-@media only screen and (max-width: 650px)
-{
-    .container{
+@media only screen and (max-width: 650px) {
+    .container {
         display: flex;
-        flex-direction:column ;
+        flex-direction: column;
         margin: 0 auto;
     }
-    .imgContainer{
+
+    .imgContainer {
         width: 35%;
     }
-    .form-inline{
+
+    .form-inline {
         height: 150px;
     }
-    .loginBox{
+
+    .loginBox {
         width: 100%;
         height: 400px;
     }
-    .formContent{
+
+    .formContent {
         width: 70%;
         height: 10%;
     }
-    .form-inline input{
+
+    .form-inline input {
         width: 90%;
     }
-    .form-inline input[type=submit]
-    {
+
+    .form-inline input[type=submit] {
         width: 100%;
     }
-    .form-inline{
+
+    .form-inline {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
         height: 250px;
     }
-    .loginPage{
+
+    .loginPage {
         height: 150px;
     }
-    .textInfo{
+
+    .textInfo {
         width: 98%;
         height: 350px;
         margin: 0 auto;
 
     }
-    .errorText{
-        font-size:  calc(12px + 6 * ((100vw - 320px) / 680));
-    }
-    .text{
+
+    .errorText {
         font-size: calc(12px + 6 * ((100vw - 320px) / 680));
     }
-    .aboutBox{
+
+    .text {
+        font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+    }
+
+    .aboutBox {
         width: 100%;
     }
-    .toDoList{
+
+    .toDoList {
         height: 150px;
     }
 }
