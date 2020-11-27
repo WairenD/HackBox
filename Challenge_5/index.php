@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../main.css/">
-    <link rel="stylesheet" href="style.css/">
+    <link rel="stylesheet" href="challenge5style.css/">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>Challenge 1</title>
+    <title>Challenge 5</title>
 </head>
 
 <header>
@@ -37,66 +38,12 @@
         </div>
     </nav>
 </header>
+
 <body>
-<div id="container">
-    <div id="title">
-        <h1>Challenge 4</h1>
-    </div>
-    <div id='search'>
-        <form action='index.php' method='post'>
-            <p>
-                <input type='text' name='search' placeholder='Search'>
-                <input type="submit" name='submit' value="Search">
-            </p>
-        </form>
-        <?php
-        if (isset($_POST['submit'])) {
-            $db = new mysqli('127.0.0.1', 'root', '', 'test');
-            $search = $_POST['search'];
-            $q = (
-                'SELECT * FROM hacker WHERE HackerName LIKE "%' . $search . '%" '
-            );
-            //1"; DELETE FROM hacker; --
-            if ($db->multi_query($q)) {
-                ?>
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>PrivilageLevel</th>
-                    </tr>
-                    <?php
-                    do {
-                        if ($result = $db->store_result()) {
-                            while ($row = $result->fetch_row()) {
-                                echo '<tr>';
-                                echo '<td>' . $row[0] . '</td>';
-                                echo '<td>' . $row[1] . '</td>';
-                                echo '<td>' . $row[2] . '</td>';
-                                echo '<td>' . $row[3] . '</td>';
-                                echo '<td>' . $row[4] . '</td>';
-                                echo '</tr>';
-                            }
-                            $result->free();
-                        }
-                        if ($db->more_results()) {
-                            printf("-----------------\n");
-                        }
-                    } while ($db->next_result());
-                    ?>
-                </table>
-                <?php
-            }
-        }
-        ?>
-    </div>
-    <div id="delete">
-        <p>Write: 1"; DELETE FROM hacker; --</p>
-    </div>
-</div>
+<h1> ADD YOU CHALLENGE STUFF HERE</h1>
+
 </body>
+
 <footer>
     <div class="main-content">
         <div class="left box">
@@ -124,4 +71,5 @@
         <span><a href="#">Privacy Policy</a></span>
     </div>
 </footer>
+
 </html>

@@ -15,7 +15,7 @@ This Website is for 100% educational purpose.
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
     <title>Sign In</title>
     <link rel="stylesheet" type="text/css" href="./challenge0style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<!--    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">-->
     <style>
         .illustrationClass {
             background-image: url("./images/people.jpg");
