@@ -1,30 +1,51 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Challenge 4</title>
-        <link rel="stylesheet" type="text/css" href="style.css?<?php echo time(); ?>">
+        <link href="css/sortableTest.css" type="text/css" rel="stylesheet"/>
         <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+        <script src="js/sortable.complete.esm.js"></script>
     </head>
     <body>
-        <div id="container">
-            <div id="title">
+        <div class="container">
+            <div class="title">
                 <h1>Challenge 4</h1>
             </div>
+            <div id="item-list"></div>
             <div id='search'>
                 <form action='index.php' method='post'>
-                    <p>
-                        <input type='text' name='search' placeholder='Search'>
-                        <input type="submit" name='submit' value="Search">
-                    </p>
+                        <div class="search-input">
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                            <div id="target-group-slot" class="target-group-slot">
+                                <div class='empty-item item' id="target-slot"></div>
+                            </div>
+                        </div>
+                        <input type="submit" name='submit' value="↵" class="submit-button">
                 </form>
                 <?php 
-                if(isset($_POST['submit'])){
+                /**if(isset($_POST['submit'])){
                     $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
                     $search = $_POST['search'];
                     $q = (
-                        'SELECT * FROM bb_users WHERE name LIKE "%'.$search.'%" '
+                        'SELECT userID, name, email, priviledge_level FROM bb_users WHERE (priviledge_level = 1 && name LIKE "'.$search.'")'
                     );
-                    //1"; DELETE FROM hacker; --
                     if ($db->multi_query($q)) {
                         ?>
                         <table>
@@ -32,7 +53,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
+                            <th>Priviledge Level</th>
                         </tr>
                         <?php
                         do {
@@ -55,12 +76,16 @@
                         </table>
                         <?php
                     }
-                }
+                }**/
                 ?>
             </div>
-            <div id="delete">
-                <p>Write: 1"; DELETE FROM hacker; --</p>
-            </div>
+            <!--
+            SELECT * FROM bb_users WHERE (priviledge_level  == 1 && name LIKE "[INPUT]");
+            SELECT * FROM bb_users WHERE (priviledge_level  == 1 && name LIKE "") OR 1 = 1;--");
+            ") OR 1 = 1;--
+            -->
+            <script type="text/javascript" src="js/item.js"></script>
+             <script type="text/javascript" src="js/Challenge4.js"></script>
         </div>
     </body>
 </html>
