@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/*page formatting for add pages*/
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,8 @@ body{
     min-height: 100vh;
     position: relative;
 }
+/*emd of pag formatting*/
+
 /*BEGIN OF HEADER CSS*/
 nav {
     z-index: 99;
@@ -195,12 +198,11 @@ nav input {
 /*BEGIN FOOTER CSS*/
 footer{
     color: #d9d9d9;
-    /*position: fixed;*/
-    position: absolute;
     bottom: 0;
     width: 100%;
     background: #111;
     height: 130px;
+    position: absolute;
 }
 .main-content{
     display: flex;

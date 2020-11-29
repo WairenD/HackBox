@@ -1,8 +1,8 @@
 <!--
-NOTE FROM HaCKBOX Team
+NOTE FROM the Hackbox Team
 This Website is for a school project.
 No copyright infringement intended
-THIS Page in inspired fromt the Official NHL Stenden log in page...
+THIS Page in inspired from the Official NHL Stenden log in page...
 NO Rights can be derived from this.
 This Website is for 100% educational purpose.
 -->
