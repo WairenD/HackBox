@@ -1,0 +1,23 @@
+body {
+    background-color: darkgrey;
+}
+
+#assistant {
+    right: 0;
+    position: fixed;
+    border: 2px solid red;
+    bottom: 124px;
+}
+
+#hint {
+    right: 0;
+    bottom: 244px;
+    position: fixed;
+    padding-left: 650px;
+    border: 2px solid red;
+}
+
+#assistant img {
+    width: 120px;
+    height: 120px;
+}
