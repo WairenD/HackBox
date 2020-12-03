@@ -6,10 +6,11 @@
         <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/sortableTest.css" />
+        <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/sortable.complete.esm.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
 
@@ -50,26 +51,23 @@
             <div id='search'>
                 <form action='index.php' method='post'>
                         <div class="search-input">
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
+                            <div class="target-group-slot">
+                                <div class="target-slot item"></div>
                             </div>
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
+                            <div class="target-group-slot">
+                                <div class="target-slot item"></div>
                             </div>
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
+                            <div class="target-group-slot">
+                                <div class="target-slot item"></div>
                             </div>
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
+                            <div class="target-group-slot">
+                                <div class="target-slot item"></div>
                             </div>
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
+                            <div class="target-group-slot">
+                                <div class="target-slot item"></div>
                             </div>
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
-                            </div>
-                            <div id="target-group-slot" class="target-group-slot">
-                                <div class='empty-item item' id="target-slot"></div>
+                            <div class="target-group-slot">
+                                <div class="target-slot item"></div>
                             </div>
                         </div>
                         <input type="submit" name='submit' value="↵" class="submit-button">
