@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>HackBOx Main Page</title>
+        <title>HackBox Main Page</title>
 
     </head>
 
@@ -53,7 +53,7 @@
                 About us</h2>
             <div class="content">
                 <p>
-                    LOL</p>
+                    </p>
             </div>
         </div>
         <div class="center box">
