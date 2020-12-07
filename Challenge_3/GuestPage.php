@@ -23,16 +23,16 @@
                         Praesent facilisis dignissim iaculis.
                         Mauris imperdiet finibus sapien, ut laoreet augue ultrices sit amet.</p>
                 </div>
-                <div class="infoText">
-                    <img src="images/helpDesk.jpg" class="photo">
+                <div class="image">
+                    <img src="images/code.jpg" class="photo">
                 </div>
             </div>
             <div class="containerBox">
-                <div class="infoText">
-                    <img src="images/code.jpg" class="codePhoto">
+                <div class="image">
+                    <img src="images/helpDesk.jpg" class="photo">
                 </div>
                 <div class="infoText">
-                    <h3>Big brain inc. is here for your safety</h3>
+                    <h3>We're here to help,not harm</h3>
                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
                         Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.
