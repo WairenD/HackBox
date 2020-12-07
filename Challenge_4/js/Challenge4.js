@@ -93,6 +93,16 @@ function setVisibilityDeleteButton(boolean, deleteButton) {
 
 }
 
+function submitAnswer() {
+    var cookieString = "submit=";
+    for (i = 0; i < targets.length; i++) {
+        console.log(targets[i].children[0].id);
+        cookieString += targets[i].children[0].id;
+    }
+    console.log(cookieString);
+    document.cookie = cookieString;
+}
+
 
 
 

@@ -9,6 +9,7 @@
 body{
     min-height: 100vh;
     position: relative;
+    padding-bottom: 9px;
 }
 /*emd of pag formatting*/
 
@@ -198,7 +199,7 @@ nav input {
 /*BEGIN FOOTER CSS*/
 footer{
     color: #d9d9d9;
-    bottom: 0;
+    bottom: -130px;
     width: 100%;
     background: #111;
     height: 130px;
