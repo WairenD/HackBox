@@ -49,35 +49,34 @@
             </div>
             <div id="item-list"></div>
             <div id='search'>
-                <form action='index.php' method='post'>
-                        <div class="search-input">
-                            <div class="target-group-slot">
-                                <div class="target-slot item"></div>
-                            </div>
-                            <div class="target-group-slot">
-                                <div class="target-slot item"></div>
-                            </div>
-                            <div class="target-group-slot">
-                                <div class="target-slot item"></div>
-                            </div>
-                            <div class="target-group-slot">
-                                <div class="target-slot item"></div>
-                            </div>
-                            <div class="target-group-slot">
-                                <div class="target-slot item"></div>
-                            </div>
-                            <div class="target-group-slot">
-                                <div class="target-slot item"></div>
-                            </div>
-                        </div>
-                        <input type="submit" name='submit' value="↵" class="submit-button">
-                </form>
+                <div class="search-input">
+                    <div class="target-group-slot">
+                        <div class="target-slot item"></div>
+                    </div>
+                    <div class="target-group-slot">
+                        <div class="target-slot item"></div>
+                    </div>
+                    <div class="target-group-slot">
+                        <div class="target-slot item"></div>
+                    </div>
+                    <div class="target-group-slot">
+                        <div class="target-slot item"></div>
+                    </div>
+                    <div class="target-group-slot">
+                        <div class="target-slot item"></div>
+                    </div>
+                    <div class="target-group-slot">
+                        <div class="target-slot item"></div>
+                    </div>
+                </div>
+                <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
                 <?php 
-                /**if(isset($_POST['submit'])){
+                if(isset($_POST['submit'])){
+
                     $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
                     $search = $_POST['search'];
                     $q = (
-                        'SELECT userID, name, email, priviledge_level FROM bb_users WHERE (priviledge_level = 1 && name LIKE "'.$search.'")'
+                        'SELECT userID, name, email, priviledge_level, chat_link FROM bb_users WHERE (priviledge_level = 1 && name LIKE "'.$search.'")'
                     );
                     if ($db->multi_query($q)) {
                         ?>
@@ -109,7 +108,7 @@
                         </table>
                         <?php
                     }
-                }**/
+                }
                 ?>
             </div>
         </div>
