@@ -70,7 +70,7 @@
     <div class="bottom">
         <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
         <span class="far fa-copyright"></span> 2020 All rights reserved.
-        <span><a href="#">Privacy Policy</a></span>
+        <span><a href="#">Privacy Policy</a></span> 
     </div>
 </footer>
 
