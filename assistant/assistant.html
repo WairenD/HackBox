@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="aDisplay" poss> </div>
+    <div id="button">
+        <button onclick="newA()">Get hint</button><br></div>
+
+
+    <script>
+        var a = ["HINT eque porro quisquam velit",
+            "HINT Lorem Ipsum is si.", "HINT 3",
+            "HINT 4",
+            "HINT 5.",
+            "HINT 6.",
+            "HINT 7.",
+        ]
+
+        function newA() {
+            index = Math.floor(Math.random() * (7)); // remove 'var' keyword to use the global var
+            document.getElementById('aDisplay').innerHTML = (a[index]);
+        }
+    </script>
+</body>
+
+</html>

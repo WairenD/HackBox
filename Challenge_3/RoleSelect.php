@@ -4,26 +4,27 @@
         <meta charset="UTF-8">
         <title>Big Brain Inc.</title>
         <link href="css/BigBrainStyle.css" type="text/css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="header">
             <div class="logo"><img src="images/BigBrainLogo.png"/></div>
             <div class="name"><h1>Big Brain Inc.</h1></div>
-            
-            
         </div>
-        <div class="main">
+        <div class="Container">
             <h2>Select one</h2>
             <div class="signInChoice">
-                <p><input type="button" value="Sign in as guest"/></p>
+                <p class="optionLogin"><input type="button" value="Sign in as guest"/></p>
             </div>
-            <div class="signInChoice">
-                <p>Username</p>
+            <form action="RoleSelect.php" method="POST" class="signInChoice">
+                <div class="forms">
+                <p class="formDetail">Username</p>
                 <input type="text" placeholder="Username"/>
-                <p>Password</p>
+                <p class="formDetail">Password</p>
                 <input type="password" placeholder="Password"/>
-                <p><input type="button" value="Sign in as admin"/></p>
-            </div>
+                <p class="formDetail"><input type="submit" value="Sign in as admin"/></p>
+                </div>
+            </form>
         </div>
     </body>
 </html>
