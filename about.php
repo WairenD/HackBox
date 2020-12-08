@@ -45,7 +45,7 @@
 </header>
 
 <body>
-<h1> MAIN PAGE</h1>
+<h1> ABOUT PAGE</h1>
 
 </body>
 

@@ -45,7 +45,7 @@
 </header>
 
 <body>
-<h1> MAIN PAGE</h1>
+<h1>LEADERBOARDS</h1>
 
 </body>
 
