@@ -103,7 +103,7 @@ h2{
 .containerBox{
     float: left;
     width: 50%;
-    height: 750px;
+    height: auto;
 }
 .image{
     padding-top: 30px;
