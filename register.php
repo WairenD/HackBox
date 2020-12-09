@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>HackBox Main Page</title>
+        <title>HackBox</title>
 
     </head>
 
@@ -42,10 +42,24 @@
         </div>
     </nav>
 </header>
-
     <body>
+      <h2 id="regTitle">Please fill in the form to register!</h2>
+      <div class="registerDiv">
+        <form runat="server" action="" method="POST" enctype="multipart/form-data">
+          <label for="email">Email Address:</label>
+          <input type="email" name="email">
+          <br><label for="username">Username:</label>
+          <input type="text" name="username">
+          <br><label for="password">Password:</label>
+          <input type="password" name="password">
+          <br><label for="passwordCheck">Password again:</label>
+          <input type="password" name="passwordCheck">
+          <input class="btn" type="submit" name="submit" value="Submit">
+        </form>
+      </div>
       <?php
       $errorMsg = "";
+      $taken = false;
       if(isset($_POST['submit'])){
         if(!empty($_POST['password']) && !empty($_POST['passwordCheck']) && !empty($_POST['email'])){
           if($_POST['password']==$_POST['passwordCheck']){
@@ -69,7 +83,7 @@
                 while (mysqli_stmt_fetch($stmt)) {
                   if($nametest == $userName || $emailtest == $userEmail){
                     $errorMsg = "<span>This username or email already taken!</span>";
-                    die();
+                    $taken = true;
                   }
                 }
               }
@@ -83,14 +97,26 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
             }
-            date_default_timezone_set('Europe/Amsterdam');
-            $currentdate = date("Y-m-d h:i:s");
-            $datetemp = "0000-00-00 00:00:00";
-            $SQLstring = "INSERT INTO ". $db_table." VALUES(NULL,?, ?, ?,?,?,?,0)";
-            if($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-              mysqli_stmt_bind_param($stmt, 'ssssss',$userEmail,$userName, $userPass,$currentdate,$datetemp,$datetemp);
-              $QueryResult = mysqli_stmt_execute($stmt);
-              if($QueryResult === FALSE) {
+            if($taken==false){
+              date_default_timezone_set('Europe/Amsterdam');
+              $currentdate = date("Y-m-d h:i:s");
+              $datetemp = "0000-00-00 00:00:00";
+              $SQLstring = "INSERT INTO ". $db_table." VALUES(NULL,?, ?, ?,?,?,?,0)";
+              if($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                mysqli_stmt_bind_param($stmt, 'ssssss',$userEmail,$userName, $userPass,$currentdate,$datetemp,$datetemp);
+                $QueryResult = mysqli_stmt_execute($stmt);
+                header("Location: login.php");
+                if($QueryResult === FALSE) {
+                  $errorMsg = "<span><p>Unable to execute the query.</p>"
+                  . "<p>Error code "
+                  . mysqli_errno($DBConnect)
+                  . ": "
+                  . mysqli_error($DBConnect)
+                  . "</p></span>";
+                }
+                //Clean up the $stmt after use
+                mysqli_stmt_close($stmt);
+              }else{
                 $errorMsg = "<span><p>Unable to execute the query.</p>"
                 . "<p>Error code "
                 . mysqli_errno($DBConnect)
@@ -98,17 +124,8 @@
                 . mysqli_error($DBConnect)
                 . "</p></span>";
               }
-              //Clean up the $stmt after use
-              mysqli_stmt_close($stmt);
-            }else{
-              $errorMsg = "<span><p>Unable to execute the query.</p>"
-              . "<p>Error code "
-              . mysqli_errno($DBConnect)
-              . ": "
-              . mysqli_error($DBConnect)
-              . "</p></span>";
+              mysqli_close($DBConnect);
             }
-            mysqli_close($DBConnect);
           }else{
             $errorMsg = "<span>The passwords do not match!</span>";
           }
@@ -117,27 +134,12 @@
         }
       }
        ?>
-       <h2 id="regTitle">Please fill in the form to register!</h2>
-       <div class="registerDiv">
-         <form runat="server" action="" method="POST" enctype="multipart/form-data">
-           <label for="email">Email Address:</label>
-           <input type="email" name="email">
-           <br><label for="username">Username:</label>
-           <input type="text" name="username">
-           <br><label for="password">Password:</label>
-           <input type="password" name="password">
-           <br><label for="passwordCheck">Password again:</label>
-           <input type="password" name="passwordCheck">
-           <input class="btn" type="submit" name="submit" value="Submit">
-         </form>
-       </div>
          <div class="errorDiv"><?php echo $errorMsg ?></div>
     </body>
     <footer>
         <div class="main-content">
             <div class="center box">
-                <h2>
-                    Location</h2>
+                <h2>Location</h2>
                 <div class="content">
                     <div class="place">
                         <span class="fas fa-map-marker-alt"></span>

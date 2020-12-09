@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>HackBox Main Page</title>
+        <title>HackBox</title>
 
     </head>
 
@@ -36,8 +36,19 @@
                     </ul>
                 </li>
                 <li><a href="./leaderboards.php">Leaderboards</a></li>
-                <li><a href="./login.php">Login</a></li>
-                <li><a href="./register.php">Register</a></li>
+                <?php
+                session_start();
+                 if(isset($_SESSION['userName'])){
+                  echo '<li><a href="#" class="desktop-item">'.$_SESSION['userName'].'</a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile-item">'.$_SESSION['userName'].'</label>
+                        <ul class="drop-menu">
+                          <li><a href="./logout.php">Log Out</a></li>
+                        </ul></li>';
+                }else{
+                  echo '<li><a href="./login.php">Login</a></li>
+                  <li><a href="./register.php">Register</a></li>';
+                } ?>
             </ul>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
@@ -52,8 +63,7 @@
 <footer>
     <div class="main-content">
         <div class="center box">
-            <h2>
-                Location</h2>
+            <h2>Location</h2>
             <div class="content">
                 <div class="place">
                     <span class="fas fa-map-marker-alt"></span>
