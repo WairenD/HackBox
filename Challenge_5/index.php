@@ -40,108 +40,110 @@
 </header>
 
 <body id="body" background="bg.jpg">
-<h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
-<h3> You have managed to start a conversation with him and need to inject some Cross Site Scripting (Javascript using an api) to acquire the IP address. (Shown Below)</h3>
+    <h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
+    <h3> You have managed to start a conversation with him and need to inject some Cross Site Scripting (Javascript using an api) to acquire the IP address. (Shown Below)</h3>
 
-<div id="display">
-    <div id="1" class="container" style="display: none">
-        <img src="avatar1.jpg" alt="Avatar">
-        <p >who are you why are you trying to hack me</p>
-        <span class="time-right">11:00</span>
+    <div id="display">
+        <div id="1" class="container" style="display: none">
+            <img src="avatar1.jpg" alt="Avatar">
+            <p>who are you why are you trying to hack me</p>
+            <span class="time-right">11:00</span>
+        </div>
+
+        <br>
+        <div id="2" class="container darker" style="display: none">
+
+            <img src="2.png" alt="Avatar" class="right">
+            <p class="right"> im gonna catch you terrorist</p>
+            <br>
+            <span class="time-left">11:01</span>
+        </div>
+        <br>
+        <div id="3" class="container" style="display: none">
+            <img src="avatar1.jpg" alt="Avatar">
+            <p>hahaha, NEVER</p>
+            <span class="time-right">11:03</span>
+        </div>
     </div>
 
-    <br>
-    <div id="2" class="container darker" style="display: none">
 
-        <img src="2.png" alt="Avatar" class="right">
-        <p class="right"> im gonna catch you terrorist</p>
-        <br>
-        <span class="time-left">11:01</span>
+    <script>
+        document.getElementById("body").onload = setTimeout(One, 1500);
+        setTimeout(Two, 3000);
+        setTimeout(Three, 4500);
+        setTimeout(question, 7000);
+
+        function One() {
+            var x = document.getElementById("1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function Two() {
+            var x = document.getElementById("2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function Three() {
+            var x = document.getElementById("3");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function question() {
+            var x = document.getElementById("question");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+    <div id="question" class="container question" style="display: none">
+
+        <form action="index.php" method="post">
+            <br>
+            Which xss method can you use to get his IP: <br>
+            <br>
+
+            <input type="radio" name="xxs" value="correct">getJSON('http://hackbox.serverict.nl/?api_key=<your_api_key>', function(data) {
+                window.console.log(JSON.stringify(data, null, 2));
+                });<br><br>
+                <input type="radio" name="xxs" value="wrong" required="required">$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+                window.console.log(data)
+                })<br><br>
+                <input type="radio" name="xxs" value="wrong">$.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
+                window.console.log(JSON.stringify(data, null, 2));
+                });<br>
+                <br><br><br>
+                <input type="submit" name="submit" value="Submit">
+        </form>
+
     </div>
-    <br>
-    <div id="3" class="container" style="display: none">
-        <img src="avatar1.jpg" alt="Avatar">
-        <p>hahaha, NEVER</p>
-        <span class="time-right" >11:03</span>
+
+    <div class="response">
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $xxs = $_POST['xxs'];
+            if ($xxs == "correct")
+                echo  " Data successfully acquired";
+            else
+                echo "error, you will be logged out now";
+        }
+
+        ?>
     </div>
-</div>
-
-
-<script>
-    document.getElementById("body").onload= setTimeout(One,1500); setTimeout(Two,3000); setTimeout(Three,4500);setTimeout(question,7000);
-    function One() {
-        var x = document.getElementById("1");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-    function Two() {
-        var x = document.getElementById("2");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-    function Three() {
-        var x = document.getElementById("3");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-    function question() {
-        var x = document.getElementById("question");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-</script>
-
-<div id="question" class="container question" style="display: none">
-
-    <form action="index.php" method="post">
-        <br>
-        Which xss method can you use to get his IP: <br>
-        <br>
-
-        <input type="radio" name="xxs" value="correct">getJSON('http://hackbox.serverict.nl/?api_key=<your_api_key>', function(data) {
-            window.console.log(JSON.stringify(data, null, 2));
-            });<br><br>
-            <input type="radio" name="xxs" value="wrong" required="required">$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-            window.console.log(data)
-            })<br><br>
-            <input type="radio" name="xxs" value="wrong">$.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
-            window.console.log(JSON.stringify(data, null, 2));
-            });<br>
-            <br><br><br>
-            <input type="submit" name="submit" value="Submit">
-    </form>
-
-</div>
-
-<div class="response">
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-        $xxs = $_POST['xxs'];
-        if ($xxs == "correct")
-            echo  " Data successfully acquired";
-        else
-            echo "error, you will be logged out now";
-    }
-
-    ?>
-</div>
 
 
 </body>

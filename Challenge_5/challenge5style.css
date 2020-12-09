@@ -1,91 +1,99 @@
 /* Chat containers */
-.container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    width: 600px;
-    margin: auto;
 
+.container {
+	border: 2px solid #dedede;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px 0;
+	width: 600px;
+	margin: auto;
 }
 
 
 /* Darker chat container */
+
 .darker {
-    border-color: #ccc;
-    background-color:  #d3cfcf ;
-
-
+	border-color: #ccc;
+	background-color: #d3cfcf;
 }
+
 
 /* Clear floats */
-.container::after {
-    content: "";
-    clear: both;
-    display: table;
 
+.container::after {
+	content: "";
+	clear: both;
+	display: table;
 }
+
 
 /* Style images */
+
 .container img {
-    float: left;
-    max-width: 60px;
-    width: 100%;
-    margin-right: 20px;
-    border-radius: 50%;
-    margin: auto;
+	float: left;
+	max-width: 60px;
+	width: 100%;
+	margin-right: 20px;
+	border-radius: 50%;
+	margin: auto;
 }
+
 
 /* Style the right image */
+
 .container img.right {
-    float: right;
-    margin-left: 20px;
-    margin-right:0;
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
 }
 
+
 /* Style time text */
+
 .time-right {
-    float: right;
-    color: #aaa;
+	float: right;
+	color: #aaa;
 }
 
+
 /* Style time text */
+
 .time-left {
-    float: left;
-    color: #999;
-    padding-top: 10px;
+	float: left;
+	color: #999;
+	padding-top: 10px;
 }
+
 .question {
-    margin: auto;
+	margin: auto;
 }
 
 .right {
-    float: right;
-    color: #000000;
+	float: right;
+	color: #000000;
 }
 
 .response {
-    color: #dedede;
-    background-color: black;
-    margin: auto;
-    width: 600px;
-    height: 30px;
+	color: #dedede;
+	background-color: black;
+	margin: auto;
+	width: 600px;
+	height: 30px;
 }
 
 .description {
-    text-align: center;
-    color: white;
+	text-align: center;
+	color: white;
 }
 
 .question {
-    border-color: #ccc;
-    background-color:  #d3cfcf ;
-    text-align: left;
+	border-color: #ccc;
+	background-color: #d3cfcf;
+	text-align: left;
 }
 
 h3 {
-
-    text-align: center;
-    color: white;
+	text-align: center;
+	color: white;
 }
