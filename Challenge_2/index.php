@@ -69,7 +69,6 @@
             </div>
         </div>
     </div>
-</main>
 <script>
     var modal = document.getElementById("myModal");
 
@@ -89,5 +88,6 @@
 </script>
 <footer>
 </footer>
+</main>
 </body>
 </html>
