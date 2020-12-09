@@ -50,7 +50,7 @@
 
     <div id="hint"> </div>
     <div id="assistant">
-        <img src="assist-sarcastic.png" alt="assistant" onclick="newA()">
+        <img src="assist-sarcastic.png" alt="assistant" onclick="getHint()">
     </div>
 </body>
 

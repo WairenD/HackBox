@@ -7,9 +7,9 @@
     font-family: 'Poppins', sans-serif
 }
 body{
-    min-height: 100vh;
+    min-height: 80vh;
     position: relative;
-    padding-bottom: 9px;
+    padding-bottom: 139px;
 }
 /*emd of pag formatting*/
 
@@ -199,7 +199,7 @@ nav input {
 /*BEGIN FOOTER CSS*/
 footer{
     color: #d9d9d9;
-    bottom: -130px;
+    bottom: 0;
     width: 100%;
     background: #111;
     height: 130px;
@@ -279,73 +279,73 @@ footer{
 /*END FOOTER CSS*/
 /*START REGISTER/LOGIN CSS*/
 .registerDiv{
-  width: 450px;
-  height: 300px;
-  margin: auto;
-  margin-top: 5%;
-  text-align: right;
-  background-color: #242526;
-  color: white;
+    width: 450px;
+    height: 300px;
+    margin: auto;
+    margin-top: 5%;
+    text-align: right;
+    background-color: #242526;
+    color: white;
 }
 .registerDiv input{
-margin-top: 15px;
-margin-right: 50px;
-height:40px;
-width: 250px;
+    margin-top: 15px;
+    margin-right: 50px;
+    height:40px;
+    width: 250px;
 }
 .loginDiv{
-  width: 450px;
-  height: 200px;
-  margin: auto;
-  margin-top: 10%;
-  text-align: right;
-  background-color: #242526;
-  color: white;
+    width: 450px;
+    height: 200px;
+    margin: auto;
+    margin-top: 10%;
+    text-align: right;
+    background-color: #242526;
+    color: white;
 }
 .loginDiv input{
-margin-top: 15px;
-margin-right: 50px;
-height:40px;
-width: 250px;
+    margin-top: 15px;
+    margin-right: 50px;
+    height:40px;
+    width: 250px;
 }
 .errorDiv{
-  text-align: center;
-  margin: auto;
-  color:red;
+    text-align: center;
+    margin: auto;
+    color:red;
 }
 .btn{
- border:0.16em solid rgba(255,255,255,0);
- box-sizing: border-box;
- text-decoration:none;
- font-weight:300;
- text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
- text-align:center;
- transition: all 0.5s;
+    border:0.16em solid rgba(255,255,255,0);
+     box-sizing: border-box;
+     text-decoration:none;
+     font-weight:300;
+     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+     text-align:center;
+     transition: all 0.5s;
 }
 .btn:hover{
-  border-color: grey;
+    border-color: grey;
 }
 .btn:active{
-  background-color: #242526;
-  color: white;
+    background-color: #242526;
+    color: white;
 }
 #regTitle{
-  margin-top: 50px;
-  text-align: center;
+    margin-top: 50px;
+    text-align: center;
 }
 /*END REGISTER/LOGIN CSS*/
 /*START LEADERBOARDS CSS*/
 table{
-  width: 100%;
-  text-align: center;
-  color:white;
+    width: 100%;
+    text-align: center;
+    color:white;
 }
 td,th{
-  background-color: #242526;
-  padding: 25px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: white;
-  border-radius: 5px;
+    background-color: #242526;
+    padding: 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 5px;
 }
 /*END LEADERBOARDS CSS*/
