@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Big Brain Inc.</title>
-        <link href="css/BigBrainStyle.css" type="text/css" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Big Brain Inc.</title>
+    <link href="css/BigBrainStyle.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
     <div class="header">
-        <div class="logo"><img src="images/BigBrainLogo.png" class="mainLogo"/></div>
-        <div class="name"><h1>Big Brain Inc.</h1></div>
-        <div class="welcome"><p class="welcomeText">Welcome guest user</p></div>
+        <div class="logo"><img src="images/BigBrainLogo.png" class="mainLogo" /></div>
+        <div class="name">
+            <h1>Big Brain Inc.</h1>
+        </div>
+        <div class="welcome">
+            <p class="welcomeText">Welcome guest user</p>
+        </div>
     </div>
     <div class="main">
         <div class="textInfo">
@@ -42,6 +48,6 @@
             </div>
         </div>
     </div>
-    </body>
-</html>
+</body>
 
+</html>

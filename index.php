@@ -1,8 +1,5 @@
-<html>
-    <head>
-        <title>HackBox</title>
-
-    </head>
+<!DOCTYPE html>
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -28,25 +25,25 @@
                     <input type="checkbox" id="showDrop">
                     <label for="showDrop" class="mobile-item">Challenges</label>
                     <ul class="drop-menu">
-                      <li><a href="./Challenge_1/index.php">Challenge 1</a></li>
-                      <li><a href="./Challenge_2/index.php">Challenge 2</a></li>
-                      <li><a href="./Challenge_3/index.php">Challenge 3</a></li>
-                      <li><a href="./Challenge_4/index.php">Challenge 4</a></li>
-                      <li><a href="./Challenge_5/index.php">Challenge 5</a></li>
+                        <li><a href="./Challenge_1/index.php">Challenge 1</a></li>
+                        <li><a href="./Challenge_2/index.php">Challenge 2</a></li>
+                        <li><a href="./Challenge_3/index.php">Challenge 3</a></li>
+                        <li><a href="./Challenge_4/index.php">Challenge 4</a></li>
+                        <li><a href="./Challenge_5/index.php">Challenge 5</a></li>
                     </ul>
                 </li>
                 <li><a href="./leaderboards.php">Leaderboards</a></li>
                 <?php
                 session_start();
-                 if(isset($_SESSION['userName'])){
-                  echo '<li><a href="#" class="desktop-item">'.$_SESSION['userName'].'</a>
+                if (isset($_SESSION['userName'])) {
+                    echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
                         <input type="checkbox" id="showDrop">
-                        <label for="showDrop" class="mobile-item">'.$_SESSION['userName'].'</label>
+                        <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
                         <ul class="drop-menu">
                           <li><a href="./logout.php">Log Out</a></li>
                         </ul></li>';
-                }else{
-                  echo '<li><a href="./login.php">Login</a></li>
+                } else {
+                    echo '<li><a href="./login.php">Login</a></li>
                   <li><a href="./register.php">Register</a></li>';
                 } ?>
             </ul>
@@ -56,7 +53,7 @@
 </header>
 
 <body>
-<h1> MAIN PAGE</h1>
+    <h1> MAIN PAGE</h1>
 
 </body>
 
