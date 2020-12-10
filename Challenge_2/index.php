@@ -72,11 +72,11 @@
                 <h2>Note 1 - "Neo Genesis"</h2>
                 <p class="text">
                     That day, my world was shattered <span class="finding">b</span>efo<span class="finding">r</span>e my
-                    eyes.Everything was taken from me.
+                    eyes. Everything was taken from me.
                     Everything. The path that remained before me was m<span class="finding">u</span>ddled wi<span class="finding">t</span>h unease and unc<span class="finding">e</span>rtainty.
                     The system tried to erase what had happened.
                     They succeeded to some degree, but I still managed to slip through their hands. Because of them, I had
-                    long since <span class="finding">f</span>org <span class="finding">o</span>tten my past self, befo <span class="finding">r</span>e then.
+                    long since <span class="finding">f</span>org<span class="finding">o</span>tten my past self, befo<span class="finding">r</span>e then.
                     I never forgot the <span class="finding">c</span>hronic trauma though, the f<span class="finding">e</span>ar, the grief, and the unbridled rage
                 </p>
             </div>
