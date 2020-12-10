@@ -70,49 +70,10 @@
                     </div>
                 </div>
                 <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
-                <?php 
-                if(isset($_POST['submit'])){
-
-                    $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
-                    $search = $_POST['search'];
-                    $q = (
-                        'SELECT userID, name, email, priviledge_level, chat_link FROM bb_users WHERE (priviledge_level = 1 && name LIKE "'.$search.'")'
-                    );
-                    if ($db->multi_query($q)) {
-                        ?>
-                        <table>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Priviledge Level</th>
-                        </tr>
-                        <?php
-                        do {
-                            if ($result = $db->store_result()) {
-                                while ($row = $result->fetch_row()) {
-                                    echo '<tr>';
-                                    echo '<td>'.$row[0].'</td>';
-                                    echo '<td>'.$row[1].'</td>';
-                                    echo '<td>'.$row[2].'</td>';
-                                    echo '<td>'.$row[3].'</td>';
-                                    echo '</tr>';
-                                }
-                                $result->free();
-                            }
-                            if ($db->more_results()) {
-                                printf("-----------------\n");
-                            }
-                        } while ($db->next_result());
-                        ?>
-                        </table>
-                        <?php
-                    }
-                }
-                ?>
             </div>
         </div>
     </body>
+    
     <footer>
         <div class="main-content">
             <div class="left box">
@@ -147,4 +108,246 @@
         <script type="text/javascript" src="js/item.js"></script>
         <script type="text/javascript" src="js/Challenge4.js"></script>
     </footer>
+    <?php 
+        define("MAX_ENTITIES", 6);
+        //check if user submitted an answer
+        if(isset($_COOKIE['submit']))
+        {
+            $input = (int) htmlentities($_COOKIE['submit']);
+            $num_length = strlen((string)$input);
+            $isValidQuery = true;
+            //checks for length of answer
+            if($num_length > MAX_ENTITIES)
+            {
+                echo("Submited answer has to many entities");
+                $isValidQuery = false;
+               return;
+			}
+            //Make the answer 6 digits long
+            for($i = $num_length; $i < MAX_ENTITIES; $i++)
+            {
+                $input = $input * 10;     
+			}
+            //Cast the answer into an array and cast them as integers to make sure no other datatypes are in the answer
+            $inputArray = array();
+            $inputArray[0] = (int) ($input / 100000);
+            $inputArray[1] = (int) ($input / 10000) % 10;
+            $inputArray[2] = (int) ($input / 1000) % 10;
+            $inputArray[3] = (int) ($input / 100) % 10;
+            $inputArray[4] = (int) ($input / 10) % 10;
+            $inputArray[5] = (int) $input % 10;
+
+            $inputTypeArray = array();
+            $inputIsString = true;
+            $isCommentedOut = false;
+            $amountOfQuotes = 2;
+            for($i = 0; $i < MAX_ENTITIES; $i++)
+            {
+                //check for dublicate values
+                if (count(array_keys($inputArray, $inputArray[$i])) > 1) 
+                {
+                    if($inputArray[$i] != 0)
+                    {
+                        echo("Submited answer has dublicate values");
+                        $isValidQuery = false;
+                        return;
+					}
+                    
+                }
+                //check for invalid values like negative numbers
+                if($inputArray[$i] > MAX_ENTITIES || $inputArray[$i] < 0)
+                {
+                    echo("Submited answer has invalid values");
+                    $isValidQuery = false;
+                    continue;        
+				}
+                //check how each value will be read by the mock sql command
+                if($inputArray[$i] == 0)
+                {
+                    $inputTypeArray[$i] = "empty";    
+                    continue;
+				}
+
+                if($isCommentedOut)
+                {
+                    $inputTypeArray[$i] = "comment";
+                    continue;
+				}
+
+                if($inputArray[$i] == 1 || $inputArray[$i] == 2)
+                {
+                    $inputIsString = !$inputIsString;
+                    $amountOfQuotes++;
+                    $inputTypeArray[$i] = "quote";
+				}
+                else
+                {
+                    if($inputIsString)
+                    {
+                        $inputTypeArray[$i] = "string";
+                        continue;
+					}
+
+                    if($inputArray[$i] == 4)
+                    {
+                        $inputTypeArray[$i] = "comment";
+                        $isCommentedOut = true;
+                        $amountOfQuotes--;
+
+				    }
+                    elseif($inputArray[$i] == 5 || $inputArray[$i] == 6)
+                    {
+                        $inputTypeArray[$i] = "operator";
+					}
+                    elseif($inputArray[$i] == 3)
+                    {
+                        $inputTypeArray[$i] = "true";
+                    }
+                    else
+                    {
+                        $inputTypeArray[$i] = "unknown";
+					}
+
+				
+				}
+			}
+            //check if the amount of quotes at the end of the query is even or uneven
+            if($amountOfQuotes % 2 == 1)
+            {
+               echo("<br> One of the quotes is not properally closed");
+               $isValidQuery = false;
+               return;
+			}
+            //if the user inputted '"(' in the answer the query that is not commented out,  the query will always have an unclosed bracket
+            $positionOfTwo = array_search(2, $inputArray);
+            if($positionOfTwo !== false)
+            {
+                if($inputTypeArray[$positionOfTwo] == "quote")
+                {
+                    echo("<br> Unclosed bracket");    
+                    $isValidQuery = false;
+                    return;  
+				}
+               
+			}
+
+            $queryArray = array("&quot;)", "&quot;(", "1 = 1", ";--", "AND", "OR");
+            $searchQuery = "";
+            $queryCondition = "";
+            $isOperatorSet = false;
+            if($isValidQuery)
+            {
+                $queryConditionArray = "";
+                for($i = 0; $i < MAX_ENTITIES; $i++)
+                {
+                    //create the string the query will search for in the database
+                    if($inputTypeArray[$i] == "string")
+                    {
+                        $searchQuery = $searchQuery.$queryArray[$inputArray[$i] - 1];    
+					}
+                    //check if an operator appears twice
+                    if($inputTypeArray[$i] == "operator")
+                    {
+                        if($isOperatorSet)
+                        {
+                            echo("<br> invalid query");    
+                            return;
+						}
+                        else
+                        {
+                            $isOperatorSet = true;
+                            $queryConditionArray = $inputArray[$i];
+						}
+					}
+                    //check if the '1=1' part is put before the operator
+                    if($inputTypeArray[$i] == "true")
+                    {
+                        if(!$isOperatorSet)
+                        {
+                            echo("<br> invalid query");    
+                            //return;
+						}
+                        else
+                        {
+                            $queryConditionArray = $queryConditionArray.$inputArray[$i];          
+						}           
+					}
+				}
+                //
+                switch($queryConditionArray)
+                {
+                    case "63":
+                        $q = (
+                            'SELECT userID, name, priviledge_level, chat_link FROM bb_users'
+                        );
+                        break;
+                    case "53":
+                    case "":
+                        $q = (
+                            //'SELECT userID, name, priviledge_level, chat_link FROM bb_users WHERE (priviledge_level = 1 && name LIKE "'.$search.'")'
+                            'SELECT userID, name, priviledge_level, chat_link FROM bb_users WHERE (priviledge_level = 1 && name LIKE "'.$searchQuery.'")'
+                        );
+                        break;
+                    default:
+                        echo("<br> invalid query");
+                        return;
+				}
+                //Execute query here
+                $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
+                $searchQuery = htmlentities($searchQuery);
+               
+                
+
+                
+                if ($db->multi_query($q)) {
+                    ?>
+                    <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Priviledge Level</th>
+                        <th>chat_link</th>
+                    </tr>
+                    <?php
+                    do {
+                        if ($result = $db->store_result()) {
+                            if(mysqli_num_rows($result)==0)
+                            {
+                                echo 'User "' . $searchQuery . '" not found.';
+							}
+                            $i = 0;
+                            while ($row = $result->fetch_row()) {
+                                if($i>4){break;}
+                                echo '<tr>';
+                                echo '<td>'.$row[0].'</td>';
+                                echo '<td>'.$row[1].'</td>';
+                                echo '<td>'.$row[2].'</td>';
+                                echo '<td>'.$row[3].'</td>';
+                                echo '</tr>';
+                                $i++;
+                            }
+                            $result->free();
+                        }
+                        if ($i>4) {
+                            printf("And 10.000 more rows \n");
+                        }
+                        
+                    } while ($db->next_result());
+                    ?>
+                    </table>
+                    <?php
+                }
+			}
+            /**
+            1: ")
+            2: "(
+            3: 1 = 1
+            4: ;--
+            5: AND
+            6: OR
+            **/
+  
+            
+        }
+    ?>
 </html>

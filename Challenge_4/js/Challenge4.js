@@ -3,8 +3,8 @@ var queryArray = ["&quot;)", "&quot;(", "1 = 1", ";--", "AND", "OR"];
 
 var funcs = [];
 var items = new Array();
-for (i = 0; i < queryArray.length; i++) {
-    var item = new Item(queryArray[i], i);
+for (i = 1; i <= queryArray.length; i++) {
+    var item = new Item(queryArray[i - 1], i);
     items.push(item);
     setVisibilityDeleteButton(false, item.deleteButton);
 
