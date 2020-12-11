@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>HACKBOX MAIN</title>
+    <title>Challenge 1</title>
   </head>
   <body>
   <header>
