@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../main.css">
-    <link rel="stylesheet" href="challenge5style.css">
+    <link rel="stylesheet" href="css/challenge5style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 5</title>
@@ -39,13 +39,13 @@
     </nav>
 </header>
 
-<body id="body" background="bg.jpg">
+<body id="body" background="images/bg.JPG">
     <h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
     <h3> You have managed to start a conversation with him and need to inject some Cross Site Scripting (Javascript using an api) to acquire the IP address. (Shown Below)</h3>
 
     <div id="display">
         <div id="1" class="container" style="display: none">
-            <img src="avatar1.jpg" alt="Avatar">
+            <img src="images/avatar1.JPG" alt="Avatar">
             <p>who are you why are you trying to hack me</p>
             <span class="time-right">11:00</span>
         </div>
@@ -53,14 +53,14 @@
         <br>
         <div id="2" class="container darker" style="display: none">
 
-            <img src="2.png" alt="Avatar" class="right">
+            <img src="images/2.png" alt="Avatar" class="right">
             <p class="right"> im gonna catch you terrorist</p>
             <br>
             <span class="time-left">11:01</span>
         </div>
         <br>
         <div id="3" class="container" style="display: none">
-            <img src="avatar1.jpg" alt="Avatar">
+            <img src="images/avatar1.JPG" alt="Avatar">
             <p>hahaha, NEVER</p>
             <span class="time-right">11:03</span>
         </div>
