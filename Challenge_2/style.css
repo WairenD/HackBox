@@ -4,6 +4,8 @@ body {
 
 .formContent {
 	color: #2afafa;
+	padding: 5%;
+
 }
 
 .container h2,
@@ -21,6 +23,7 @@ body {
 }
 
 .text {
+	padding: 5%;
 	font-size: calc(8px + 6 * ((100vw - 320px) / 680));
 }
 
@@ -149,7 +152,7 @@ img {
 
 #img-box {
 	width: 100%;
-	height: 200px;
+	height: 30vh;
 }
 
 
@@ -232,19 +235,22 @@ img {
 	}
 	.form-inline {
 		height: 150px;
+
 	}
 	.loginBox {
 		width: 100%;
 		height: 400px;
 	}
 	.formContent {
-		width: 70%;
+		width: 100%;
 		height: 10%;
+		margin: 5%;
 	}
 	.form-inline input {
 		width: 90%;
 	}
 	.form-inline input[type=submit] {
+		margin-top: 45%;
 		width: 100%;
 	}
 	.form-inline {
