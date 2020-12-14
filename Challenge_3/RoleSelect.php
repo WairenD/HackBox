@@ -10,7 +10,7 @@
 
 <body>
     <div class="header">
-        <div class="logo"><img src="images/BigBrainLogo.png" /></div>
+        <div class="logo"><img src="images/BigBrainLogo.png" class="mainLogo" /></div>
         <div class="name">
             <h1>Big Brain Inc.</h1>
         </div>
