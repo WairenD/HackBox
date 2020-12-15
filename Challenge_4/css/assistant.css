@@ -4,14 +4,14 @@ body {
 
 #assistant {
     right: 0;
-    position: fixed;
-    bottom: 124px;
+    position: absolute;
+    bottom: 118px;
 }
 
 #hint {
-    right: 0;
-    bottom: 250px;
-    position: fixed;
+    right: 100px;
+    bottom: 230px;
+    position: absolute;
     padding-left: 650px;
 }
 
