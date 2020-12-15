@@ -11,22 +11,21 @@
     <header>
         <nav>
             <div class="wrapper">
-                <div class="logo"><a href="#">HACKBOX</a></div>
+                <div class="logo"><a href="../">HACKBOX</a></div>
                 <input type="radio" name="slider" id="menu-btn">
                 <input type="radio" name="slider" id="close-btn">
                 <ul class="nav-links">
                     <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="../about.php">About</a></li>
                     <li>
-                        <a href="#" class="desktop-item">Dropdown Menu</a>
+                        <a href="#" class="desktop-item">Challenges</a>
                         <input type="checkbox" id="showDrop">
-                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                        <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
-                            <li><a href="#">Drop menu 1</a></li>
-                            <li><a href="#">Drop menu 2</a></li>
-                            <li><a href="#">Drop menu 3</a></li>
-                            <li><a href="#">Drop menu 4</a></li>
+                            <li><a href="../Challenge_1">Challenge 1</a></li>
+                            <li><a href="../Challenge_2">Challenge 2</a></li>
+                            <li><a href=" ">Challenge 3</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Feedback</a></li>
