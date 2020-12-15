@@ -5,7 +5,7 @@ body {
 #assistant {
     right: 0;
     position: fixed;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     bottom: 124px;
 }
 
@@ -14,7 +14,7 @@ body {
     bottom: 250px;
     position: fixed;
     padding-left: 650px;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
 }
 
 #assistant img {
