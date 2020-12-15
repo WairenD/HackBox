@@ -19,9 +19,9 @@
                     <li><a href="../">Home</a></li>
                     <li><a href="../about.php">About</a></li>
                     <li>
-                        <a href="#" class="desktop-item">Dropdown Menu</a>
+                        <a href="#" class="desktop-item">Challenges</a>
                         <input type="checkbox" id="showDrop">
-                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                        <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
                             <li><a href="../Challenge_1">Challenge 1</a></li>
                             <li><a href="../Challenge_2">Challenge 2</a></li>
