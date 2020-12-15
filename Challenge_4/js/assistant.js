@@ -1,5 +1,3 @@
-// window.onbeforeunload = () => '';
-
 const a = [
     "HINT 1",
     "HINT 2 Lorem Ipsum",
