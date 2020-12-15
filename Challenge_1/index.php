@@ -22,7 +22,7 @@
                   <li><a href="../">Home</a></li>
                   <li><a href="../about.php">About</a></li>
                   <li>
-                      <a href="#" class="desktop-item">Challenges</a>
+                      <a href="#" class="desktop-item">Dropdown Menu</a>
                       <input type="checkbox" id="showDrop" />
                       <label for="showDrop" class="mobile-item">Challenges</label>
                       <ul class="drop-menu">
