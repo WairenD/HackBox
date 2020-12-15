@@ -1,3 +1,5 @@
+// window.onbeforeunload = () => '';
+
 const a = [
     "HINT 1",
     "HINT 2 Lorem Ipsum",
@@ -7,6 +9,7 @@ const a = [
     "HINT 6.",
     "HINT 7.",
 ];
+
 var hints=0;
 function getHint() {
     $('#hint').show().delay(5000).hide(0);

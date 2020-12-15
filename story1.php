@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +8,27 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>HACKBOX MAIN</title>
     </head>
-  </head>
   <body>
     <header>
         <nav>
             <div class="wrapper">
-                <div class="logo"><a href="./index.php">HACKBOX</a></div>
+                <div class="logo"><a href="./">HACKBOX</a></div>
                 <input type="radio" name="slider" id="menu-btn">
                 <input type="radio" name="slider" id="close-btn">
                 <ul class="nav-links">
                     <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="./index.php">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li><a href="./about.php">About</a></li>
                     <li>
                         <a href="#" class="desktop-item">Challenges</a>
                         <input type="checkbox" id="showDrop">
                         <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
-                            <li><a href="./Challenge_1/index.php">Challenge 1</a></li>
-                            <li><a href="./Challenge_2/index.php">Challenge 2</a></li>
-                            <li><a href="./Challenge_3/index.php">Challenge 3</a></li>
-                            <li><a href="./Challenge_4/index.php">Challenge 4</a></li>
-                            <li><a href="./Challenge_5/index.php">Challenge 5</a></li>
+                            <li><a href="./Challenge_1">Challenge 1</a></li>
+                            <li><a href="./Challenge_2">Challenge 2</a></li>
+                            <li><a href="./Challenge_3">Challenge 3</a></li>
+                            <li><a href="./Challenge_4">Challenge 4</a></li>
+                            <li><a href="./Challenge_5">Challenge 5</a></li>
                         </ul>
                     </li>
                     <li><a href="./leaderboards.php">Leaderboards</a></li>
@@ -53,7 +51,7 @@
             </div>
         </nav>
     </header>
-    <img width="15%" height="15%" class="charImg1" src="images/Detectivefull.png" alt="char1">
+    <img width="15%" height="15%" class="charImg1" src="images/detective_full_body.jpeg" alt="char1">
     <div class="mainText">
       <div class="leftTextDiv">
         <p style="margin-top:20px;" class="textLeft">Alright you two, welcome to the team. I’m the detective Svenja Schmit, in charge of the “Neo Genesis” case that’s currently ongoing. I trust you’re already up to speed on what’s going on, but I think it’s best I go over it with you real quick to be sure. Okay?</p>
@@ -73,7 +71,7 @@
         <p class="textRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit vitae nibh et lobortis. Ut elit magna, auctor quis eros vitae, imperdiet tincidunt risus. Maecenas mollis lobortis consequat</p>
       </div>
     </div>
-    <img width="15%" height="15%" class="charImg2" src="images/Detectivefull.png" alt="char2">
+    <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.jpeg" alt="char2">
     <footer>
         <div class="main-content">
             <div class="center box">

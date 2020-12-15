@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../main.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 2</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
 </head>
@@ -21,17 +21,15 @@
                     <input type="radio" name="slider" id="close-btn">
                     <ul class="nav-links">
                         <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../about.php">About</a></li>
                         <li>
                             <a href="#" class="desktop-item">Dropdown Menu</a>
                             <input type="checkbox" id="showDrop">
                             <label for="showDrop" class="mobile-item">Dropdown Menu</label>
                             <ul class="drop-menu">
-                                <li><a href="#">Drop menu 1</a></li>
-                                <li><a href="#">Drop menu 2</a></li>
-                                <li><a href="#">Drop menu 3</a></li>
-                                <li><a href="#">Drop menu 4</a></li>
+                                <li><a href="../Challenge_1">Challenge 1</a></li>
+                                <li><a href="">Challenge 2</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Feedback</a></li>
@@ -43,7 +41,7 @@
         <div class="container">
             <div class="loginBox">
                 <div class="imgContainer">
-                    <img src="img/logo.png" alt="logo" class="logo">
+                    <img src="images/logo.png" alt="logo" class="logo">
                 </div>
                 <div class="loginPage">
                     <form action="index.php" method="POST" class="form-inline">
@@ -87,7 +85,7 @@
                     <p class="text">find the missing password</p>
                 </div>
                 <div class="images">
-                    <img src="img/logo.png" alt="a key ?" id="img-box">
+                    <img src="images/logo.png" alt="a key ?" id="img-box">
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
                         <img class="modal-content" id="img01">
@@ -113,6 +111,7 @@
                 modal.style.display = "none";
             };
         </script>
+
         <footer>
             <div class="main-content">
                 <div class="left box">

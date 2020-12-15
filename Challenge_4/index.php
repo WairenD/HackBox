@@ -6,34 +6,35 @@
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/sortableTest.css" />
+    <link rel="stylesheet" href="css/assistant.css">
+    <script type="text/javascript" src="js/assistant.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/sortable.complete.esm.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="wrapper">
-                <div class="logo"><a href="./index.php">HACKBOX</a></div>
+                <div class="logo"><a href="./">HACKBOX</a></div>
                 <input type="radio" name="slider" id="menu-btn">
                 <input type="radio" name="slider" id="close-btn">
                 <ul class="nav-links">
                     <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="./index.php">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li><a href="./about.php">About</a></li>
                     <li>
                         <a href="#" class="desktop-item">Challenges</a>
                         <input type="checkbox" id="showDrop">
                         <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
-                            <li><a href="./Challenge_1/index.php">Challenge 1</a></li>
-                            <li><a href="./Challenge_2/index.php">Challenge 2</a></li>
-                            <li><a href="./Challenge_3/index.php">Challenge 3</a></li>
-                            <li><a href="./Challenge_4/index.php">Challenge 4</a></li>
-                            <li><a href="./Challenge_5/index.php">Challenge 5</a></li>
+                            <li><a href="./Challenge_1">Challenge 1</a></li>
+                            <li><a href="./Challenge_2">Challenge 2</a></li>
+                            <li><a href="./Challenge_3">Challenge 3</a></li>
+                            <li><a href="">Challenge 4</a></li>
+                            <li><a href="./Challenge_5">Challenge 5</a></li>
                         </ul>
                     </li>
                     <li><a href="./leaderboards.php">Leaderboards</a></li>
@@ -323,10 +324,15 @@
             5: AND
             6: OR
             **/
-  
-            
+
         }
     ?>
+
+    <div class="hint"></div>
+    <div id="assistant">
+        <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+    </div>
+
     <footer>
         <div class="main-content">
             <div class="center box">

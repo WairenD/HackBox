@@ -16,7 +16,7 @@
   <header>
     <nav>
       <div class="wrapper">
-        <div class="logo"><a href="./index.php">HACKBOX</a></div>
+        <div class="logo"><a href="./">HACKBOX</a></div>
         <input type="radio" name="slider" id="menu-btn">
         <input type="radio" name="slider" id="close-btn">
         <ul class="nav-links">
@@ -28,11 +28,11 @@
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Challenges</label>
             <ul class="drop-menu">
-              <li><a href="./Challenge_1/index.php">Challenge 1</a></li>
-              <li><a href="./Challenge_2/index.php">Challenge 2</a></li>
-              <li><a href="./Challenge_3/index.php">Challenge 3</a></li>
-              <li><a href="./Challenge_4/index.php">Challenge 4</a></li>
-              <li><a href="./Challenge_5/index.php">Challenge 5</a></li>
+              <li><a href="./Challenge_1">Challenge 1</a></li>
+              <li><a href="./Challenge_2">Challenge 2</a></li>
+              <li><a href="./Challenge_3">Challenge 3</a></li>
+              <li><a href="./Challenge_4">Challenge 4</a></li>
+              <li><a href="./Challenge_5">Challenge 5</a></li>
             </ul>
           </li>
           <li><a href="./leaderboards.php">Leaderboards</a></li>

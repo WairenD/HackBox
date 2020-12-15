@@ -12,30 +12,30 @@
   </head>
   <body>
   <header>
-        <nav>
-            <div class="wrapper">
-                <div class="logo"><a href="#">HACKBOX</a></div>
-                <input type="radio" name="slider" id="menu-btn">
-                <input type="radio" name="slider" id="close-btn">
-                <ul class="nav-links">
-                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li>
-                        <a href="#" class="desktop-item">Dropdown Menu</a>
-                        <input type="checkbox" id="showDrop">
-                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
-                        <ul class="drop-menu">
-                            <li><a href="#">Instructions</a></li>
-                            <li><a href="#">Challenge 0</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Feedback</a></li>
-                </ul>
-                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-            </div>
-        </nav>
-    </header>
+      <nav>
+          <div class="wrapper">
+              <div class="logo"><a href="#">HACKBOX</a></div>
+              <input type="radio" name="slider" id="menu-btn" />
+              <input type="radio" name="slider" id="close-btn" />
+              <ul class="nav-links">
+                  <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                  <li><a href="../">Home</a></li>
+                  <li><a href="../about.php">About</a></li>
+                  <li>
+                      <a href="#" class="desktop-item">Dropdown Menu</a>
+                      <input type="checkbox" id="showDrop" />
+                      <label for="showDrop" class="mobile-item">Challenges</label>
+                      <ul class="drop-menu">
+                          <li><a href="">Challenge 1</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="#">Feedback</a></li>
+              </ul>
+              <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+          </div>
+      </nav>
+  </header>
+
     <div class="center">
       <form runat="server" method="post">
         <input class="txtinput" type="password" name="password" >
@@ -58,23 +58,29 @@
       }
     }
      ?>
-    <footer>
-        <div class="main-content">
-            <div class="center box">
-                <h2>Location</h2>
-                <div class="content">
-                    <div class="place">
-                        <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">NHL Stenden</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom">
-            <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-            <span class="far fa-copyright"></span> 2020 All rights reserved.
-            <span><a href="./privacy_policy.php">Privacy Policy</a></span>
-        </div>
-    </footer>
+  <footer>
+      <div class="main-content">
+          <div class="left box">
+              <h2>About us</h2>
+              <div class="content">
+                  <p>LOL</p>
+              </div>
+          </div>
+          <div class="center box">
+              <h2>Location</h2>
+              <div class="content">
+                  <div class="place">
+                      <span class="fas fa-map-marker-alt"></span>
+                      <span class="text">NHL Stenden</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="bottom">
+          <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
+          <span class="far fa-copyright"></span> 2020 All rights reserved.
+          <span><a href="../privacy_policy.php">Privacy Policy</a></span>
+      </div>
+  </footer>
   </body>
 </html>
