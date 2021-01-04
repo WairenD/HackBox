@@ -192,7 +192,7 @@
             //check if the amount of quotes at the end of the query is even or uneven
             if($amountOfQuotes % 2 == 1)
             {
-               echo("<br> One of the quotes is not properally closed");
+               echo("<br> One of the quotes is not properly  closed");
                $isValidQuery = false;
                return;
 			}
