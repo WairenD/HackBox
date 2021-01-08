@@ -86,77 +86,48 @@
     <img width="15%" height="15%" class="charImg1" src="images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
       <div class="rightTextDiv">
-        <p style="margin-top:20px;" class="textRight">Svenja: Okay, let’s hear it. What were you able to find?</p>
+        <p style="margin-top:20px;" class="textRight">Svenja: Alright you two, welcome to the team. I’m the detective Svenja Schmit, in charge of the “Neo Genesis” case that’s currently ongoing. I trust you’re already up to speed on what’s going on, but I think it’s best I go over it with you real quick to be sure. Okay? </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss! Brainiac and I were able to get into a social media account we think belongs or belonged to our perpetrator. We managed to get the login info via some mumbo-jumbo Brainiac did with that note you left us, and found a profile that was blank save for a single link to a rather – interesting – website seemingly set up by our perp.</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Okay!</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: And what did you find there?</p>
+        <p style="margin-top:-40px;" class="textRight">Svenja: …About 12 hours ago, a vicious attack was carried out across a number of large facilities owned and operated by Shiny Tech, inc. We understand it to have been an act of terror remotely executed by one person with unclear motives. The only thing we were able to find were an image we believe to be their chosen calling card, as well as what some of us have been considering a manifesto note of sorts. We’ve provided this note for you. We’re hoping you’ll be able to garner some useful information from it. </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Well we – </p>
-        <span class="textLeftSpace"></span>
-      </div>
-      <div class="actionTextDiv">
-        <p class="actionText">*Svenja’s phone rings*</p>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: DETECTIVE SCHMIT!!</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: I’m sure we will.</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Mr. van Braam, hello sir –</p>
+        <p style="margin-top:20px;" class="textRight">Svenja: In any case, I’m not exactly thrilled to have been assigned a couple of newbies for such a potentially critical role in solving this case, but you’re all the higher-ups were able to get us. That Said, I and the rest of my unit are counting on you to do your utmost to help solve this case. The sooner we can figure out who this lowlife is, the sooner we can stop worrying about a repeat attack.</p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: Don’t “hElLo sIR” me! Why have you not found and arrested that maniac yet?! Do you enjoy having terrorists running loose in the city.</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Don’t worry Boss, We’ll get to the bottom of this. </p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Sir, we’re doing all we can… We’ve got our best people on the case.</p>
+        <p style="margin-top:-40px;" class="textRight">Svenja: Dimitri Valentine, was it? I’ve read your file… if I remember correctly, there were notes left that described you as “, chatty, inappropriately boisterous, has no regard for personal space, and overly confident in his abilities.” </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: Well clearly your best isn’t good enough, otherwise that lunatic would already be behind bars! Just what Is taking so long?! I pay my taxes to keep your sorry behinds well-funded so you can do your jobs as efficiently as possible! WHY HAVE I NOT YET SEEN RESULTS?!</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: What? Who wrote that? Was it Brenda in administration? I bet it was her. She never liked me.</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: These things take time, sir. We’re working on figuring out who did this, then we’re going to find out where they are and bring them to justice. I understand things are a bit hectic and frightening right now, but you need to remain calm.</p>
+        <p style="margin-top:-40px;" class="textRight">Svenja: It doesn’t matter who wrote it. But the fact that these notes exist does not instill me with very much confidence in you. Now our friend here… the notes on them indicate that they might actually have some potential. Not enough to put me at ease, but enough to know that at least one of you may actually produce results. </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: Calm? CALM! You expect me to be calm after I’ve been attacked by a lunatic?! Nine dead and about three dozen critically injured! These people can’t work being dead or so badly injured that they might as well be. Add to that, the repairs needed for those facilities. Even if I cut a few corners, which I damn well intend to, I’m still losing money. Bleeding! I’m bleeding money! I can’t be bleeding money detective… I’m trying to run a business here!</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss, let me assure you that I am positive this Brainiac and I will get the job done before you even know it. I bet we’ll find out who did this heinous act in no time.</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Sir, I hardly think –</p>
+        <p style="margin-top:-40px;" class="textRight">Svenja: “Overly confident in his abilities”</p>
         <span class="textRightSpace"></span>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: INDEED YOU HARDLY THINK!! You need to find out who did this as soon as possible or, I promise you, I will rain Hell down about your pathetic operation and you’ll be out of a job so fast that your head will spin! Good day!</p>
-        <span class="textLeftSpace"></span>
-      </div>
-      <div class="actionTextDiv">
-        <p class="actionText">*click*</p>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: That was… I don’t know, a lot. Are you okay?</p>
-        <span class="textLeftSpace"></span>
-      </div>
-      <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: I am perfectly fine. You two hack into that website and find me a lead, any lead. Now if you’ll excuse me, I’m needed elsewhere.</p>
-        <span class="textRightSpace"></span>
-      </div>
-      <div class="actionTextDiv">
-        <p class="actionText">*leaves*</p>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Well Brainiac, seems Mr. CEO (Van Braam, was it?) is a real handful right now.</p>
-        <span class="textLeftSpace"></span>
       </div>
     </div>
     <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">

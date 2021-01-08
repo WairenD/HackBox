@@ -102,7 +102,7 @@
           date_default_timezone_set('Europe/Amsterdam');
           $currentdate = date("Y-m-d h:i:s");
           $datetemp = "0000-00-00 00:00:00";
-          $SQLstring = "INSERT INTO " . $db_table . " VALUES(NULL,?, ?, ?,?,?,?,0)";
+          $SQLstring = "INSERT INTO " . $db_table . " VALUES(NULL,?, ?, ?,?,?,?,1)";
           if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
             mysqli_stmt_bind_param($stmt, 'ssssss', $userEmail, $userName, $userPass, $currentdate, $datetemp, $datetemp);
             $QueryResult = mysqli_stmt_execute($stmt);

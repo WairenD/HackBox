@@ -85,81 +85,102 @@
     </header>
     <img width="15%" height="15%" class="charImg1" src="images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
-      <div class="rightTextDiv">
-        <p style="margin-top:20px;" class="textRight">Svenja: Okay, let’s hear it. What were you able to find?</p>
-        <span class="textRightSpace"></span>
-      </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss! Brainiac and I were able to get into a social media account we think belongs or belonged to our perpetrator. We managed to get the login info via some mumbo-jumbo Brainiac did with that note you left us, and found a profile that was blank save for a single link to a rather – interesting – website seemingly set up by our perp.</p>
-        <span class="textLeftSpace"></span>
-      </div>
-      <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: And what did you find there?</p>
-        <span class="textRightSpace"></span>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Well we – </p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Just how is Big Brain, Inc involved in this? I know Big Brain and Shiny Tech used to have a bit of a rivalry back in the day, but Shiny Tech is always encountering new rivals. However, Big Brain’s fall from grace was messier than most others. It was crazy, back then –</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="actionTextDiv">
-        <p class="actionText">*Svenja’s phone rings*</p>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: DETECTIVE SCHMIT!!</p>
-        <span class="textLeftSpace"></span>
+        <p class="actionText">*Phone rings*</p>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Mr. van Braam, hello sir –</p>
+        <p style="margin-top:20px;" class="textRight">Svenja: You two, have you found anything? Anything at all? Things have gotten worse. </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: Don’t “hElLo sIR” me! Why have you not found and arrested that maniac yet?! Do you enjoy having terrorists running loose in the city.</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Worse how?</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Sir, we’re doing all we can… We’ve got our best people on the case.</p>
+        <p class="textRight">Svenja: Another attack. This time only two facilities, but they were among the largest. Can’t quite say how many deceased or injured just yet, but it’s already grim.</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px; background-color: orange;" class="textRight">Martin: DETECTIVE SCHMIT!! MY BUSINESS IS UNDER ATTACK AND YOU’RE ON THE PHONE?!</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: Mr. Van Braam sir, I am doing my job. I’m checking in with a couple of my investigators, and they’re doing the best that they can. </p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px; background-color: orange;" class="textRight">Martin: CLEARLY THEIR BEST ISN’T GOOD ENOUGH! Listen, you bunch of dolts, I just need you to give me a name, and maybe a last known location and I can sort this mess out myself.</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: Just how do you intend to do that, sir?  </p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px; background-color: orange;" class="textRight">Martin: Don’t you worry about that. I have my methods, and they’re more effective than yours.</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: …in any case sir, we haven’t any information on the perp’s identity. Isn’t that right, Dimitri? </p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px; background-color: orange;" class="textRight">Martin: INDEED YOU HARDLY THINK!! You need to find out who did this as soon as possible or, I promise you, I will rain Hell down about your pathetic operation and you’ll be out of a job so fast that your head will spin! Good day!</p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: Well clearly your best isn’t good enough, otherwise that lunatic would already be behind bars! Just what Is taking so long?! I pay my taxes to keep your sorry behinds well-funded so you can do your jobs as efficiently as possible! WHY HAVE I NOT YET SEEN RESULTS?!</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Well, that’s true, but we think we have something worth looking in to. Big Brain, inc appears to be associated with the attacker somehow.</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: These things take time, sir. We’re working on figuring out who did this, then we’re going to find out where they are and bring them to justice. I understand things are a bit hectic and frightening right now, but you need to remain calm.</p>
+        <p style="margin-top:20px; background-color: orange;" class="textRight">What is he saying? What do they know, detective? Do they have a name? any kind of lead?</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: …n-no, they’ve nothing much yet, other than a couple theories.</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px; background-color: orange;" class="textRight">Martin: BAH!! YOU GOOD FOR NOTHING –  </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: Calm? CALM! You expect me to be calm after I’ve been attacked by a lunatic?! Nine dead and about three dozen critically injured! These people can’t work being dead or so badly injured that they might as well be. Add to that, the repairs needed for those facilities. Even if I cut a few corners, which I damn well intend to, I’m still losing money. Bleeding! I’m bleeding money! I can’t be bleeding money detective… I’m trying to run a business here!</p>
+        <p style="margin-top:20px; background-color: darkblue;" class="textLeft">Officer: Sir, we need you to calm down and clear out this area. It’s potentially dangerous for you to be this out in public. You may be a target. Please, come with me. </p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Sir, I hardly think –</p>
+        <p style="margin-top:20px; background-color: orange;" class="textRight">Martin: What? Very well. Detective, I highly suggest you do your job and figure this out quickly, or there will be consequences. </p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="actionTextDiv">
+        <p class="actionText">*Martin is escorted away*</p>
+      </div>
+      <div class="leftTextDiv">
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Well, that was ominous. I don’t quite like or trust that man.</p>
+        <span class="textLeftSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: Me neither, but that’s hardly our concern right now. I need you to investigate Big Brain. Find a way in to their system or whatever, and gain access to as much information as possible. This could be crucial.</p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: orange;" class="textLeft">Martin: INDEED YOU HARDLY THINK!! You need to find out who did this as soon as possible or, I promise you, I will rain Hell down about your pathetic operation and you’ll be out of a job so fast that your head will spin! Good day!</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: You got it Boss! Brainiac and I will contact you if we find anything of note.</p>
         <span class="textLeftSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: Right.</p>
+        <span class="textRightSpace"></span>
       </div>
       <div class="actionTextDiv">
         <p class="actionText">*click*</p>
       </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: That was… I don’t know, a lot. Are you okay?</p>
-        <span class="textLeftSpace"></span>
-      </div>
-      <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: I am perfectly fine. You two hack into that website and find me a lead, any lead. Now if you’ll excuse me, I’m needed elsewhere.</p>
-        <span class="textRightSpace"></span>
-      </div>
-      <div class="actionTextDiv">
-        <p class="actionText">*leaves*</p>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Well Brainiac, seems Mr. CEO (Van Braam, was it?) is a real handful right now.</p>
-        <span class="textLeftSpace"></span>
-      </div>
     </div>
-    <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">
+      <img width="6%" height="6%" style="margin-left: 0;margin-top:30vh;" class="charImg2" src="images/detective_full_body.png" alt="char2">
+      <img width="11%" height="11%" style="margin-top:30vh;" class="charImg2" src="images/magnate_full_body.png" alt="char2">
     <footer>
         <div class="main-content">
             <div class="center box">

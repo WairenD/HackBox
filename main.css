@@ -7,6 +7,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
+	 scroll-behavior: smooth;
 }
 
 body {
@@ -160,6 +161,7 @@ nav .wrapper {
 		font-size: 20px;
 	}
 	.nav-links .drop-menu {
+		z-index: 2;
 		position: static;
 		opacity: 1;
 		top: 65px;
@@ -398,15 +400,15 @@ th {
 /*END LEADERBOARDS CSS*/
 /*START STORY CSS*/
 .mainText{
-	z-index: -1;
-	position: absolute;
+	z-index: 1;
+	float:left;
 	padding: 0;
-	margin: 20%;
-	height: 77vh;
+	margin:5%;
+	height: 75vh;
 	background-color: #242526;
-	width: 60vw;
+	width: 55vw;
 	margin-top: 9px;
-	overflow-y:scroll;
+	overflow:auto;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -415,41 +417,69 @@ th {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #242526;
+  background: #2e2f30;
   border-radius: 10px;
 }
 .textLeft{
-	text-align: left;
+	float:left;
+	text-align: justify;
 	border-radius: 5px;
-	background-color: blue;
+	background-color: red;
 	padding: 20px;
 	margin-bottom: 80px;
 	margin-left: 10px;
+	color:white;
+}
+.textLeftSpace{
+	float:left;
+	width:20vw;
 }
 .textRight{
-	text-align: right;
+	float:right;
+	text-align: justify;
 	border-radius: 5px;
 	background-color: green;
 	padding: 20px;
-	margin-bottom: 80px;
+	margin-bottom:20px;
+	color:white;
+}
+.textRightSpace{
+	float:right;
+	width:60vw;
 }
 .leftTextDiv{
-	float: left;
+	width: 45%;
+	height: 40px;
+	margin-left: 1.5%;
+}
+.rightTextDiv{
+	margin-left:52.5%;
 	width: 45%;
 	height: 40px;
 }
-.rightTextDiv{
-	float: right;
-	width: 45%;
+.actionTextDiv{
+	width: 95%;
 	height: 40px;
+	margin:auto;
+}
+.actionText{
+	width: 100%;
+	float:right;
+	text-align: center;
+	border-radius: 5px;
+	background-color: white;
+	padding: 20px;
+	margin-bottom:20px;
 }
 .charImg1{
 	float: left;
 	margin-left: 2.5%;
 }
 .charImg2{
-	float: right;
-	margin-right: 2.5%;
+	float: left;
+}
+.rightImgDiv{
+	float:left;
 }
 /*END STORY CSS*/
 

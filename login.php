@@ -54,6 +54,7 @@
     <?php
     session_unset();
     session_start();
+    $_SESSION['challStage'] =1;
     $errorMsg = "";
     if (isset($_POST['submit'])) {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
