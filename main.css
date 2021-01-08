@@ -508,6 +508,10 @@ th {
 	color: white;
 	text-decoration:  none;
 }
+.contactList p a:hover
+{
+	text-decoration: underline;
+}
 .aboutContainer h1{
 	text-align: center;
 	color: black;
