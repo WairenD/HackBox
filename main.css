@@ -432,7 +432,7 @@ th {
 }
 .textLeftSpace{
 	float:left;
-	width:10vw;
+	width:20vw;
 }
 .textRight{
 	float:right;
@@ -445,7 +445,7 @@ th {
 }
 .textRightSpace{
 	float:right;
-	width:50vw;
+	width:60vw;
 }
 .leftTextDiv{
 	width: 45%;
@@ -477,5 +477,8 @@ th {
 }
 .charImg2{
 	float: left;
+}
+.rightImgDiv{
+	float:left;
 }
 /*END STORY CSS*/
