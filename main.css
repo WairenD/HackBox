@@ -503,6 +503,11 @@ th {
 	height: 60vh;
 	background-color: white;
 }
+.contactList p a
+{
+	color: white;
+	text-decoration:  none;
+}
 .aboutContainer h1{
 	text-align: center;
 	color: black;
@@ -532,7 +537,8 @@ th {
 	background-color:  #242526;
 }
 .contactList p{
-	padding: 10px;
+	padding: 15px;
+	font-size: 20px;
 	text-align: center;
 	color: white;
 }
@@ -545,6 +551,10 @@ th {
 	.aboutUs p
 	{
 		font-size: 20px;
+	}
+
+	.contactList p{
+		font-size: 15px;
 	}
 
 }
@@ -565,6 +575,10 @@ th {
 	.aboutContainer
 	{
 		height: 50px;
+	}
+	.aboutContainer h1
+	{
+		font-size: 25px;
 	}
 	.aboutUs
 	{

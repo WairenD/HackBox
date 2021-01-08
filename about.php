@@ -66,13 +66,13 @@
         </div>
         <div class="contactList">
             <h2>Contact List</h2>
-            <p>Robert Murcsek</p>
-            <p>Kareem Glasgow</p>
-            <p>Jonathan Mohamed</p>
-            <p>Georgi Dimitrov - georgi.dimitrov@student.nhlstenden.com</p>
-            <p>Nish Marovanidze </p>
-            <p>Thomas Koops</p>
-            <p>Xuan Đo</p>
+            <p>Robert Murcsek - <a href="mailto:robert.murcsek@student.nhlstenden.com">robert.murcsek@student.nhlstenden.com</a></p>
+            <p>Kareem Glasgow - <a href="mailto:kareem.glasgow@student.nhlstenden.com">kareem.glasgow@student.nhlstenden.com</a></p>
+            <p>Jonathan Mohamed - <a href="mailto:jonathan.mohamed@student.nhlstenden.com">jonathan.mohamed@student.nhlstenden.com</a></p>
+            <p>Georgi Dimitrov - <a href="mailto:georgi.dimitrov@student.nhlstenden.com">georgi.dimitrov@student.nhlstenden.com</a></p>
+            <p>Nish Marovanidze - <a href="mailto:nish.marovanidze@student.nhlstenden.com">nish.marovanidze@student.nhlstenden.com</a></p>
+            <p>Thomas Koops - <a href="mailto:thomas.koops@student.nhlstenden.com">thomas.koops@student.nhlstenden.com</a></p>
+            <p>Xuan Đo - <a href="mailto:xuan.do@student.nhlstenden.com">xuan.do@student.nhlstenden.com</a></p>
         </div>
     </div>
 </body>
