@@ -77,6 +77,29 @@
                     <li><a href="./register.php">Register</a></li>';
                     }
                     mysqli_close($DBConnect);
+                    include("connection.php");
+                    $SQLstring = "UPDATE " . $db_table . " SET startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+                    if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                      $QueryResult = mysqli_stmt_execute($stmt);
+                      if ($QueryResult === FALSE) {
+                        $errorMsg = "<span><p>Unable to execute the query.</p>"
+                          . "<p>Error code "
+                          . mysqli_errno($DBConnect)
+                          . ": "
+                          . mysqli_error($DBConnect)
+                          . "</p></span>";}
+                          else{
+                          }
+                      //Clean up the $stmt after use
+                      mysqli_stmt_close($stmt);
+                    } else {
+                      $errorMsg = "<span><p>Unable to execute the query.</p>"
+                        . "<p>Error code "
+                        . mysqli_errno($DBConnect)
+                        . ": "
+                        . mysqli_error($DBConnect)
+                        . "</p></span>";
+                    }
                     ?>
                 </ul>
                 <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>

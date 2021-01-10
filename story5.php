@@ -11,6 +11,7 @@
   <body>
     <header>
       <?php
+      $errorMsg = "";
       include("connection.php");
       $SQLstring = "SELECT currentLevel FROM " . $db_table;
       if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
@@ -83,6 +84,32 @@
             </div>
         </nav>
     </header>
+    <?php
+    include("connection.php");
+    $SQLstring = "UPDATE " . $db_table . " SET endTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+    if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+      $QueryResult = mysqli_stmt_execute($stmt);
+      if ($QueryResult === FALSE) {
+        $errorMsg = "<span><p>Unable to execute the query.</p>"
+          . "<p>Error code "
+          . mysqli_errno($DBConnect)
+          . ": "
+          . mysqli_error($DBConnect)
+          . "</p></span>";}
+          else{
+          }
+      //Clean up the $stmt after use
+      mysqli_stmt_close($stmt);
+    } else {
+      $errorMsg = "<span><p>Unable to execute the query.</p>"
+        . "<p>Error code "
+        . mysqli_errno($DBConnect)
+        . ": "
+        . mysqli_error($DBConnect)
+        . "</p></span>";
+    }
+     ?>
+       <div class="errorDiv"><?php echo $errorMsg ?></div>
     <img width="15%" height="15%" class="charImg1" src="images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
       <div class="rightTextDiv">
@@ -175,6 +202,9 @@
       <div class="leftTextDiv">
         <p style="margin-top:20px;" class="textLeft">Dimitri: Well then, what are we waiting for?! C’mon Brainiac! Hot chocolate and treats! Free hot chocolate and treats! Let’s go! </p>
         <span class="textLeftSpace"></span>
+      </div>
+      <div class="actionTextDiv">
+        <a href="leaderboards.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="END"></a>
       </div>
     </div>
     <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">

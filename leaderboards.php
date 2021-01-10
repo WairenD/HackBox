@@ -58,15 +58,14 @@
         <table>
             <tr>
                 <th>Username</th>
-                <th>Time to finish</th>
-                <th>Date</th>
+                <th>Time to finish(hh/mm/ss)</th>
             </tr>
             <?php
             include("connection.php");
-            $SQLstring = "SELECT userName,bestTime,endTime FROM " . $db_table;
+            $SQLstring = "SELECT userName,TIMEDIFF(endTime, startTime) FROM " . $db_table;
             if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
                 mysqli_stmt_execute($stmt);
-                mysqli_stmt_bind_result($stmt, $userName, $bestTime, $endTime);
+                mysqli_stmt_bind_result($stmt, $userName,$bestTime);
                 mysqli_stmt_store_result($stmt);
                 if ($stmt === FALSE) {
                     $errorMsg = "<span><p>Unable to execute the query.</p>"
@@ -80,7 +79,6 @@
                         echo '<tr>
                     <td>' . $userName . '</td>
                     <td>' . $bestTime . '</td>
-                    <td>' . $endTime . '</td>
                   </tr>';
                     }
                 }
