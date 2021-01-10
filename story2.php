@@ -11,6 +11,8 @@
   <body>
     <header>
       <?php
+      session_start();
+      $errorMsg = "";
       include("connection.php");
       $SQLstring = "SELECT currentLevel FROM " . $db_table;
       if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
@@ -39,8 +41,31 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      session_start();
-      $_SESSION['challStage'] = $currentLevel;
+      if($currentLevel<3){
+        $currentLevel=3;
+      }
+      $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+      if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+        $QueryResult = mysqli_stmt_execute($stmt);
+        if ($QueryResult === FALSE) {
+          $errorMsg = "<span><p>Unable to execute the query.</p>"
+            . "<p>Error code "
+            . mysqli_errno($DBConnect)
+            . ": "
+            . mysqli_error($DBConnect)
+            . "</p></span>";}
+            else{
+            }
+        //Clean up the $stmt after use
+        mysqli_stmt_close($stmt);
+      } else {
+        $errorMsg = "<span><p>Unable to execute the query.</p>"
+          . "<p>Error code "
+          . mysqli_errno($DBConnect)
+          . ": "
+          . mysqli_error($DBConnect)
+          . "</p></span>";
+      }
        ?>
         <nav>
             <div class="wrapper">
@@ -49,7 +74,7 @@
                 <input type="radio" name="slider" id="close-btn">
                 <ul class="nav-links">
                     <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="./index.php">Home</a></li>
                     <li><a href="./about.php">About</a></li>
                     <li>
                         <a href="#" class="desktop-item">Challenges</a>
@@ -57,7 +82,7 @@
                         <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
                           <?php
-                          for($i = 0;$i<$_SESSION['challStage'];$i++){
+                          for($i = 0;$i<$currentLevel;$i++){
                             echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
                           }
                           ?>
