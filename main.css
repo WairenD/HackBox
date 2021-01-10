@@ -508,6 +508,10 @@ th {
 	color: white;
 	text-decoration:  none;
 }
+.contactList p a:hover
+{
+	text-decoration: underline;
+}
 .aboutContainer h1{
 	text-align: center;
 	color: black;
@@ -525,7 +529,7 @@ th {
 	color: orangered;
 }
 .aboutUs p{
-	padding: 15px;
+	padding: 10px;
 	color: white;
 	font-size: 25px;
 	text-align: justify;
@@ -538,7 +542,7 @@ th {
 }
 .contactList p{
 	padding: 15px;
-	font-size: 20px;
+	font-size: 15px;
 	text-align: center;
 	color: white;
 }
@@ -550,13 +554,13 @@ th {
 {
 	.aboutUs p
 	{
+		padding: 5px;
 		font-size: 20px;
 	}
-
-	.contactList p{
-		font-size: 15px;
+	.contactList p
+	{
+		padding: 10px;
 	}
-
 }
 
 @media screen and (max-width: 955px)
@@ -567,7 +571,7 @@ th {
 	}
 	.contactList p
 	{
-		font-size: 15px;
+		font-size: 10px;
 	}
 }
 @media screen and (max-width: 615px)
@@ -601,6 +605,7 @@ th {
 	.contactList p
 	{
 		font-size: 8px;
+		padding: 5px;
 	}
 }
 
