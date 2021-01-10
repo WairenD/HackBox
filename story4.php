@@ -85,68 +85,97 @@
     </header>
     <img width="15%" height="15%" class="charImg1" src="images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Now that’s a funny thing, isn’t it? There’s logged data for Minerva Dewitt in here. You know Minerva Dewitt, don’t you? She was the daughter of Big Brain’s founders. Tragic story really. Her parents’ met a sudden and brutal end one evening, and then Minerva went missing and was never found. After a few years of searching and coming up empty-handed, they declared her legally dead. Spooky they have data for her here, don’t you think?</p>
-        <span class="textLeftSpace"></span>
+      <div class="actionTextDiv">
+        <p class="actionText" style="margin-top:20px;">*phone rings* </p>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Okay… hear me out. You remember that manifesto note Boss left us? That, added with the circumstances of Minerva’s disappearance and her parents’ deaths… Do you think it’s Minerva doing this? She could’ve survived and somehow escaped all attempts to find her, and now she’s back… but then why launch an attack on Shiny Tech and its employees? You don’t think Shiny Tech or Mr. CEO could’ve been involved in… no, that’s… then again, that man gives me major bad vibes. </p>
-        <span class="textLeftSpace"></span>
-      </div>
-      <div class="rightTextDiv">
-        <p style="margin-top:20px;" class="textRight">Svenja: Good evening you two. </p>
-        <span class="textRightSpace"></span>
-      </div>
-      <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss? You look troubled, what’s up? </p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Hello?</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:20px;" class="textRight">Svenja: …Not too long ago, I got an odd phone call from a man calling himself “Manifest”, he said he knew what Oblivion was after then left me a somewhat cryptic message. “Sometimes the dead comes back to punish the living,” he said. Any idea what he could’ve meant by that? Other than ghosts running amuck downtown, obviously.</p>
+        <p style="margin-top:-40px; background-color:darkblue" class="textRight">Manifest: Good evening. I’m the one called Manifest, and I’ve been in contact with detective Schmit.  </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Ghosts running amuck uptown?</p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Y-Yeh, what can I do for you? </p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: This is serious Dimitri! This must be some sort of clue, right? I’m so exhausted that I’m having trouble thinking clearly. That horrible man has been berating me at every step I make</p>
+        <p style="margin-top:-40px; background-color:darkblue" class="textRight">Manifest: I’m just calling to let you know that Oblivion, your terrorist, has likely got something major planned for her next move. It would put an immediate stop to it if you want to save hundreds, maybe thousands of lives.</p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss! I think I have an idea on what that Manifest guy might be hinting at. </p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: What? What is she planning? What do you know? I need you to tell me everything!</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: So you think Minerva Dewitt is our terrorist here? </p>
+        <p style="margin-top:-40px; background-color:darkblue" class="textRight">Manifest: Sorry, that’s all I got for you. I just thought you should know so that you and your partner would hurry things along.</p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Yes ma’am. </p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Wo are you? How are you involved in this?</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: And you think she’s out to get Martin van Braam, who you believe to be responsible for the deaths of her parents? </p>
+        <p style="margin-top:-40px; background-color:darkblue" class="textRight">Manifest: Listen, Oblivion… no, Minerva is something of a colleague of mine. I’m a major part of why this is even happening, and I intend to help put a stop to it. You guys are on the right track, I know it. However, you need to hurry up or many more are going to suffer because of us. </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Yes ma’am. </p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: “Us”? </p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Alright, I’ll cosign this theory of yours. Get whatever data you’ve found concerning Minerva on a flash drive for me, then expunge her from Big Brain’s databases. If she’s the one we’re after, she’s likely siphoning some sort of resource from Big Brain, and I’d rather she be cut off from that resource. </p>
+        <p style="margin-top:-40px; background-color:darkblue" class="textRight">Manifest: Yes, us. I helped make Minerva in to the monster she is today. It makes sense though. I’m also a monster created by another, nastier monster. But I and my monster are not your concern. Minerva is your concern. Please, find and stop her. While you do that, I’m going to put a more permanent end to the creation of monsters like Minerva and I.</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="actionTextDiv">
+        <p class="actionText" style="margin-top:20px;">*click* </p>
+      </div>
+      <div class="actionTextDiv">
+        <p class="actionText" style="margin-top:20px;">*Svenja rushes in to the room*</p>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: You two!</p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px;" class="textLeft">Dimitri: Whatever you say boss. Brainiac is on it. </p>
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss!</p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Thanks, you two. I’ve got to go speak with the folks running Big Brain, but I’ll be sure to keep in touch </p>
+        <p style="margin-top:20px;" class="textRight">Svenja: What’s going on here? You look like you’ve seen a ghost. Never mind that. I came by to give you explicit orders to use cross site scripting to find Minerva’s location. We have enough to bag her, we just need to find her.</p>
         <span class="textRightSpace"></span>
+      </div>
+      <div class="leftTextDiv">
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss! Manifest just called here. He says Minerva is likely planning to do something that will harm hundreds if not thousands of people. Also, he’s a lot more involved than we originally theorized. He says he helped turn her into the monster known as Oblivion. You don’t suppose he was the one responsible for her disappearance years ago, do you?</p>
+        <span class="textLeftSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: You might be on to something Dimitri, but given what he says about Minerva’s next move, we need to focus on stopping her immediately. Meanwhile, I’m going to pay Mr, Van Braam a surprise visit. I’ve a feeling he knows far more about this than he’s letting on. He’s currently bunkered down at his uptown office.  </p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="leftTextDiv">
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss?</p>
+        <span class="textLeftSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: I think Mr. van Braam may have something to do with the Dewitt murders and now their daughter who went missing has returned to exact some twisted form of justice. I checked the case files on the Dewitt murders, and there’s just enough evidence there that implicates Van Braam. How none of it was ever brought up before is astounding to me. I suppose when you’re rich and powerful, you can make certain things pass beneath many people’s radars.</p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="leftTextDiv">
+        <p style="margin-top:20px;" class="textLeft">Dimitri: Boss, this could be a huge news story if true. The press will be all over this, for the accusation alone. Are we prepared for that kind of attention?</p>
+        <span class="textLeftSpace"></span>
+      </div>
+      <div class="rightTextDiv">
+        <p style="margin-top:20px;" class="textRight">Svenja: Don’t worry about that. We’ve had the press’ attention this entire time. A few more questions and cameras shouldn’t be too much of an issue. Anyway, get to work you two. I’m going to request an audience with that vile monster. </p>
+        <span class="textRightSpace"></span>
+      </div>
+      <div class="leftTextDiv">
+        <p style="margin-top:20px;" class="textLeft">Dimitri: …Vile monster indeed.</p>
+        <span class="textLeftSpace"></span>
       </div>
     </div>
-    <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">
+    <img width="17%" height="18%" style="margin-top: 20px;" class="charImg2" src="images/assassin_full_body.png" alt="char2">
     <footer>
         <div class="main-content">
             <div class="center box">

@@ -149,7 +149,7 @@
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">
-        <p style="margin-top:20px; background-color: darkblue;" class="textLeft">Officer: Sir, we need you to calm down and clear out this area. It’s potentially dangerous for you to be this out in public. You may be a target. Please, come with me. </p>
+        <p style="margin-top:20px; background-color: lightblue;" class="textLeft">Officer: Sir, we need you to calm down and clear out this area. It’s potentially dangerous for you to be this out in public. You may be a target. Please, come with me. </p>
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
