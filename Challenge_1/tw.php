@@ -11,9 +11,6 @@
 </head>
 <body>
   <div class="fullpage">
-    <div class="indexHeader">
-      <div id="userPic"><img src="images/defuserpic.jpg" alt="user"></div>
-    </div>
     <div id="index">
       <div id="menu">
         <ul>
