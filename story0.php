@@ -41,30 +41,30 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      if($currentLevel<1){
+      if($currentLevel==0){
         $currentLevel=1;
-      }
-      $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
-      if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-        $QueryResult = mysqli_stmt_execute($stmt);
-        if ($QueryResult === FALSE) {
+        $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+          $QueryResult = mysqli_stmt_execute($stmt);
+          if ($QueryResult === FALSE) {
+            $errorMsg = "<span><p>Unable to execute the query.</p>"
+              . "<p>Error code "
+              . mysqli_errno($DBConnect)
+              . ": "
+              . mysqli_error($DBConnect)
+              . "</p></span>";}
+              else{
+              }
+          //Clean up the $stmt after use
+          mysqli_stmt_close($stmt);
+        } else {
           $errorMsg = "<span><p>Unable to execute the query.</p>"
             . "<p>Error code "
             . mysqli_errno($DBConnect)
             . ": "
             . mysqli_error($DBConnect)
-            . "</p></span>";}
-            else{
-            }
-        //Clean up the $stmt after use
-        mysqli_stmt_close($stmt);
-      } else {
-        $errorMsg = "<span><p>Unable to execute the query.</p>"
-          . "<p>Error code "
-          . mysqli_errno($DBConnect)
-          . ": "
-          . mysqli_error($DBConnect)
-          . "</p></span>";
+            . "</p></span>";
+        }
       }
        ?>
         <nav>
@@ -153,6 +153,9 @@
       <div class="rightTextDiv">
         <p style="margin-top:-40px;" class="textRight">Svenja: “Overly confident in his abilities”</p>
         <span class="textRightSpace"></span>
+      </div>
+      <div class="actionTextDiv">
+        <a href="Challenge_1/index.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="Next Challenge"></a>
       </div>
     </div>
     <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">

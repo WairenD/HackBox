@@ -41,10 +41,11 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      if($currentLevel<4){
-        $currentLevel=4;
-      }
-      $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", endTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+      if($currentLevel<3){
+        header("Location: index.php");
+      }else if($currentLevel==3){
+      $currentLevel=4;
+      $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
       if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
         $QueryResult = mysqli_stmt_execute($stmt);
         if ($QueryResult === FALSE) {
@@ -66,6 +67,7 @@
           . mysqli_error($DBConnect)
           . "</p></span>";
       }
+    }
        ?>
         <nav>
             <div class="wrapper">
@@ -169,6 +171,9 @@
       <div class="rightTextDiv">
         <p style="margin-top:-40px;" class="textRight">Svenja: Thanks, you two. I’ve got to go speak with the folks running Big Brain, but I’ll be sure to keep in touch </p>
         <span class="textRightSpace"></span>
+      </div>
+      <div class="actionTextDiv">
+        <a href="Challenge_4/index.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="Next Challenge"></a>
       </div>
     </div>
     <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">

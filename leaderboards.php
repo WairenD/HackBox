@@ -90,11 +90,57 @@
         <table>
             <tr>
                 <th>Username</th>
-                <th>Time to finish(hh/mm/ss)</th>
+                <th>Best Time(hh/mm/ss)</th>
             </tr>
             <?php
             include("connection.php");
-            $SQLstring = "SELECT userName,TIMEDIFF(endTime, startTime) FROM " . $db_table;
+            $SQLstring = "SELECT userName,bestTime,TIMEDIFF(endTime, startTime) FROM " . $db_table;
+            if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_bind_result($stmt,$userName,$bestTime,$tempTime);
+                mysqli_stmt_store_result($stmt);
+                if ($stmt === FALSE) {
+                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                        . "<p>Error code "
+                        . mysqli_errno($DBConnect)
+                        . ": "
+                        . mysqli_error($DBConnect)
+                        . "</p></span>";
+                } else {
+                  while (mysqli_stmt_fetch($stmt)) {
+                      $SQLstring = "UPDATE " . $db_table . " SET bestTime='".max($tempTime,$bestTime)."' WHERE userName='".$userName."'";
+                      if ($stmtup = mysqli_prepare($DBConnect, $SQLstring)) {
+                        $QueryResult = mysqli_stmt_execute($stmtup);
+                        if ($QueryResult === FALSE) {
+                          $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";}
+                        //Clean up the $stmt after use
+                        mysqli_stmt_close($stmtup);
+                      } else {
+                        $errorMsg = "<span><p>Unable to execute the query.</p>"
+                          . "<p>Error code "
+                          . mysqli_errno($DBConnect)
+                          . ": "
+                          . mysqli_error($DBConnect)
+                          . "</p></span>";
+                      }
+                  }
+                }
+                //Clean up the $stmt after use
+                mysqli_stmt_close($stmt);
+            } else {
+                $errorMsg = "<span><p>Unable to execute the query.</p>"
+                    . "<p>Error code "
+                    . mysqli_errno($DBConnect)
+                    . ": "
+                    . mysqli_error($DBConnect)
+                    . "</p></span>";
+            }
+            $SQLstring = "SELECT userName,bestTime FROM " . $db_table;
             if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
                 mysqli_stmt_execute($stmt);
                 mysqli_stmt_bind_result($stmt, $userName,$bestTime);
@@ -128,6 +174,7 @@
             ?>
         </table>
     </div>
+           <div class="errorDiv"><?php echo $errorMsg ?></div>
     <footer>
         <div class="main-content">
             <div class="center box">
