@@ -394,9 +394,29 @@ th {
 	border-width: 2px;
 	border-color: white;
 	border-radius: 5px;
+	transition: 0.1s;
 }
-
-
+td:hover{
+		background-color: #303133;
+}
+.playAgainBtn{
+	width: 400px;
+	height: 70px;
+	margin: 10px;
+	color: #f0380e;
+	font-size: 25px;
+	font-weight: normal;
+	background-color: #242526;
+	transition: 0.1s;
+	border-radius: 10px;
+	border: none;
+}
+.playAgainBtn:hover{
+	cursor:pointer;
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #303133;
+}
 /*END LEADERBOARDS CSS*/
 /*START STORY CSS*/
 .mainText{

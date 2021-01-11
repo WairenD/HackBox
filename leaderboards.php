@@ -85,15 +85,48 @@
           </div>
       </nav>
   </header>
-    <div class="insertChallengeHere">
         <h1>LEADERBOARDS</h1>
+        <?php
+        include("connection.php");
+        if(isset($_SESSION['userName'])){
+         ?>
+        <div style="text-align:center;">
+          <form method="post">
+              <input class="playAgainBtn" type="submit" name="play" value="Play Again">
+              <?php
+              if(isset($_POST['play'])){
+                $SQLstring = "UPDATE " . $db_table . " SET currentlevel='0',endTime='0000-00-00 00:00:00' WHERE userName='".$_SESSION['userName']."'";
+                if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                  $QueryResult = mysqli_stmt_execute($stmt);
+                  if ($QueryResult === FALSE) {
+                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                      . "<p>Error code "
+                      . mysqli_errno($DBConnect)
+                      . ": "
+                      . mysqli_error($DBConnect)
+                      . "</p></span>";}
+                  //Clean up the $stmt after use
+                  mysqli_stmt_close($stmt);
+                } else {
+                  $errorMsg = "<span><p>Unable to execute the query.</p>"
+                    . "<p>Error code "
+                    . mysqli_errno($DBConnect)
+                    . ": "
+                    . mysqli_error($DBConnect)
+                    . "</p></span>";
+                }
+                header("Location: story0.php");
+              }
+            }
+               ?>
+          </form>
+        </div>
         <table>
             <tr>
                 <th>Username</th>
                 <th>Best Time(hh/mm/ss)</th>
             </tr>
             <?php
-            include("connection.php");
             $SQLstring = "SELECT userName,bestTime,TIMEDIFF(endTime, startTime) FROM " . $db_table;
             if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
                 mysqli_stmt_execute($stmt);
@@ -140,7 +173,7 @@
                     . mysqli_error($DBConnect)
                     . "</p></span>";
             }
-            $SQLstring = "SELECT userName,bestTime FROM " . $db_table;
+            $SQLstring = "SELECT userName,bestTime FROM " . $db_table." ORDER BY bestTime ASC";
             if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
                 mysqli_stmt_execute($stmt);
                 mysqli_stmt_bind_result($stmt, $userName,$bestTime);
@@ -173,7 +206,6 @@
             mysqli_close($DBConnect);
             ?>
         </table>
-    </div>
            <div class="errorDiv"><?php echo $errorMsg ?></div>
     <footer>
         <div class="main-content">

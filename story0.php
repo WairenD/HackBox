@@ -41,7 +41,10 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      if($currentLevel==0){
+      if($currentLevel!=0 || !isset($_SESSION['userName'])){
+        header("Location: index.php");
+      }
+      else if($currentLevel==0){
         $currentLevel=1;
         $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
         if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {

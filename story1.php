@@ -41,7 +41,7 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      if($currentLevel<1){
+      if($currentLevel<1 || !isset($_SESSION['userName'])){
         header("Location: index.php");
       }else if($currentLevel==1){
         $currentLevel=2;

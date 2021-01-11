@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-      <link rel="stylesheet" href="CSS/challenge1style.css">
     <title>Challenge 1</title>
   </head>
   <body>
@@ -44,29 +43,9 @@
               . "</p></span>";
       }
       session_start();
-      $SQLstring = "UPDATE " . $db_table . " SET startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
-      if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-        $QueryResult = mysqli_stmt_execute($stmt);
-        if ($QueryResult === FALSE) {
-          $errorMsg = "<span><p>Unable to execute the query.</p>"
-            . "<p>Error code "
-            . mysqli_errno($DBConnect)
-            . ": "
-            . mysqli_error($DBConnect)
-            . "</p></span>";}
-            else{
-            }
-        //Clean up the $stmt after use
-        mysqli_stmt_close($stmt);
-      } else {
-        $errorMsg = "<span><p>Unable to execute the query.</p>"
-          . "<p>Error code "
-          . mysqli_errno($DBConnect)
-          . ": "
-          . mysqli_error($DBConnect)
-          . "</p></span>";
+      if($currentLevel==0 || !isset($_SESSION['userName'])){
+        header("Location: ../index.php");
       }
-
       $_SESSION['challStage'] = $currentLevel;
        ?>
         <nav>
@@ -97,10 +76,10 @@
                          <input type="checkbox" id="showDrop">
                          <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
                          <ul class="drop-menu">
-                          <li><a href="../logout.php">Log Out</a></li>
+                          <li><a href="./logout.php">Log Out</a></li>
                          </ul></li>';
                     } else {
-                        header("Location: ../index.php");
+                      header("Location: ../index.php");
                     }
                     mysqli_close($DBConnect);
                     ?>
@@ -109,58 +88,8 @@
             </div>
         </nav>
     </header>
-    <div class="fullpage">
-      <a href="profile.php"><img style="margin: 20px; margin-left:82%;" src="images/minervaimg.png" alt=""></a>
-      <h1 id="mainHeader">Please enter you login details!</h1>
-      <div id="logoDiv"><img id="logo" src="images/nhltwitter.png" alt="logo"></div>
-      <div class="formDiv">
-      <form runat="server" action="" method="POST">
-        <input class="inputStyle" type="text" name="userName" placeholder="Username" maxlength="30">
-        <input class="inputStyle" type="password" name="userPass" placeholder="Password" maxlength="30">
-        <div class="login">
-            <input class="buttonStyle" type="submit" name="login" value="Log in">
-        </div>
-      </form>
-      </div>
-    </div>
     <?php
-    if(isset($_POST['submit'])){
-      if(!empty($_POST['password'])){
-          if($_POST['password']=="123"){
-            include("../connection.php");
-            $challenge=2;
-            $SQLstring = "UPDATE " . $db_table . " SET currentLevel=".$challenge." WHERE userName='".$_SESSION['userName']."'";
-            if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-              $QueryResult = mysqli_stmt_execute($stmt);
-              if ($QueryResult === FALSE) {
-                $errorMsg = "<span><p>Unable to execute the query.</p>"
-                  . "<p>Error code "
-                  . mysqli_errno($DBConnect)
-                  . ": "
-                  . mysqli_error($DBConnect)
-                  . "</p></span>";}
-                  else{
-                    header('Location: ../story1.php');
-                  }
-              //Clean up the $stmt after use
-              mysqli_stmt_close($stmt);
-            } else {
-              $errorMsg = "<span><p>Unable to execute the query.</p>"
-                . "<p>Error code "
-                . mysqli_errno($DBConnect)
-                . ": "
-                . mysqli_error($DBConnect)
-                . "</p></span>";
-            }
-          }
-          else{
-              $errorMsg = "<span>Login details are incorrect!</span>";
-            }
-
-      }else{
-        $errorMsg = "<span>Please fill in all the details!</span>";
-      }
-    }
+    include("tw.php");
      ?>
      <div class="errorDiv"><?php echo $errorMsg ?></div>
      <footer>

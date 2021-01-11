@@ -15,32 +15,8 @@
     <?php
     $errorMsg = "";
     include("./connection.php");
-    $SQLstring = "SELECT currentLevel FROM " . $db_table;
-    if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $currentLevel);
-        mysqli_stmt_store_result($stmt);
-        if ($stmt === FALSE) {
-            $errorMsg = "<span><p>Unable to execute the query.</p>"
-                . "<p>Error code "
-                . mysqli_errno($DBConnect)
-                . ": "
-                . mysqli_error($DBConnect)
-                . "</p></span>";
-        } else {
-            while (mysqli_stmt_fetch($stmt)) {
-                $challenge = $currentLevel;
-            }
-        }
-        //Clean up the $stmt after use
-        mysqli_stmt_close($stmt);
-    } else {
-        $errorMsg = "<span><p>Unable to execute the query.</p>"
-            . "<p>Error code "
-            . mysqli_errno($DBConnect)
-            . ": "
-            . mysqli_error($DBConnect)
-            . "</p></span>";
+    if(isset($_SESSION['userName'])){
+      header("Location: index.php");
     }
      ?>
       <nav>
