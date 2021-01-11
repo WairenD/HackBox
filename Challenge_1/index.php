@@ -110,7 +110,7 @@
         </nav>
     </header>
     <div class="fullpage">
-      <a href="profile.php"><img style="margin: 20px; margin-left:82%;" src="images/minervaimg.png" alt=""></a>
+      <a href="profile.php"><img style="margin: 10px; margin-left:82%;" src="images/minervaimg.png" alt=""></a>
       <h1 id="mainHeader">Please enter you login details!</h1>
       <div id="logoDiv"><img id="logo" src="images/nhltwitter.png" alt="logo"></div>
       <div class="formDiv">
