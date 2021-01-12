@@ -9,16 +9,101 @@
 </head>
 
 <body>
+    <?php
+    $dummyUserId = "25213";
+    $dummyAuthToken = "d9gdsn0v51gqwezgj";
+    $currentRole = "invalid";
+
+    if(isset($_POST['guestSubmit'])){
+        $expire = time()+3600;
+        setcookie("role", "guest", $expire);
+        setcookie("user_id", $dummyUserId, $expire);
+        setcookie("auth_token", $dummyAuthToken, $expire);
+        header('Location: GuestPage.php');
+	}
+
+    if(isset($_POST['logoutButton'])){
+        setcookie("role", null, -1);
+        setcookie("user_id", null, -1);
+        setcookie("auth_token", null, -1);
+	}
+    
+    if(isset($_COOKIE["role"]) && isset($_COOKIE["user_id"]) && isset($_COOKIE["auth_token"]) && !isset($_POST['logoutButton'])){
+        $role = $_COOKIE["role"];
+        $role = strtoLower($role);
+        $userId = $_COOKIE["user_id"];
+        $authToken = $_COOKIE["auth_token"];
+    
+        if($userId == $dummyUserId && $authToken == $dummyAuthToken){
+            switch($role){
+                case "guest":
+                    $currentRole = "guest";
+                    break;
+                case "admin":
+                    $currentRole = "admin";
+                    break;
+                default:
+                    $currentRole = "invalid";
+                    break;
+		    }
+	    }else{
+            $currentRole = "invalid";
+	    }
+
+
+	}else{
+        $currentRole = "none";
+	}
+    ?>
+
     <div class="header">
-        <div class="logo"><img src="images/BigBrainLogo.png" class="mainLogo" /></div>
+        <div class="logo"><a href="RoleSelect.php"><img src="images/BigBrainLogo.png" class="mainLogo" /></a></div>
         <div class="name">
             <h1>Big Brain Inc.</h1>
         </div>
-        <div class="welcome">
-            <p class="welcomeText">Welcome guest user</p>
-        </div>
+        <?php
+            if($currentRole == "admin"){
+                echo('<div class="headerItem">
+                <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
+                </div>');
+
+                echo('<div class="headerItem">
+                <p><a href="AdminPage.php" class="welcomeText">User Search</a></p>
+                </div>');
+
+                echo('<div class="headerItem">
+                <p class="welcomeText">Welcome admin</p>
+                </div>');
+			}
+
+            if($currentRole == "guest"){
+                echo('<div class="headerItem">
+                <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
+                </div>');
+                
+                echo('<div class="headerItem">
+                <p class="welcomeText">Welcome guest</p>
+                </div>');
+			}
+        ?>
     </div>
     <div class="main">
+        <?php 
+            if($currentRole == "invalid" || $currentRole == "none"){
+                echo('
+                    <h2>User not logged in</h2>
+                    <div class="headerItem">
+                        <p><a href="RoleSelect.php" class="welcomeText">Back to role select</a></p>
+                    </div>
+                   
+                ');
+
+
+                exit();
+			}
+            
+            
+        ?>
         <div class="textInfo">
             <div class="containerBox">
                 <div class="infoText">
