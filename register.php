@@ -12,8 +12,7 @@
 <body>
   <header>
     <?php
-    $errorMsg = "";
-    include("./connection.php");
+    session_start();
     if(isset($_SESSION['userName'])){
       header("Location: index.php");
     }
@@ -33,8 +32,8 @@
                       <label for="showDrop" class="mobile-item">Challenges</label>
                       <ul class="drop-menu">
                         <?php
-                        for($i = 0;$i<$currentLevel;$i++){
-                          echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                          for($i = 0;$i<$currentLevel;$i++){
+                            echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
                         }
                         ?>
                       </ul>
@@ -52,7 +51,6 @@
                       echo '<li><a href="./login.php">Login</a></li>
                   <li><a href="./register.php">Register</a></li>';
                   }
-                  mysqli_close($DBConnect);
                   ?>
               </ul>
               <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
@@ -76,11 +74,11 @@
   </div>
   <?php
   $errorMsg = "";
+  include("connection.php");
   $taken = false;
   if (isset($_POST['submit'])) {
     if (!empty($_POST['password']) && !empty($_POST['passwordCheck']) && !empty($_POST['email'])) {
       if ($_POST['password'] == $_POST['passwordCheck']) {
-        include("connection.php");
         $userName = htmlentities($_POST['username']);
         $userPass = password_hash(htmlentities($_POST['password']), PASSWORD_BCRYPT);
         $userEmail = htmlentities($_POST['email']);
@@ -114,10 +112,10 @@
             . mysqli_error($DBConnect)
             . "</p></span>";
         }
-        if ($taken == false) {
+        if (!$taken) {
           date_default_timezone_set('Europe/Amsterdam');
           $datetemp = "0000-00-00 00:00:00";
-          $SQLstring = "INSERT INTO " . $db_table . " VALUES(NULL,?, ?, ?,?,?,?,1)";
+          $SQLstring = "INSERT INTO " . $db_table . " VALUES(NULL,?, ?, ?,?,?,?,0)";
           if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
             mysqli_stmt_bind_param($stmt, 'ssssss', $userEmail, $userName, $userPass, $datetemp, $datetemp, $datetemp);
             $QueryResult = mysqli_stmt_execute($stmt);

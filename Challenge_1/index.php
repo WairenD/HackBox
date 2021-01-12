@@ -16,7 +16,11 @@
       <?php
       $errorMsg = "";
       include("../connection.php");
-      $SQLstring = "SELECT currentLevel FROM " . $db_table;
+      session_start();
+      if(!isset($_SESSION['userName'])){
+        header("Location: ../index.php");
+      }
+      $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
       if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
           mysqli_stmt_execute($stmt);
           mysqli_stmt_bind_result($stmt, $currentLevel);
@@ -43,31 +47,30 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      session_start();
-      $SQLstring = "UPDATE " . $db_table . " SET startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
-      if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-        $QueryResult = mysqli_stmt_execute($stmt);
-        if ($QueryResult === FALSE) {
+      if($currentLevel!=1){
+        $SQLstring = "UPDATE " . $db_table . " SET startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+          $QueryResult = mysqli_stmt_execute($stmt);
+          if ($QueryResult === FALSE) {
+            $errorMsg = "<span><p>Unable to execute the query.</p>"
+              . "<p>Error code "
+              . mysqli_errno($DBConnect)
+              . ": "
+              . mysqli_error($DBConnect)
+              . "</p></span>";}
+              else{
+              }
+          //Clean up the $stmt after use
+          mysqli_stmt_close($stmt);
+        } else {
           $errorMsg = "<span><p>Unable to execute the query.</p>"
             . "<p>Error code "
             . mysqli_errno($DBConnect)
             . ": "
             . mysqli_error($DBConnect)
-            . "</p></span>";}
-            else{
-            }
-        //Clean up the $stmt after use
-        mysqli_stmt_close($stmt);
-      } else {
-        $errorMsg = "<span><p>Unable to execute the query.</p>"
-          . "<p>Error code "
-          . mysqli_errno($DBConnect)
-          . ": "
-          . mysqli_error($DBConnect)
-          . "</p></span>";
+            . "</p></span>";
+        }
       }
-
-      $_SESSION['challStage'] = $currentLevel;
        ?>
         <nav>
             <div class="wrapper">
@@ -84,7 +87,7 @@
                         <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
                           <?php
-                          for($i = 0;$i<$_SESSION['challStage'];$i++){
+                          for($i = 0;$i<$currentLevel;$i++){
                             echo '<li><a href="../Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
                           }
                           ?>
@@ -99,10 +102,7 @@
                          <ul class="drop-menu">
                           <li><a href="../logout.php">Log Out</a></li>
                          </ul></li>';
-                    } else {
-                        header("Location: ../index.php");
                     }
-                    mysqli_close($DBConnect);
                     ?>
                 </ul>
                 <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
@@ -115,8 +115,8 @@
       <div id="logoDiv"><img id="logo" src="images/nhltwitter.png" alt="logo"></div>
       <div class="formDiv">
       <form runat="server" action="" method="POST">
-        <input class="inputStyle" type="text" name="userName" placeholder="Username" maxlength="30">
-        <input class="inputStyle" type="password" name="userPass" placeholder="Password" maxlength="30">
+        <input class="inputStyle" type="email" name="email" placeholder="Email" maxlength="30">
+        <input class="inputStyle" type="password" name="password" placeholder="Password" maxlength="30">
         <div class="login">
             <input class="buttonStyle" type="submit" name="login" value="Log in">
         </div>
@@ -124,34 +124,10 @@
       </div>
     </div>
     <?php
-    if(isset($_POST['submit'])){
+    if(isset($_POST['login'])){
       if(!empty($_POST['password'])){
-          if($_POST['password']=="123"){
-            include("../connection.php");
-            $challenge=2;
-            $SQLstring = "UPDATE " . $db_table . " SET currentLevel=".$challenge." WHERE userName='".$_SESSION['userName']."'";
-            if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-              $QueryResult = mysqli_stmt_execute($stmt);
-              if ($QueryResult === FALSE) {
-                $errorMsg = "<span><p>Unable to execute the query.</p>"
-                  . "<p>Error code "
-                  . mysqli_errno($DBConnect)
-                  . ": "
-                  . mysqli_error($DBConnect)
-                  . "</p></span>";}
-                  else{
-                    header('Location: ../story1.php');
-                  }
-              //Clean up the $stmt after use
-              mysqli_stmt_close($stmt);
-            } else {
-              $errorMsg = "<span><p>Unable to execute the query.</p>"
-                . "<p>Error code "
-                . mysqli_errno($DBConnect)
-                . ": "
-                . mysqli_error($DBConnect)
-                . "</p></span>";
-            }
+          if($_POST['password']=="19950525" && $_POST['email']=="minerva.dewitt@oblivion.com"){
+            header('Location: ../story1.php');
           }
           else{
               $errorMsg = "<span>Login details are incorrect!</span>";

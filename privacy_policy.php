@@ -32,8 +32,9 @@
   <?php
   session_start();
   $errorMsg = "";
-  include("./connection.php");
-  $SQLstring = "SELECT currentLevel FROM " . $db_table;
+  include("connection.php");
+  if(isset($_SESSION['userName'])){
+  $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
   if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
       mysqli_stmt_execute($stmt);
       mysqli_stmt_bind_result($stmt, $currentLevel);
@@ -60,6 +61,7 @@
           . mysqli_error($DBConnect)
           . "</p></span>";
   }
+}
    ?>
     <nav>
         <div class="wrapper">
@@ -76,8 +78,10 @@
                     <label for="showDrop" class="mobile-item">Challenges</label>
                     <ul class="drop-menu">
                       <?php
-                      for($i = 0;$i<$currentLevel;$i++){
-                        echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                      if(isset($currentLevel)){
+                        for($i = 0;$i<$currentLevel;$i++){
+                          echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                        }
                       }
                       ?>
                     </ul>
@@ -95,7 +99,6 @@
                     echo '<li><a href="./login.php">Login</a></li>
                 <li><a href="./register.php">Register</a></li>';
                 }
-                mysqli_close($DBConnect);
                 ?>
             </ul>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>

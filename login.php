@@ -13,8 +13,7 @@
 <body>
   <header>
     <?php
-    $errorMsg = "";
-    include("./connection.php");
+    session_start();
     if(isset($_SESSION['userName'])){
       header("Location: index.php");
     }
@@ -34,8 +33,10 @@
                       <label for="showDrop" class="mobile-item">Challenges</label>
                       <ul class="drop-menu">
                         <?php
-                        for($i = 0;$i<$currentLevel;$i++){
-                          echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                        if(isset($currentLevel)){
+                          for($i = 0;$i<$currentLevel;$i++){
+                            echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                          }
                         }
                         ?>
                       </ul>
@@ -53,7 +54,6 @@
                       echo '<li><a href="./login.php">Login</a></li>
                   <li><a href="./register.php">Register</a></li>';
                   }
-                  mysqli_close($DBConnect);
                   ?>
               </ul>
               <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
@@ -71,9 +71,6 @@
         </form>
     </div>
     <?php
-    session_unset();
-    session_start();
-    $_SESSION['challStage'] =1;
     $errorMsg = "";
     if (isset($_POST['submit'])) {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {

@@ -15,48 +15,79 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="wrapper">
-                <div class="logo"><a href="./">HACKBOX</a></div>
-                <input type="radio" name="slider" id="menu-btn">
-                <input type="radio" name="slider" id="close-btn">
-                <ul class="nav-links">
-                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./about.php">About</a></li>
-                    <li>
-                        <a href="#" class="desktop-item">Challenges</a>
-                        <input type="checkbox" id="showDrop">
-                        <label for="showDrop" class="mobile-item">Challenges</label>
-                        <ul class="drop-menu">
-                            <li><a href="./Challenge_1">Challenge 1</a></li>
-                            <li><a href="./Challenge_2">Challenge 2</a></li>
-                            <li><a href="./Challenge_3">Challenge 3</a></li>
-                            <li><a href="">Challenge 4</a></li>
-                            <li><a href="./Challenge_5">Challenge 5</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./leaderboards.php">Leaderboards</a></li>
-                    <?php
-                    session_start();
-                    if (isset($_SESSION['userName']))
-                    {
-                        echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
-                            <input type="checkbox" id="showDrop">
-                            <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
-                            <ul class="drop-menu">
-                              <li><a href="./logout.php">Log Out</a></li>
-                            </ul></li>';
-                    } else {
-                        echo '<li><a href="./login.php">Login</a></li>
-                      <li><a href="./register.php">Register</a></li>';
-                    } ?>
-                </ul>
-                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <?php
+    $errorMsg = "";
+    include("../connection.php");
+    session_start();
+    if(!isset($_SESSION['userName'])){
+      header("Location: ../index.php");
+    }
+    $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
+    if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $currentLevel);
+        mysqli_stmt_store_result($stmt);
+        if ($stmt === FALSE) {
+            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                . "<p>Error code "
+                . mysqli_errno($DBConnect)
+                . ": "
+                . mysqli_error($DBConnect)
+                . "</p></span>";
+        } else {
+            while (mysqli_stmt_fetch($stmt)) {
+                $challenge = $currentLevel;
+            }
+        }
+        //Clean up the $stmt after use
+        mysqli_stmt_close($stmt);
+    } else {
+        $errorMsg = "<span><p>Unable to execute the query.</p>"
+            . "<p>Error code "
+            . mysqli_errno($DBConnect)
+            . ": "
+            . mysqli_error($DBConnect)
+            . "</p></span>";
+    }
+     ?>
+      <nav>
+          <div class="wrapper">
+              <div class="logo"><a href="./">HACKBOX</a></div>
+              <input type="radio" name="slider" id="menu-btn">
+              <input type="radio" name="slider" id="close-btn">
+              <ul class="nav-links">
+                  <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                  <li><a href="../index.php">Home</a></li>
+                  <li><a href="../about.php">About</a></li>
+                  <li>
+                      <a href="#" class="desktop-item">Challenges</a>
+                      <input type="checkbox" id="showDrop">
+                      <label for="showDrop" class="mobile-item">Challenges</label>
+                      <ul class="drop-menu">
+                        <?php
+                        for($i = 0;$i<$currentLevel;$i++){
+                          echo '<li><a href="../Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                        }
+                        ?>
+                      </ul>
+                  </li>
+                  <li><a href="../leaderboards.php">Leaderboards</a></li>
+                  <?php
+                  if (isset($_SESSION['userName'])) {
+                      echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
+                       <input type="checkbox" id="showDrop">
+                       <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
+                       <ul class="drop-menu">
+                        <li><a href="../logout.php">Log Out</a></li>
+                       </ul></li>';
+                  }
+                  ?>
+              </ul>
+              <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+          </div>
+      </nav>
+  </header>
     <div class="container">
         <div class="title">
             <h1>Challenge 4</h1>
@@ -86,7 +117,7 @@
             <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
         </div>
     </div>
-    <?php 
+    <?php
         define("MAX_ENTITIES", 6);
         //check if user submitted an answer
         if(isset($_COOKIE['submit']))
@@ -104,7 +135,7 @@
             //Make the answer 6 digits long
             for($i = $num_length; $i < MAX_ENTITIES; $i++)
             {
-                $input = $input * 10;     
+                $input = $input * 10;
 			}
             //Cast the answer into an array and cast them as integers to make sure no other datatypes are in the answer
             $inputArray = array();
@@ -122,7 +153,7 @@
             for($i = 0; $i < MAX_ENTITIES; $i++)
             {
                 //check for dublicate values
-                if (count(array_keys($inputArray, $inputArray[$i])) > 1) 
+                if (count(array_keys($inputArray, $inputArray[$i])) > 1)
                 {
                     if($inputArray[$i] != 0)
                     {
@@ -130,19 +161,19 @@
                         $isValidQuery = false;
                         return;
 					}
-                    
+
                 }
                 //check for invalid values like negative numbers
                 if($inputArray[$i] > MAX_ENTITIES || $inputArray[$i] < 0)
                 {
                     echo("Submited answer has invalid values");
                     $isValidQuery = false;
-                    continue;        
+                    continue;
 				}
                 //check how each value will be read by the mock sql command
                 if($inputArray[$i] == 0)
                 {
-                    $inputTypeArray[$i] = "empty";    
+                    $inputTypeArray[$i] = "empty";
                     continue;
 				}
 
@@ -186,7 +217,7 @@
                         $inputTypeArray[$i] = "unknown";
 					}
 
-				
+
 				}
 			}
             //check if the amount of quotes at the end of the query is even or uneven
@@ -202,11 +233,11 @@
             {
                 if($inputTypeArray[$positionOfTwo] == "quote")
                 {
-                    echo("<br> Unclosed bracket");    
+                    echo("<br> Unclosed bracket");
                     $isValidQuery = false;
-                    return;  
+                    return;
 				}
-               
+
 			}
 
             $queryArray = array("&quot;)", "&quot;(", "1 = 1", ";--", "AND", "OR");
@@ -221,14 +252,14 @@
                     //create the string the query will search for in the database
                     if($inputTypeArray[$i] == "string")
                     {
-                        $searchQuery = $searchQuery.$queryArray[$inputArray[$i] - 1];    
+                        $searchQuery = $searchQuery.$queryArray[$inputArray[$i] - 1];
 					}
                     //check if an operator appears twice
                     if($inputTypeArray[$i] == "operator")
                     {
                         if($isOperatorSet)
                         {
-                            echo("<br> invalid query");    
+                            echo("<br> invalid query");
                             return;
 						}
                         else
@@ -242,13 +273,13 @@
                     {
                         if(!$isOperatorSet)
                         {
-                            echo("<br> invalid query");    
+                            echo("<br> invalid query");
                             //return;
 						}
                         else
                         {
-                            $queryConditionArray = $queryConditionArray.$inputArray[$i];          
-						}           
+                            $queryConditionArray = $queryConditionArray.$inputArray[$i];
+						}
 					}
 				}
                 //
@@ -273,10 +304,10 @@
                 //Execute query here
                 $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
                 $searchQuery = htmlentities($searchQuery);
-               
-                
 
-                
+
+
+
                 if ($db->multi_query($q)) {
                     ?>
                     <table>
@@ -309,7 +340,7 @@
                         if ($i>4) {
                             printf("And 10.000 more rows \n");
                         }
-                        
+
                     } while ($db->next_result());
                     ?>
                     </table>

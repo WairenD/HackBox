@@ -13,8 +13,11 @@
       <?php
       session_start();
       $errorMsg = "";
+      if(!isset($_SESSION['userName'])){
+        header("Location: index.php");
+      }
       include("connection.php");
-      $SQLstring = "SELECT currentLevel FROM " . $db_table;
+      $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
       if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
           mysqli_stmt_execute($stmt);
           mysqli_stmt_bind_result($stmt, $currentLevel);
@@ -41,10 +44,7 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      if($currentLevel!=0 || !isset($_SESSION['userName'])){
-        header("Location: index.php");
-      }
-      else if($currentLevel==0){
+      if($currentLevel==0){
         $currentLevel=1;
         $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
         if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {

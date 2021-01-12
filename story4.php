@@ -14,7 +14,7 @@
       session_start();
       $errorMsg = "";
       include("connection.php");
-      $SQLstring = "SELECT currentLevel FROM " . $db_table;
+      $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
       if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
           mysqli_stmt_execute($stmt);
           mysqli_stmt_bind_result($stmt, $currentLevel);

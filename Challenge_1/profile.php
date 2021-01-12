@@ -46,7 +46,6 @@
       if($currentLevel==0 || !isset($_SESSION['userName'])){
         header("Location: ../index.php");
       }
-      $_SESSION['challStage'] = $currentLevel;
        ?>
         <nav>
             <div class="wrapper">

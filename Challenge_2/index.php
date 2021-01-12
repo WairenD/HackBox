@@ -12,32 +12,79 @@
 </head>
 
 <body>
-    <main>
-        <header>
-            <nav>
-                <div class="wrapper">
-                    <div class="logo"><a href="#">HACKBOX</a></div>
-                    <input type="radio" name="slider" id="menu-btn">
-                    <input type="radio" name="slider" id="close-btn">
-                    <ul class="nav-links">
-                        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                        <li><a href="../">Home</a></li>
-                        <li><a href="../about.php">About</a></li>
-                        <li>
-                            <a href="#" class="desktop-item">Challenges</a>
-                            <input type="checkbox" id="showDrop">
-                            <label for="showDrop" class="mobile-item">Challenges</label>
-                            <ul class="drop-menu">
-                                <li><a href="../Challenge_1">Challenge 1</a></li>
-                                <li><a href="">Challenge 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Feedback</a></li>
-                    </ul>
-                    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-                </div>
-            </nav>
-        </header>
+      <header>
+        <?php
+        $errorMsg = "";
+        include("../connection.php");
+        session_start();
+        if(!isset($_SESSION['userName'])){
+          header("Location: ../index.php");
+        }
+        $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
+        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $currentLevel);
+            mysqli_stmt_store_result($stmt);
+            if ($stmt === FALSE) {
+                $errorMsg = "<span><p>Unable to execute the query.</p>"
+                    . "<p>Error code "
+                    . mysqli_errno($DBConnect)
+                    . ": "
+                    . mysqli_error($DBConnect)
+                    . "</p></span>";
+            } else {
+                while (mysqli_stmt_fetch($stmt)) {
+                    $challenge = $currentLevel;
+                }
+            }
+            //Clean up the $stmt after use
+            mysqli_stmt_close($stmt);
+        } else {
+            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                . "<p>Error code "
+                . mysqli_errno($DBConnect)
+                . ": "
+                . mysqli_error($DBConnect)
+                . "</p></span>";
+        }
+         ?>
+          <nav>
+              <div class="wrapper">
+                  <div class="logo"><a href="./">HACKBOX</a></div>
+                  <input type="radio" name="slider" id="menu-btn">
+                  <input type="radio" name="slider" id="close-btn">
+                  <ul class="nav-links">
+                      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                      <li><a href="../index.php">Home</a></li>
+                      <li><a href="../about.php">About</a></li>
+                      <li>
+                          <a href="#" class="desktop-item">Challenges</a>
+                          <input type="checkbox" id="showDrop">
+                          <label for="showDrop" class="mobile-item">Challenges</label>
+                          <ul class="drop-menu">
+                            <?php
+                            for($i = 0;$i<$currentLevel;$i++){
+                              echo '<li><a href="../Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                            }
+                            ?>
+                          </ul>
+                      </li>
+                      <li><a href="../leaderboards.php">Leaderboards</a></li>
+                      <?php
+                      if (isset($_SESSION['userName'])) {
+                          echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
+                           <input type="checkbox" id="showDrop">
+                           <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
+                           <ul class="drop-menu">
+                            <li><a href="../logout.php">Log Out</a></li>
+                           </ul></li>';
+                      }
+                      ?>
+                  </ul>
+                  <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+              </div>
+          </nav>
+      </header>
         <div class="container">
             <div class="loginBox">
                 <div class="imgContainer">
@@ -54,7 +101,7 @@
                             $password = $_POST['password'];
                             if (!empty($username) && !empty($password)) {
                                 if ($username == "bruteforce" && $password == "1234") {
-                                    header("Location:secondPage.php");
+                                    header("Location: ../story2.php");
                                 } else {
                                     echo '<p class="errorText">Incorrect username or password!</p>';
                                 }
@@ -111,35 +158,24 @@
                 modal.style.display = "none";
             };
         </script>
-
-        <footer>
-            <div class="main-content">
-                <div class="left box">
-                    <h2>
-                        About us</h2>
-                    <div class="content">
-                        <p>
-                            LOL</p>
-                    </div>
-                </div>
-                <div class="center box">
-                    <h2>
-                        Location</h2>
-                    <div class="content">
-                        <div class="place">
-                            <span class="fas fa-map-marker-alt"></span>
-                            <span class="text">NHL Stenden</span>
-                        </div>
+    <footer>
+        <div class="main-content">
+            <div class="center box">
+                <h2>Location</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">NHL Stenden</span>
                     </div>
                 </div>
             </div>
-            <div class="bottom">
-                <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-                <span class="far fa-copyright"></span> 2020 All rights reserved.
-                <span><a href="#">Privacy Policy</a></span>
-            </div>
-        </footer>
-    </main>
+        </div>
+        <div class="bottom">
+            <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
+            <span class="far fa-copyright"></span> 2020 All rights reserved.
+            <span><a href="./privacy_policy.php">Privacy Policy</a></span>
+        </div>
+    </footer>
 </body>
 
 </html>
