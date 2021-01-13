@@ -48,7 +48,7 @@
                     $currentRole = "admin";
                     break;
                 default:
-                    $currentRole = "invalid";
+                    $currentRole = "invalidRole";
                     break;
 		    }
 	    }else{
@@ -62,7 +62,7 @@
     ?>
 
     <div class="header">
-        <div class="logo"><a href="RoleSelect.php"><img src="images/BigBrainLogo.png" class="mainLogo" /></a></div>
+        <div class="logo"><a href="index.php"><img src="images/BigBrainLogo.png" class="mainLogo" /></a></div>
         <div class="name">
             <h1>Big Brain Inc.</h1>
         </div>
@@ -73,11 +73,7 @@
                 </div>');
 
                 echo('<div class="headerItem">
-                <p><a href="AdminPage.php" class="welcomeText">User Search</a></p>
-                </div>');
-
-                echo('<div class="headerItem">
-                <p class="welcomeText">Welcome admin</p>
+                <p><a href="../Challenge_4/index.php" class="welcomeText">User Search</a></p>
                 </div>');
 			}
 
@@ -98,7 +94,7 @@
             if($currentRole == "guest" || $currentRole == "admin"){
                 echo('
                     <h2>User already logged in</h2>
-                    <form action="RoleSelect.php" method="POST" class="form">
+                    <form action="index.php" method="POST" class="form">
                     
                         <div class="logout">
                             <div class="optionLogin">
@@ -116,7 +112,7 @@
             
         ?>
         <h2>Select one</h2>
-        <form action="RoleSelect.php" method="POST" class="form">
+        <form action="index.php" method="POST" class="form">
             <div class="signInChoice">
                 <p class="optionLogin"><input name="guestSubmit" type="submit" value="Sign in as guest" /></p>
             </div>
@@ -137,6 +133,8 @@
 	                }
             if($currentRole == "invalid"){
                 echo('<p class="error">Authorisation token or used id is incorrect</p>'); 
+			}elseif($currentRole == "invalidRole"){
+                echo('<p class="error">Invalid role set</p>'); 
 			}
             ?>
             </div>
