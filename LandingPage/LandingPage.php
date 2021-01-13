@@ -64,9 +64,9 @@
                     <h1>ETHICAL HACKING<br>CHALLENGES</h1>
                     <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
         </div>
-        <div class="top_right-box">
-            <img src="hacker-illustration.png">
-        </div>
+                <div class="top_right-box">
+                    <img src="hacker-illustration.png">
+                </div>
     </div>
     <div class="middle-box">
         <div class="middle-upper_box">
@@ -111,25 +111,22 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="separate-bar">
-    </div>
-    <div class="bottom-box">
-        <div class="bottom-left_box">
-            <img src="assistant1.png">
+        <div class="bottom-box">
+            <div class="bottom-left_box">
+                <img src="assistant1.png">
+            </div>
+            <div class="bottom-center_box">
+                <h1>FEELING LOST?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Praesent a urna rhoncus, maximus dolor ac, commodo
+                    arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
+                    scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit.
+                    scelerisque. </p>
+            </div>
+            <div class="bottom-right_box">
+                <img src="assistant2.png">
+            </div>
         </div>
-        <div class="bottom-center_box">
-            <h1>FEELING LOST?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent a urna rhoncus, maximus dolor ac, commodo
-                arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
-                scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit.
-                scelerisque. </p>
-        </div>
-        <div class="bottom-right_box">
-            <img src="assistant2.png">
-        </div>
-    </div>
 </div>
 </body>
 
@@ -151,5 +148,4 @@
         <span><a href="./privacy_policy.php">Privacy Policy</a></span>
     </div>
 </footer>
-
 </html>
