@@ -192,10 +192,12 @@
                         . "</p></span>";
                 } else {
                     while (mysqli_stmt_fetch($stmt)) {
-                        echo '<tr>
-                    <td>' . $userName . '</td>
-                    <td>' . $bestTime . '</td>
-                  </tr>';
+                      if($bestTime!="00:00:00"){
+                            echo '<tr>
+                        <td>' . $userName . '</td>
+                        <td>' . $bestTime . '</td>
+                        </tr>';
+                      }
                     }
                 }
                 //Clean up the $stmt after use
