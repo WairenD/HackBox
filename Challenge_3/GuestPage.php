@@ -43,7 +43,7 @@
                     $currentRole = "admin";
                     break;
                 default:
-                    $currentRole = "invalid";
+                    $currentRole = "invalidRole";
                     break;
 		    }
 	    }else{
@@ -57,7 +57,7 @@
     ?>
 
     <div class="header">
-        <div class="logo"><a href="RoleSelect.php"><img src="images/BigBrainLogo.png" class="mainLogo" /></a></div>
+        <div class="logo"><a href="Index.php"><img src="images/BigBrainLogo.png" class="mainLogo" /></a></div>
         <div class="name">
             <h1>Big Brain Inc.</h1>
         </div>
@@ -68,11 +68,7 @@
                 </div>');
 
                 echo('<div class="headerItem">
-                <p><a href="AdminPage.php" class="welcomeText">User Search</a></p>
-                </div>');
-
-                echo('<div class="headerItem">
-                <p class="welcomeText">Welcome admin</p>
+                <p><a href="../Challenge_4/index.php" class="welcomeText">User Search</a></p>
                 </div>');
 			}
 
@@ -89,11 +85,11 @@
     </div>
     <div class="main">
         <?php 
-            if($currentRole == "invalid" || $currentRole == "none"){
+            if($currentRole == "invalid" || $currentRole == "none" || $currentRole == "invalidRole"){
                 echo('
                     <h2>User not logged in</h2>
                     <div class="headerItem">
-                        <p><a href="RoleSelect.php" class="welcomeText">Back to role select</a></p>
+                        <p><a href="index.php" class="welcomeText">Back to role select</a></p>
                     </div>
                    
                 ');
