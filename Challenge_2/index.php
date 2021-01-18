@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="../main.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 2</title>
+    <link rel="stylesheet" href="css/assistant.css">
+    <script type="text/javascript" src="js/assistant.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
@@ -158,7 +161,12 @@
                 modal.style.display = "none";
             };
         </script>
-    <footer>
+      <div id="hint"> </div>
+      <div id="assistant">
+          <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+      </div>
+
+      <footer>
         <div class="main-content">
             <div class="center box">
                 <h2>Location</h2>

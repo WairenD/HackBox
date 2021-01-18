@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/assistant.css">
+    <script type="text/javascript" src="js/assistant.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <link rel="stylesheet" href="CSS/challenge1style.css">
@@ -139,6 +142,10 @@
     }
      ?>
      <div class="errorDiv"><?php echo $errorMsg ?></div>
+    <div id="hint"> </div>
+    <div id="assistant">
+        <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+    </div>
      <footer>
          <div class="main-content">
              <div class="center box">

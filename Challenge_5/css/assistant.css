@@ -1,0 +1,22 @@
+body {
+    background-color: darkgrey;
+}
+
+#assistant {
+    right: 0;
+    position: absolute;
+    bottom: 124px;
+}
+
+#hint {
+    right: 0;
+    bottom: 250px;
+    position: fixed;
+    padding-left: 650px;
+    color: white;
+}
+
+#assistant img {
+    width: 120px;
+    height: 120px;
+}

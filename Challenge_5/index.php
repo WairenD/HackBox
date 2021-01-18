@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/challenge5style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/assistant.css">
+    <script type="text/javascript" src="js/assistant.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Challenge 5</title>
 </head>
 
@@ -146,6 +149,10 @@
         ?>
     </div>
 
+    <div id="hint"> </div>
+    <div id="assistant">
+        <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+    </div>
 
 </body>
 
