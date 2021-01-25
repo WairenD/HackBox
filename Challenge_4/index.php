@@ -138,7 +138,11 @@
                         if ($result = $db->store_result()) {
                             if(mysqli_num_rows($result)==0)
                             {
-                                echo 'User not found.';
+                                if(isset($output[2])){
+                                    echo 'User '. $output[2] .' not found.';
+                                }else{
+                                    echo 'User not found.';
+                                }
 					        }
                             $i = 0;
                             while ($row = $result->fetch_row()) {
@@ -390,7 +394,7 @@
                         $error = "<br> invalid query";
                         return array(-1, $error);
 				}
-                return array(1, $q);
+                return array(1, $q, $searchQuery);
 			}
             /**
             1: ")

@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 1</title>
+    <link rel="stylesheet" href="css/challenge1style.css">
   </head>
   <body>
     <header>
