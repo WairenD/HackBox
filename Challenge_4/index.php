@@ -119,6 +119,7 @@
 
         <?php
         $output = checkAnswer();
+        $rightAnswer = false;
         if(isset($output) && isset($output[0]) && isset($output[1])){
             if($output[0] == 1){
                 $q = $output[1];
@@ -151,7 +152,13 @@
                                 echo '<td>' . $row[0] . '</td>';
                                 echo '<td>' . $row[1] . '</td>';
                                 echo '<td>' . $row[2] . '</td>';
-                                echo '<td>' . $row[3] . '</td>';
+                                if($row[2] == 2){
+                                    $rightAnswer = true;
+                                    echo '<td><a href="../story4.php">'. $row[3]. '</a></td>';
+                                }else{
+                                    echo '<td>' . $row[3] . '</td>';
+                                }
+                                
                                 echo '</tr>';
                                 $i++;
                             }
@@ -182,7 +189,12 @@
             if($output[0] == -1){
                 echo '<script>getHintWithInput("' . $output[1] . '"); </script>';
             }elseif($output[0] == 1){
-                echo '<script>getHintWithInput("That query was valid");</script>';
+                if($rightAnswer){
+                    echo '<script>getHintWithInput("That&#39;s it! The hacker is online, go have a chat with him and see if you can find more about his plans");</script>';
+                }else{
+                    echo '<script>getHintWithInput("That query was valid");</script>';
+                }
+                
             }
         }
        ?>
