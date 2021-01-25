@@ -138,7 +138,7 @@
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Dimitri Valentine, was it? I’ve read your file… if I remember correctly, there were notes left that described you as “, chatty, inappropriately boisterous, has no regard for personal space, and overly confident in his abilities.” </p>
+        <p style="margin-top:-40px;" class="textRight">Svenja: Dimitri Valentine, was it? I’ve read your file… if I remember correctly, there were notes left that described you as “chatty, inappropriately boisterous, has no regard for personal space, and overly confident in his abilities.” </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">

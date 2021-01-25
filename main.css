@@ -751,17 +751,18 @@ td:hover{
 	color: black;
 	margin-left: 50px;
 }
-.middle-right_box{
-	float:left;
-	background-color:dodgerblue;
+.middle-right_box {
+	float: left;
+	background-color: #f0592a;
 	width: 25.33%;
-	height:100%;
+	height: 100%;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 .middle-right_box img{
 	width: 100%;
 	height: 100%;
+	object-fit: contain;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -843,13 +844,14 @@ td:hover{
 }
 .bottom-left_box{
 	float: left;
-	background-color:purple;
+	background-color:black;
 	width:33.33%;
 	height:100%;
 }
-.bottom-left_box img{
-	width:100%;
-	height:100%;
+.bottom-left_box img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 .bottom-center_box{
 	background-color: black;
@@ -872,13 +874,14 @@ td:hover{
 }
 .bottom-right_box{
 	float: left;
-	background-color:cadetblue;
+	background-color:black;
 	width:33.33%;
 	height:100%;
 }
-.bottom-right_box img{
-	width:100%;
-	height:100%;
+.bottom-right_box img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 @media only screen and (max-width: 1024px) {
