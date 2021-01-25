@@ -139,9 +139,10 @@
                     scelerisque. A lectus lacus. Nulla suscipit ultrices
                     scelerisque. </p>
                 <br>
-                <div class="play-bttn">
-                    PLAY
-                </div>
+                <a href="register.php"><div class="play-bttn">
+                        REGISTER NOW!
+                    </div></a>
+
             </div>
         </div>
     </div>
