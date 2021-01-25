@@ -223,7 +223,7 @@
             
             
         </form>
-        <div class="ErrorMessages">
+        <div class="errorMessages">
             <?php
             if(isset($_POST['adminSubmit'])){
                         echo('<p class="error">Username and password combination incorrect</p>');
