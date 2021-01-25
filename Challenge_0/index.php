@@ -43,7 +43,7 @@ This Website is for 100% educational purpose.
                         </div>
                     </form>
                     <div id="introduction" class="groupMargin">
-                        <p>Sign-in to NHL Stenden. <a href="#">Forgot your password?</a></p>
+                        <p>Sign-in to NHL Stednen. <a href="#">Forgot your password?</a></p>
                     </div>
                 </div>
             </div>
