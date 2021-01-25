@@ -10,6 +10,7 @@
     <title>HACKBOX MAIN</title>
 </head>
 
+<body>
 <header>
     <?php
     session_start();
@@ -88,14 +89,13 @@
     </nav>
 </header>
 
-<body>
+
 <div class="landing-page-body">
     <div class="top-box">
         <div class="top_left-box">
-            <h2>Discover new bounderies
-                <h2>
-                    <h1>ETHICAL HACKING<br>CHALLENGES</h1>
-                    <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
+            <h2>Discover new bounderies</h2>
+            <h1>ETHICAL HACKING<br>CHALLENGES</h1>
+            <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
         </div>
         <div class="top_right-box">
             <img src="images/hacker-illustration.png" alt="illustration">
@@ -139,9 +139,11 @@
                     scelerisque. A lectus lacus. Nulla suscipit ultrices
                     scelerisque. </p>
                 <br>
-                <a href="register.php"><div class="play-bttn">
+                <a href="register.php">
+                    <div class="play-bttn">
                         REGISTER NOW!
-                    </div></a>
+                    </div>
+                </a>
 
             </div>
         </div>
@@ -166,8 +168,6 @@
         </div>
     </div>
 </div>
-</body>
-
 <footer>
     <div class="main-content">
         <div class="center box">
@@ -186,5 +186,5 @@
         <span><a href="./privacy_policy.php">Privacy Policy</a></span>
     </div>
 </footer>
-
+</body>
 </html>
