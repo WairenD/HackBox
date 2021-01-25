@@ -10,41 +10,42 @@
     <title>HACKBOX MAIN</title>
 </head>
 
+<body>
 <header>
-  <?php
-  session_start();
-  $errorMsg = "";
-  include("connection.php");
-  if(isset($_SESSION['userName'])){
-  $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
-  if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_bind_result($stmt, $currentLevel);
-      mysqli_stmt_store_result($stmt);
-      if ($stmt === FALSE) {
-          $errorMsg = "<span><p>Unable to execute the query.</p>"
-              . "<p>Error code "
-              . mysqli_errno($DBConnect)
-              . ": "
-              . mysqli_error($DBConnect)
-              . "</p></span>";
-      } else {
-          while (mysqli_stmt_fetch($stmt)) {
-              $challenge = $currentLevel;
-          }
-      }
-      //Clean up the $stmt after use
-      mysqli_stmt_close($stmt);
-  } else {
-      $errorMsg = "<span><p>Unable to execute the query.</p>"
-          . "<p>Error code "
-          . mysqli_errno($DBConnect)
-          . ": "
-          . mysqli_error($DBConnect)
-          . "</p></span>";
-  }
-}
-   ?>
+    <?php
+    session_start();
+    $errorMsg = "";
+    include("connection.php");
+    if (isset($_SESSION['userName'])) {
+        $SQLstring = "SELECT currentLevel FROM " . $db_table . " WHERE userName='" . $_SESSION['userName'] . "'";
+        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $currentLevel);
+            mysqli_stmt_store_result($stmt);
+            if ($stmt === FALSE) {
+                $errorMsg = "<span><p>Unable to execute the query.</p>"
+                    . "<p>Error code "
+                    . mysqli_errno($DBConnect)
+                    . ": "
+                    . mysqli_error($DBConnect)
+                    . "</p></span>";
+            } else {
+                while (mysqli_stmt_fetch($stmt)) {
+                    $challenge = $currentLevel;
+                }
+            }
+            //Clean up the $stmt after use
+            mysqli_stmt_close($stmt);
+        } else {
+            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                . "<p>Error code "
+                . mysqli_errno($DBConnect)
+                . ": "
+                . mysqli_error($DBConnect)
+                . "</p></span>";
+        }
+    }
+    ?>
     <nav>
         <div class="wrapper">
             <div class="logo"><a href="./">HACKBOX</a></div>
@@ -59,13 +60,13 @@
                     <input type="checkbox" id="showDrop">
                     <label for="showDrop" class="mobile-item">Challenges</label>
                     <ul class="drop-menu">
-                      <?php
-                      if(isset($currentLevel)){
-                        for($i = 0;$i<$currentLevel;$i++){
-                          echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                        <?php
+                        if (isset($currentLevel)) {
+                            for ($i = 0; $i < $currentLevel; $i++) {
+                                echo '<li><a href="./Challenge_' . ($i + 1) . '">Challenge ' . ($i + 1) . '</a></li>';
+                            }
                         }
-                      }
-                      ?>
+                        ?>
                     </ul>
                 </li>
                 <li><a href="./leaderboards.php">Leaderboards</a></li>
@@ -88,11 +89,85 @@
     </nav>
 </header>
 
-<body>
-    <h1> MAIN PAGE</h1>
 
-</body>
+<div class="landing-page-body">
+    <div class="top-box">
+        <div class="top_left-box">
+            <h2>Discover new bounderies</h2>
+            <h1>ETHICAL HACKING<br>CHALLENGES</h1>
+            <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
+        </div>
+        <div class="top_right-box">
+            <img src="images/hacker-illustration.png" alt="illustration">
+        </div>
+    </div>
+    <div class="middle-box">
+        <div class="middle-upper_box">
+            <div class="middle-left_box">
+                <h1>5</h1>
+                <h2>Challenges</h2>
+                <p>Glimpse to authentic hacking</p>
+            </div>
+            <div class="middle-center_box">
+                <div class="vertical-bar"></div>
+                <div class="middle-center_sub_box">
+                    <h1>20-30</h1>
+                    <h2>Minutes</h2>
+                    <p>Of detective-sense</p>
+                </div>
+            </div>
+            <div class="middle-right_box">
+                <img src="images/unlimited.png" alt="unlimited">
+            </div>
+        </div>
+        <div class="middle-lower_box">
+            <div class="middle-lower_left_box">
+                <h1>20-30</h1>
+                <h2>Minutes</h2>
+                <p>of practical and immersion<br> in ethical hacking<br> for security engineer.</p>
+                <h2>Level</h2>
+                <p>Beginner - Intermediate</p>
+            </div>
+            <div class="middle-lower_right_box">
+                <h1>About the challenges</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Praesent a urna rhoncus, maximus dolor ac, commodo
+                    arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
+                    scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit. A lectus
+                    lacus.
+                    Nulla suscipit ultrices
+                    scelerisque. A lectus lacus. Nulla suscipit ultrices
+                    scelerisque. </p>
+                <br>
+                <a href="register.php">
+                    <div class="play-bttn">
+                        REGISTER NOW!
+                    </div>
+                </a>
 
+            </div>
+        </div>
+    </div>
+    z
+    <div class="separate-bar">
+    </div>
+    <div class="bottom-box">
+        <div class="bottom-left_box">
+            <img src="images/assistant1.png" alt="assistant1">
+        </div>
+        <div class="bottom-center_box">
+            <h1>FEELING LOST?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent a urna rhoncus, maximus dolor ac, commodo
+                arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
+                scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit.
+                scelerisque. </p>
+        </div>
+        <div class="bottom-right_box">
+            <img src="images/assistant2.png" alt="assistant2">
+        </div>
+    </div>
+</div>
 <footer>
     <div class="main-content">
         <div class="center box">
@@ -111,5 +186,5 @@
         <span><a href="./privacy_policy.php">Privacy Policy</a></span>
     </div>
 </footer>
-
+</body>
 </html>

@@ -115,7 +115,7 @@
                     while (mysqli_stmt_fetch($stmt)) {
                         if ($userEmail == htmlentities($_POST['email']) && $userPassword = $_POST['password']) {
                             $_SESSION['userName'] = $userName;
-                            header("Location: index.php");
+                            header("Location: story0.php");
                         } else {
                             $errorMsg = "<span>Incorrect login details</span>";
                         }
