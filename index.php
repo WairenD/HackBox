@@ -11,40 +11,40 @@
 </head>
 
 <header>
-  <?php
-  session_start();
-  $errorMsg = "";
-  include("connection.php");
-  if(isset($_SESSION['userName'])){
-  $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
-  if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_bind_result($stmt, $currentLevel);
-      mysqli_stmt_store_result($stmt);
-      if ($stmt === FALSE) {
-          $errorMsg = "<span><p>Unable to execute the query.</p>"
-              . "<p>Error code "
-              . mysqli_errno($DBConnect)
-              . ": "
-              . mysqli_error($DBConnect)
-              . "</p></span>";
-      } else {
-          while (mysqli_stmt_fetch($stmt)) {
-              $challenge = $currentLevel;
-          }
-      }
-      //Clean up the $stmt after use
-      mysqli_stmt_close($stmt);
-  } else {
-      $errorMsg = "<span><p>Unable to execute the query.</p>"
-          . "<p>Error code "
-          . mysqli_errno($DBConnect)
-          . ": "
-          . mysqli_error($DBConnect)
-          . "</p></span>";
-  }
-}
-   ?>
+    <?php
+    session_start();
+    $errorMsg = "";
+    include("connection.php");
+    if (isset($_SESSION['userName'])) {
+        $SQLstring = "SELECT currentLevel FROM " . $db_table . " WHERE userName='" . $_SESSION['userName'] . "'";
+        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $currentLevel);
+            mysqli_stmt_store_result($stmt);
+            if ($stmt === FALSE) {
+                $errorMsg = "<span><p>Unable to execute the query.</p>"
+                    . "<p>Error code "
+                    . mysqli_errno($DBConnect)
+                    . ": "
+                    . mysqli_error($DBConnect)
+                    . "</p></span>";
+            } else {
+                while (mysqli_stmt_fetch($stmt)) {
+                    $challenge = $currentLevel;
+                }
+            }
+            //Clean up the $stmt after use
+            mysqli_stmt_close($stmt);
+        } else {
+            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                . "<p>Error code "
+                . mysqli_errno($DBConnect)
+                . ": "
+                . mysqli_error($DBConnect)
+                . "</p></span>";
+        }
+    }
+    ?>
     <nav>
         <div class="wrapper">
             <div class="logo"><a href="./">HACKBOX</a></div>
@@ -59,13 +59,13 @@
                     <input type="checkbox" id="showDrop">
                     <label for="showDrop" class="mobile-item">Challenges</label>
                     <ul class="drop-menu">
-                      <?php
-                      if(isset($currentLevel)){
-                        for($i = 0;$i<$currentLevel;$i++){
-                          echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                        <?php
+                        if (isset($currentLevel)) {
+                            for ($i = 0; $i < $currentLevel; $i++) {
+                                echo '<li><a href="./Challenge_' . ($i + 1) . '">Challenge ' . ($i + 1) . '</a></li>';
+                            }
                         }
-                      }
-                      ?>
+                        ?>
                     </ul>
                 </li>
                 <li><a href="./leaderboards.php">Leaderboards</a></li>
@@ -98,7 +98,7 @@
                     <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
         </div>
         <div class="top_right-box">
-            <img src="images/hacker-illustration.png">
+            <img src="images/hacker-illustration.png" alt="illustration">
         </div>
     </div>
     <div class="middle-box">
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="middle-right_box">
-                <img src="images/unlimited.png">
+                <img src="images/unlimited.png" alt="unlimited">
             </div>
         </div>
         <div class="middle-lower_box">
@@ -144,12 +144,13 @@
                 </div>
             </div>
         </div>
-    </div>z
+    </div>
+    z
     <div class="separate-bar">
     </div>
     <div class="bottom-box">
         <div class="bottom-left_box">
-            <img src="images/assistant1.png">
+            <img src="images/assistant1.png" alt="assistant1">
         </div>
         <div class="bottom-center_box">
             <h1>FEELING LOST?</h1>
@@ -160,7 +161,7 @@
                 scelerisque. </p>
         </div>
         <div class="bottom-right_box">
-            <img src="images/assistant2.png">
+            <img src="images/assistant2.png" alt="assistant2">
         </div>
     </div>
 </div>
