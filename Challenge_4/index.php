@@ -92,6 +92,7 @@
         <div class="title">
             <h1>Challenge 4</h1>
         </div>
+        <div class="sqlContainer">
         <div id="item-list"></div>
         <div id='search'>
             <div class="search-input">
@@ -113,10 +114,9 @@
                 <div class="target-group-slot">
                     <div class="target-slot item"></div>
                 </div>
+                <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
             </div>
-            <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
         </div>
-
         <?php
         $output = checkAnswer();
         if(isset($output) && isset($output[0]) && isset($output[1])){
@@ -126,7 +126,7 @@
                 $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
                 if ($db->multi_query($q)) {
                     ?>
-                    <table>
+                    <table class="tableOfContent">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -138,8 +138,12 @@
                         if ($result = $db->store_result()) {
                             if(mysqli_num_rows($result)==0)
                             {
-                                echo 'User not found.';
-					        }
+                                if(isset($output[2])){
+                                    echo "<p class='errorTextSql'>'User '. $output[2] .' not found.'";
+                                }else{
+                                    echo "<p class='errorTextSql'>User not found.";
+                                }
+                            }
                             $i = 0;
                             while ($row = $result->fetch_row()) {
                                 if($i>4){break;}
@@ -163,12 +167,9 @@
                 }
             }
         }
-        
-        
     ?>
-
     </div>
-    
+    </div>
 
     <div id="hint"></div>
     <div id="assistant">
