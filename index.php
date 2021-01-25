@@ -89,8 +89,81 @@
 </header>
 
 <body>
-    <h1> MAIN PAGE</h1>
-
+<div class="landing-page-body">
+    <div class="top-box">
+        <div class="top_left-box">
+            <h2>Discover new bounderies
+                <h2>
+                    <h1>ETHICAL HACKING<br>CHALLENGES</h1>
+                    <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
+        </div>
+        <div class="top_right-box">
+            <img src="images/hacker-illustration.png">
+        </div>
+    </div>
+    <div class="middle-box">
+        <div class="middle-upper_box">
+            <div class="middle-left_box">
+                <h1>5</h1>
+                <h2>Challenges</h2>
+                <p>Glimpse to authentic hacking</p>
+            </div>
+            <div class="middle-center_box">
+                <div class="vertical-bar"></div>
+                <div class="middle-center_sub_box">
+                    <h1>20-30</h1>
+                    <h2>Minutes</h2>
+                    <p>Of detective-sense</p>
+                </div>
+            </div>
+            <div class="middle-right_box">
+                <img src="images/unlimited.png">
+            </div>
+        </div>
+        <div class="middle-lower_box">
+            <div class="middle-lower_left_box">
+                <h1>20-30</h1>
+                <h2>Minutes</h2>
+                <p>of practical and immersion<br> in ethical hacking<br> for security engineer.</p>
+                <h2>Level</h2>
+                <p>Beginner - Intermediate</p>
+            </div>
+            <div class="middle-lower_right_box">
+                <h1>About the challenges</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Praesent a urna rhoncus, maximus dolor ac, commodo
+                    arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
+                    scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit. A lectus
+                    lacus.
+                    Nulla suscipit ultrices
+                    scelerisque. A lectus lacus. Nulla suscipit ultrices
+                    scelerisque. </p>
+                <br>
+                <div class="play-bttn">
+                    PLAY
+                </div>
+            </div>
+        </div>
+    </div>z
+    <div class="separate-bar">
+    </div>
+    <div class="bottom-box">
+        <div class="bottom-left_box">
+            <img src="images/assistant1.png">
+        </div>
+        <div class="bottom-center_box">
+            <h1>FEELING LOST?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent a urna rhoncus, maximus dolor ac, commodo
+                arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
+                scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit.
+                scelerisque. </p>
+        </div>
+        <div class="bottom-right_box">
+            <img src="images/assistant2.png">
+        </div>
+    </div>
+</div>
 </body>
 
 <footer>

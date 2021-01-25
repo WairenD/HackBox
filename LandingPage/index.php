@@ -65,7 +65,7 @@
                     <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
         </div>
         <div class="top_right-box">
-            <img src="hacker-illustration.png">
+            <img src="images/hacker-illustration.png">
         </div>
     </div>
     <div class="middle-box">
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="middle-right_box">
-                <img src="unlimited.png">
+                <img src="images/unlimited.png">
             </div>
         </div>
         <div class="middle-lower_box">
@@ -116,7 +116,7 @@
     </div>
     <div class="bottom-box">
         <div class="bottom-left_box">
-            <img src="assistant1.png">
+            <img src="images/assistant1.png">
         </div>
         <div class="bottom-center_box">
             <h1>FEELING LOST?</h1>
@@ -127,7 +127,7 @@
                 scelerisque. </p>
         </div>
         <div class="bottom-right_box">
-            <img src="assistant2.png">
+            <img src="images/assistant2.png">
         </div>
     </div>
 </div>
