@@ -8,7 +8,9 @@ const a = [
     "HINT 7.",
 ];
 
-var hints=0;
+var hints = 0;
+
+
 function getHint() {
     $('#hint').show().delay(10000).hide(0);
     setTimeout(function() {
@@ -17,4 +19,13 @@ function getHint() {
 
     document.getElementById('hint').innerHTML = (a[this.hints]);
     this.hints = this.hints < a.length - 1? ++this.hints: 0;
+}
+
+function getHintWithInput(hintText) {
+    $('#hint').show().delay(10000).hide(0);
+    setTimeout(function () {
+        $('#hint').fadeOut('fast');
+    }, 8000);
+
+    document.getElementById('hint').innerHTML = (hintText);
 }

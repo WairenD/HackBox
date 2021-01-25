@@ -116,9 +116,99 @@
             </div>
             <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
         </div>
+
+        <?php
+        $output = checkAnswer();
+        if(isset($output) && isset($output[0]) && isset($output[1])){
+            if($output[0] == 1){
+                $q = $output[1];
+                //Execute query here
+                $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
+                if ($db->multi_query($q)) {
+                    ?>
+                    <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Priviledge Level</th>
+                        <th>chat_link</th>
+                    </tr>
+                    <?php
+                    do {
+                        if ($result = $db->store_result()) {
+                            if(mysqli_num_rows($result)==0)
+                            {
+                                echo 'User not found.';
+					        }
+                            $i = 0;
+                            while ($row = $result->fetch_row()) {
+                                if($i>4){break;}
+                                echo '<tr>';
+                                echo '<td>' . $row[0] . '</td>';
+                                echo '<td>' . $row[1] . '</td>';
+                                echo '<td>' . $row[2] . '</td>';
+                                echo '<td>' . $row[3] . '</td>';
+                                echo '</tr>';
+                                $i++;
+                            }
+                            $result->free();
+                        }
+                    
+
+                    } while ($db->next_result());
+                    echo '</table>';
+                    if ($i>4) {
+                        echo("And 10.000 more rows \n");
+                    }
+                }
+            }
+        }
+        
+        
+    ?>
+
     </div>
-    <?php
-        define("MAX_ENTITIES", 6);
+    
+
+    <div id="hint"></div>
+    <div id="assistant">
+        <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+        <?php
+        if(isset($output[0])){
+            if($output[0] == -1){
+                echo '<script>getHintWithInput("' . $output[1] . '"); </script>';
+            }
+        }
+       ?>
+    </div>
+
+    <footer>
+        <div class="main-content">
+            <div class="center box">
+                <h2>Location</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">NHL Stenden</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
+            <span class="far fa-copyright"></span> 2020 All rights reserved.
+            <span><a href="./privacy_policy.php">Privacy Policy</a></span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/item.js"></script>
+    <script type="text/javascript" src="js/Challenge4.js"></script>
+</body>
+</html>
+
+<?php
+    function checkAnswer(){
+    $error = "";
+    define("MAX_ENTITIES", 6);
         //check if user submitted an answer
         if(isset($_COOKIE['submit']))
         {
@@ -128,9 +218,9 @@
             //checks for length of answer
             if($num_length > MAX_ENTITIES)
             {
-                echo("Submited answer has to many entities");
+                $error = "Submited answer has to many entities";
                 $isValidQuery = false;
-               return;
+               return array(-1, $error);
 			}
             //Make the answer 6 digits long
             for($i = $num_length; $i < MAX_ENTITIES; $i++)
@@ -157,9 +247,9 @@
                 {
                     if($inputArray[$i] != 0)
                     {
-                        echo("Submited answer has dublicate values");
+                        $error = "Submited answer has dublicate values";
                         $isValidQuery = false;
-                        return;
+                        return array(-1, $error);
 					}
 
                 }
@@ -223,9 +313,9 @@
             //check if the amount of quotes at the end of the query is even or uneven
             if($amountOfQuotes % 2 == 1)
             {
-               echo("<br> One of the quotes is not properly  closed");
+               $error = "<br> One of the quotes is not properly  closed";
                $isValidQuery = false;
-               return;
+               return array(-1, $error);
 			}
             //if the user inputted '"(' in the answer the query that is not commented out,  the query will always have an unclosed bracket
             $positionOfTwo = array_search(2, $inputArray);
@@ -233,9 +323,9 @@
             {
                 if($inputTypeArray[$positionOfTwo] == "quote")
                 {
-                    echo("<br> Unclosed bracket");
+                    $error = "<br> Unclosed bracket";
                     $isValidQuery = false;
-                    return;
+                    return array(-1, $error);
 				}
 
 			}
@@ -253,14 +343,15 @@
                     if($inputTypeArray[$i] == "string")
                     {
                         $searchQuery = $searchQuery.$queryArray[$inputArray[$i] - 1];
+                        $searchQuery = htmlentities($searchQuery);
 					}
                     //check if an operator appears twice
                     if($inputTypeArray[$i] == "operator")
                     {
                         if($isOperatorSet)
                         {
-                            echo("<br> invalid query");
-                            return;
+                            $error = "<br> invalid query";
+                            return array(-1, $error);
 						}
                         else
                         {
@@ -274,7 +365,7 @@
                         if(!$isOperatorSet)
                         {
                             echo("<br> invalid query");
-                            //return;
+                            //return -1;
 						}
                         else
                         {
@@ -298,54 +389,10 @@
                         );
                         break;
                     default:
-                        echo("<br> invalid query");
-                        return;
+                        $error = "<br> invalid query";
+                        return array(-1, $error);
 				}
-                //Execute query here
-                $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
-                $searchQuery = htmlentities($searchQuery);
-
-
-
-
-                if ($db->multi_query($q)) {
-                    ?>
-                    <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Priviledge Level</th>
-                        <th>chat_link</th>
-                    </tr>
-                    <?php
-                    do {
-                        if ($result = $db->store_result()) {
-                            if(mysqli_num_rows($result)==0)
-                            {
-                                echo 'User "' . $searchQuery . '" not found.';
-							}
-                            $i = 0;
-                            while ($row = $result->fetch_row()) {
-                                if($i>4){break;}
-                                echo '<tr>';
-                                echo '<td>' . $row[0] . '</td>';
-                                echo '<td>' . $row[1] . '</td>';
-                                echo '<td>' . $row[2] . '</td>';
-                                echo '<td>' . $row[3] . '</td>';
-                                echo '</tr>';
-                                $i++;
-                            }
-                            $result->free();
-                        }
-                        if ($i>4) {
-                            printf("And 10.000 more rows \n");
-                        }
-
-                    } while ($db->next_result());
-                    ?>
-                    </table>
-                    <?php
-                }
+                return array(1, $q);
 			}
             /**
             1: ")
@@ -355,34 +402,7 @@
             5: AND
             6: OR
             **/
-
         }
-    ?>
+    }
+?>
 
-    <div id="hint"></div>
-    <div id="assistant">
-        <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
-    </div>
-
-    <footer>
-        <div class="main-content">
-            <div class="center box">
-                <h2>Location</h2>
-                <div class="content">
-                    <div class="place">
-                        <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">NHL Stenden</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom">
-            <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-            <span class="far fa-copyright"></span> 2020 All rights reserved.
-            <span><a href="./privacy_policy.php">Privacy Policy</a></span>
-        </div>
-    </footer>
-    <script type="text/javascript" src="js/item.js"></script>
-    <script type="text/javascript" src="js/Challenge4.js"></script>
-</body>
-</html>
