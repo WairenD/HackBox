@@ -181,6 +181,8 @@
         if(isset($output[0])){
             if($output[0] == -1){
                 echo '<script>getHintWithInput("' . $output[1] . '"); </script>';
+            }elseif($output[0] == 1){
+                echo '<script>getHintWithInput("That query was valid");</script>';
             }
         }
        ?>
@@ -315,7 +317,7 @@
             //check if the amount of quotes at the end of the query is even or uneven
             if($amountOfQuotes % 2 == 1)
             {
-               $error = "<br> One of the quotes is not properly  closed";
+               $error = "One of the quotes is not properly closed, try adding more quotes or removing the last quote with ;--";
                $isValidQuery = false;
                return array(-1, $error);
 			}
@@ -325,7 +327,7 @@
             {
                 if($inputTypeArray[$positionOfTwo] == "quote")
                 {
-                    $error = "<br> Unclosed bracket";
+                    $error = "Unclosed bracket, try adding or removing one bracket";
                     $isValidQuery = false;
                     return array(-1, $error);
 				}
@@ -352,7 +354,7 @@
                     {
                         if($isOperatorSet)
                         {
-                            $error = "<br> invalid query";
+                            $error = "invalid query";
                             return array(-1, $error);
 						}
                         else
@@ -366,7 +368,7 @@
                     {
                         if(!$isOperatorSet)
                         {
-                            echo("<br> invalid query");
+                            echo("invalid query");
                             //return -1;
 						}
                         else
@@ -391,7 +393,7 @@
                         );
                         break;
                     default:
-                        $error = "<br> invalid query";
+                        $error = "invalid query";
                         return array(-1, $error);
 				}
                 return array(1, $q, $searchQuery);

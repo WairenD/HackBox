@@ -1,11 +1,7 @@
 const a = [
-    "HINT 1",
-    "HINT 2",
-    "HINT 3",
-    "HINT 4",
-    "HINT 5.",
-    "HINT 6.",
-    "HINT 7.",
+    "Their user input is not validated. Drag and drop the right query into the search bar for SQL injection!",
+    "I've looked into the source code of the website and found the original query, it looks something like this: SELECT userID, name, priviledge_level, chat_link FROM bb_users WHERE (priviledge_level = 1 && name LIKE '[INPUT]')",
+    "Try inputting something, I'll tell you if it's a valid query or not"
 ];
 
 var hints = 0;
