@@ -32,8 +32,10 @@
                       <label for="showDrop" class="mobile-item">Challenges</label>
                       <ul class="drop-menu">
                         <?php
+                        if(isset($currentLevel)){
                           for($i = 0;$i<$currentLevel;$i++){
                             echo '<li><a href="./Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
+                            }
                         }
                         ?>
                       </ul>
