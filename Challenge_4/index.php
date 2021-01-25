@@ -248,7 +248,6 @@
                     if($inputArray[$i] != 0)
                     {
                         $error = "Submited answer has dublicate values";
-                        $isValidQuery = false;
                         return array(-1, $error);
 					}
 
@@ -256,9 +255,8 @@
                 //check for invalid values like negative numbers
                 if($inputArray[$i] > MAX_ENTITIES || $inputArray[$i] < 0)
                 {
-                    echo("Submited answer has invalid values");
-                    $isValidQuery = false;
-                    continue;
+                    $error = "Submited answer has invalid values";
+                    return array(-1, $error);
 				}
                 //check how each value will be read by the mock sql command
                 if($inputArray[$i] == 0)
