@@ -17,6 +17,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 p, h1, h2,h3{
     color:white;
@@ -68,7 +69,17 @@ h2{
     float: left;
     width: 15%;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.backText {
+    width: 15%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .photo{
     padding-top: 5%;
     width: 90%;
@@ -88,14 +99,14 @@ h2{
     margin-left: 15%;
     margin-right: 15%;
     width:70%;
-    height: 120vh;
+    height: 90vh;
     background-color: #434343;
 }
 .Container{
     margin-left: 15%;
     margin-right: 15%;
     width:70%;
-    height: 90vh;
+    height: 70vh;
     background-color: #434343;
 }
 .textInfo{
