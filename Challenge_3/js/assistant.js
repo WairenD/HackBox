@@ -1,7 +1,7 @@
 const a = [
-    "Their user input is not validated. Drag and drop the right query into the search bar for SQL injection!",
-    "I've looked into the source code of the website and found the original query, it looks something like this: SELECT userID, name, priviledge_level, chat_link FROM bb_users WHERE (priviledge_level = 1 && name LIKE '[INPUT]')",
-    "Try inputting something, I'll tell you if it's a valid query or not"
+    "As a user on this site we cannot do anything, we need to escalate our privileges check around the webpage if you can somehow change your role to an Admin",
+    "It seems that to access anything on this site you need a valid authorization token and user id.",
+    "The website seems to be storing user info on the user's side, press f12 and check around the Storage if you can't use that to your advantage."
 ];
 
 var hints = 0;

@@ -103,6 +103,7 @@ function submitAnswer() {
     }
     console.log(cookieString);
     document.cookie = cookieString;
+    window.location.reload(true)
 }
 
 

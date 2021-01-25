@@ -96,8 +96,8 @@
     <div class="aboutMainContainer">
         <div class="aboutUs">
             <h2>We are HackBox</h2>
-            <p>We are students from NHL Stenden in Emmen,The Netherlands.We wanted to create project which involves around ethical hacking.The main idea about HackBox is to introduce to newcomers ethical hacking and its basics.
-                For the team,the user is the most important part of this project,that is why we decided to introduce the world of ethical hacking in the face of intractable website with challenges which the further you progress the harder they get.
+            <p>We are students from NHL Stenden in Emmen, The Netherlands.We wanted to create project which involves around ethical hacking. The main idea about HackBox is to introduce to newcomers ethical hacking and its basics.
+                For the team, the user is the most important part of this project, that is why we decided to introduce the world of ethical hacking in the face of intractable website with challenges which the further you progress the harder they get.
             </p>
         </div>
         <div class="contactList">

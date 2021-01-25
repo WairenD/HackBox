@@ -178,6 +178,8 @@
         if(isset($output[0])){
             if($output[0] == -1){
                 echo '<script>getHintWithInput("' . $output[1] . '"); </script>';
+            }elseif($output[0] == 1){
+                echo '<script>getHintWithInput("That query was valid");</script>';
             }
         }
        ?>
@@ -249,7 +251,6 @@
                     if($inputArray[$i] != 0)
                     {
                         $error = "Submited answer has dublicate values";
-                        $isValidQuery = false;
                         return array(-1, $error);
 					}
 
@@ -257,9 +258,8 @@
                 //check for invalid values like negative numbers
                 if($inputArray[$i] > MAX_ENTITIES || $inputArray[$i] < 0)
                 {
-                    echo("Submited answer has invalid values");
-                    $isValidQuery = false;
-                    continue;
+                    $error = "Submited answer has invalid values";
+                    return array(-1, $error);
 				}
                 //check how each value will be read by the mock sql command
                 if($inputArray[$i] == 0)
@@ -314,7 +314,7 @@
             //check if the amount of quotes at the end of the query is even or uneven
             if($amountOfQuotes % 2 == 1)
             {
-               $error = "<br> One of the quotes is not properly  closed";
+               $error = "One of the quotes is not properly closed, try adding more quotes or removing the last quote with ;--";
                $isValidQuery = false;
                return array(-1, $error);
 			}
@@ -324,7 +324,7 @@
             {
                 if($inputTypeArray[$positionOfTwo] == "quote")
                 {
-                    $error = "<br> Unclosed bracket";
+                    $error = "Unclosed bracket, try adding or removing one bracket";
                     $isValidQuery = false;
                     return array(-1, $error);
 				}
@@ -351,7 +351,7 @@
                     {
                         if($isOperatorSet)
                         {
-                            $error = "<br> invalid query";
+                            $error = "invalid query";
                             return array(-1, $error);
 						}
                         else
@@ -365,7 +365,7 @@
                     {
                         if(!$isOperatorSet)
                         {
-                            echo("<br> invalid query");
+                            echo("invalid query");
                             //return -1;
 						}
                         else
@@ -390,10 +390,10 @@
                         );
                         break;
                     default:
-                        $error = "<br> invalid query";
+                        $error = "invalid query";
                         return array(-1, $error);
 				}
-                return array(1, $q);
+                return array(1, $q, $searchQuery);
 			}
             /**
             1: ")
