@@ -59,16 +59,17 @@
     <div class="header">
         <div class="logo"><a href="Index.php"><img src="images/BigBrainLogo.png" class="mainLogo" /></a></div>
         <div class="name">
-            <h1>Big Brain Inc.</h1>
+            <h1 class="headerText">Big Brain Inc.</h1>
         </div>
         <?php
             if($currentRole == "admin"){
+
                 echo('<div class="headerItem">
                 <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
                 </div>');
 
                 echo('<div class="headerItem">
-                <p><a href="../Challenge_4/index.php" class="welcomeText">User Search</a></p>
+                <p><a href="../story3.php" class="welcomeText">User Search</a></p>
                 </div>');
 			}
 
@@ -87,7 +88,7 @@
         <?php 
             if($currentRole == "invalid" || $currentRole == "none" || $currentRole == "invalidRole"){
                 echo('
-                    <h2>User not logged in</h2>
+                    <h2 class="headerText">User not logged in</h2>
                     <div class="headerItem">
                         <p><a href="index.php" class="welcomeText">Back to role select</a></p>
                     </div>
@@ -103,7 +104,7 @@
         <div class="textInfo">
             <div class="containerBox">
                 <div class="infoText">
-                    <h3>We're here to help,not harm</h3>
+                    <h3 class="headerText">We're here to help,not harm</h3>
                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
                         Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.
@@ -119,7 +120,7 @@
                     <img src="images/helpDesk.jpg" class="photo">
                 </div>
                 <div class="infoText">
-                    <h3>We're here to help,not harm</h3>
+                    <h3 class="headerText">We're here to help,not harm</h3>
                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
                         Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.

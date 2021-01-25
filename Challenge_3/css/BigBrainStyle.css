@@ -28,11 +28,17 @@ p, h1, h2,h3{
     font-size: calc(10px + 6 * ((100vw - 320px) / 680));
     float:left;
 }
-h1, h2,h3{
+.headerText{
     font-family: "Agency FB", "Arial", sans-serif;
     text-align: center;
 }
-h3{
+
+.selectOneDiv{
+    text-align:center;
+    width:75%;
+    
+}
+h3 {
     text-align: left;
     font-size: 25px;
 }
@@ -94,7 +100,7 @@ h2{
 }
 .textInfo{
     margin:0 auto;
-    width: 90%;
+    width: 90%; 
     height:860px;
 }
 .containerBox{
