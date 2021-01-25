@@ -150,7 +150,7 @@
         </div>
         <div class="bottom-center_box">
             <h1>FEELING LOST?</h1>
-            <p>Don't worry, your assistant Dimitri will be there to help you throughout the challenges. Offering hints and guiding your way to the end. Just click on him to recieve a helpful hint. Do you have questions Dimitri can't help you with? Feel free to contact the team in the about page.</p>
+            <p>Don't worry, your assistant Dimitri will be there to help you throughout the challenges. Offering hints and guiding your way to the end. Just click on him to recieve a helpful hint. Do you have questions Dimitri can't help you with? Feel free to contact the team, you can find our contact information in the about page.</p>
         </div>
         <div class="bottom-right_box">
             <img src="images/assistant2.png" alt="assistant2">
