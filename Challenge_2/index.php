@@ -103,7 +103,7 @@
                             $username = $_POST['username'];
                             $password = $_POST['password'];
                             if (!empty($username) && !empty($password)) {
-                                if ($username == "bruteforce" && $password == "1234") {
+                                if ($username == "bruteforce" && $password == "9OXEMTG") {
                                   if($currentLevel==1){
                                     $currentLevel=2;
                                     $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
@@ -160,7 +160,7 @@
                     <p class="text">find the missing password</p>
                 </div>
                 <div class="images">
-                    <img src="images/logo.png" alt="a key ?" id="img-box">
+                    <img src="images/keyImage.png" alt="a key ?" id="img-box">
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
                         <img class="modal-content" id="img01">
