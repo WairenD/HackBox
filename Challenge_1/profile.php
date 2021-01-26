@@ -43,7 +43,7 @@
               . "</p></span>";
       }
       session_start();
-      if($currentLevel==0 || !isset($_SESSION['userName'])){
+      if(!isset($_SESSION['userName'])){
         header("Location: ../index.php");
       }
        ?>
@@ -62,7 +62,7 @@
                         <label for="showDrop" class="mobile-item">Challenges</label>
                         <ul class="drop-menu">
                           <?php
-                          for($i = 0;$i<$_SESSION['challStage'];$i++){
+                          for($i = 0;$i<$currentLevel;$i++){
                             echo '<li><a href="../Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
                           }
                           ?>

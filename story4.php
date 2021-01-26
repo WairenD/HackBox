@@ -43,28 +43,6 @@
       }
       if($currentLevel<4 || !isset($_SESSION['userName'])){
         header("Location: index.php");
-      }else if($currentLevel==4){
-        $currentLevel=5;
-        $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
-        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-          $QueryResult = mysqli_stmt_execute($stmt);
-          if ($QueryResult === FALSE) {
-            $errorMsg = "<span><p>Unable to execute the query.</p>"
-              . "<p>Error code "
-              . mysqli_errno($DBConnect)
-              . ": "
-              . mysqli_error($DBConnect)
-              . "</p></span>";}
-          //Clean up the $stmt after use
-          mysqli_stmt_close($stmt);
-        } else {
-          $errorMsg = "<span><p>Unable to execute the query.</p>"
-            . "<p>Error code "
-            . mysqli_errno($DBConnect)
-            . ": "
-            . mysqli_error($DBConnect)
-            . "</p></span>";
-        }
       }
        ?>
         <nav>

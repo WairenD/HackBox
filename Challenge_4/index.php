@@ -20,9 +20,6 @@
     $errorMsg = "";
     include("../connection.php");
     session_start();
-    if(!isset($_SESSION['userName'])){
-      header("Location: ../index.php");
-    }
     $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
     if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
         mysqli_stmt_execute($stmt);
@@ -49,6 +46,9 @@
             . ": "
             . mysqli_error($DBConnect)
             . "</p></span>";
+    }
+    if($currentLevel<3 || !isset($_SESSION['userName'])){
+      header("Location: index.php");
     }
      ?>
       <nav>
@@ -155,16 +155,41 @@
                                 if($row[2] == 2){
                                     $rightAnswer = true;
                                     echo '<td><a href="../story4.php">'. $row[3]. '</a></td>';
+                                    if($currentLevel==3){
+                                     $currentLevel=4;
+                                     $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
+                                     if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                                       $QueryResult = mysqli_stmt_execute($stmt);
+                                       if ($QueryResult === FALSE) {
+                                         $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                           . "<p>Error code "
+                                           . mysqli_errno($DBConnect)
+                                           . ": "
+                                           . mysqli_error($DBConnect)
+                                           . "</p></span>";}
+                                           else{
+                                           }
+                                       //Clean up the $stmt after use
+                                       mysqli_stmt_close($stmt);
+                                     } else {
+                                       $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                         . "<p>Error code "
+                                         . mysqli_errno($DBConnect)
+                                         . ": "
+                                         . mysqli_error($DBConnect)
+                                         . "</p></span>";
+                                     }
+                                 }
                                 }else{
                                     echo '<td>' . $row[3] . '</td>';
                                 }
-                                
+
                                 echo '</tr>';
                                 $i++;
                             }
                             $result->free();
                         }
-                    
+
 
                     } while ($db->next_result());
                     echo '</table>';
@@ -191,7 +216,7 @@
                 }else{
                     echo '<script>getHintWithInput("That query was valid");</script>';
                 }
-                
+
             }
         }
        ?>
@@ -418,4 +443,3 @@
         }
     }
 ?>
-
