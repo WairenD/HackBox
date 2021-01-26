@@ -197,7 +197,6 @@
                      . "</p></span>";
                  }
                }
-                ?
 			}
 
             if($currentRole == "guest"){
