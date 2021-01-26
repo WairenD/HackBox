@@ -81,6 +81,24 @@
                     I never forgot the <span class="finding">c</span>hronic trauma though, the f<span class="finding">e</span>ar, the grief, and the unbridled rage
                 </p>
             </div>
+            <script>
+                setInterval(makeTextAppear, 15000);
+                function makeTextAppear() {
+                    const span = document.querySelector('span');
+                    var findingElements = document.getElementsByClassName("finding");
+                    var randomNumber = Math.floor(Math.random() * findingElements.length);
+                    findingElements.item(randomNumber).className = "found";
+                    setTimeout(makeTextDisappear, 150);
+                }
+
+                function makeTextDisappear(){
+                    var foundElements = document.getElementsByClassName("found");
+                    for(var i = 0; i < foundElements.length; i++)
+                    {
+                        foundElements.item(i).className = "finding";
+                    }
+                }
+            </script>
             <div class="aboutBox">
                 <div class="toDoList">
                     <h2>To do List:</h2>
