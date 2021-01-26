@@ -417,6 +417,28 @@ td:hover{
 	font-weight: bold;
 	background-color: #303133;
 }
+
+.startBtn {
+	width: 400px;
+	height: 70px;
+	margin: 10px;
+	margin-left: 100px;
+	color: #242526;
+	font-size: 25px;
+	font-weight: normal;
+	background-color: #f0380e;
+	transition: 0.1s;
+	border-radius: 10px;
+	border: none;
+}
+
+.startBtn:hover {
+	cursor: pointer;
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #e22e0a;
+}
+
 /*END LEADERBOARDS CSS*/
 /*START STORY CSS*/
 .mainText{

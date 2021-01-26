@@ -96,6 +96,112 @@
             <h2>Discover new bounderies</h2>
             <h1>ETHICAL HACKING<br>CHALLENGES</h1>
             <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
+            <?php
+            if(isset($_SESSION['userName'])){
+                $errorMsg = "";
+                include("connection.php");
+                session_start();
+                $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
+                if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_bind_result($stmt, $currentLevel);
+                    mysqli_stmt_store_result($stmt);
+                    if ($stmt === FALSE) {
+                        $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";
+                    } else {
+                        while (mysqli_stmt_fetch($stmt)) {
+                            $challenge = $currentLevel;
+                        }
+                    }
+                    //Clean up the $stmt after use
+                    mysqli_stmt_close($stmt);
+                } else {
+                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                        . "<p>Error code "
+                        . mysqli_errno($DBConnect)
+                        . ": "
+                        . mysqli_error($DBConnect)
+                        . "</p></span>";
+                }
+                if($currentLevel == 0){
+                    ?>
+                    <form method="post">
+                    <input class="startBtn" type="submit" name="play" value="Start">
+                    <?php
+                    if(isset($_POST['play'])){
+                        $SQLstring = "UPDATE " . $db_table . " SET currentlevel='0',endTime='0000-00-00 00:00:00' WHERE userName='".$_SESSION['userName']."'";
+                        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                            $QueryResult = mysqli_stmt_execute($stmt);
+                            if ($QueryResult === FALSE) {
+                            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";}
+                            //Clean up the $stmt after use
+                            mysqli_stmt_close($stmt);
+                        } else {
+                            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";
+                        }
+                        header("Location: story0.php");
+                    }  
+                    echo("</form>");
+                }else{
+                    if($currentLevel < 5){
+                        ?>
+                        <form method="post">
+                        <input class="startBtn" type="submit" name="play" value="Continue">
+                        <?php
+                        if(isset($_POST['play'])){
+                            header("Location: challenge_". ($currentLevel + 1)."/");
+                        }  
+                        echo("</form>");
+                    }else{
+                        ?>
+                        <form method="post">
+                        <input class="startBtn" type="submit" name="play" value="Start anew">
+                        <p>This will reset your progress, your best time will be kept.</p>
+                        <?php
+                        if(isset($_POST['play'])){
+                            $SQLstring = "UPDATE " . $db_table . " SET currentlevel='0',endTime='0000-00-00 00:00:00' WHERE userName='".$_SESSION['userName']."'";
+                            if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                                $QueryResult = mysqli_stmt_execute($stmt);
+                                if ($QueryResult === FALSE) {
+                                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                    . "<p>Error code "
+                                    . mysqli_errno($DBConnect)
+                                    . ": "
+                                    . mysqli_error($DBConnect)
+                                    . "</p></span>";}
+                                    //Clean up the $stmt after use
+                                    mysqli_stmt_close($stmt);
+                                } else {
+                                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                    . "<p>Error code "
+                                    . mysqli_errno($DBConnect)
+                                    . ": "
+                                    . mysqli_error($DBConnect)
+                                    . "</p></span>";
+                                }
+                                 header("Location: story0.php");
+                            }
+                        }
+                        echo("</form>");
+                    }      
+            }
+                
+            ?>
         </div>
         <div class="top_right-box">
             <img src="images/hacker-illustration.png" alt="illustration">
@@ -141,7 +247,6 @@
             </div>
         </div>
     </div>
-    z
     <div class="separate-bar">
     </div>
     <div class="bottom-box">
