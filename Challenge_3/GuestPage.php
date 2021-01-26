@@ -19,28 +19,23 @@
     <?php include '../footer.php';?>
 <body>
     <?php
-    $dummyUserId = "25213";
     $dummyAuthToken = "d9gdsn0v51gqwezgj";
     $currentRole = "invalid";
 
     if(isset($_POST['guestSubmit'])){
         $expire = time()+3600;
         setcookie("role", "guest", $expire);
-        setcookie("user_id", $dummyUserId, $expire);
         setcookie("auth_token", $dummyAuthToken, $expire);
         header('Location: GuestPage.php');
 	}
 
     if(isset($_POST['logoutButton'])){
         setcookie("role", null, -1);
-        setcookie("user_id", null, -1);
         setcookie("auth_token", null, -1);
 	}
-    
-    if(isset($_COOKIE["role"]) && isset($_COOKIE["user_id"]) && isset($_COOKIE["auth_token"]) && !isset($_POST['logoutButton'])){
+    isset($_COOKIE["auth_token"]) && !isset($_POST['logoutButton'])){
         $role = $_COOKIE["role"];
         $role = strtoLower($role);
-        $userId = $_COOKIE["user_id"];
         $authToken = $_COOKIE["auth_token"];
     
         if($userId == $dummyUserId && $authToken == $dummyAuthToken){
