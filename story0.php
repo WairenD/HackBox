@@ -44,31 +44,6 @@
               . mysqli_error($DBConnect)
               . "</p></span>";
       }
-      if($currentLevel==0){
-        $currentLevel=1;
-        $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
-        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-          $QueryResult = mysqli_stmt_execute($stmt);
-          if ($QueryResult === FALSE) {
-            $errorMsg = "<span><p>Unable to execute the query.</p>"
-              . "<p>Error code "
-              . mysqli_errno($DBConnect)
-              . ": "
-              . mysqli_error($DBConnect)
-              . "</p></span>";}
-              else{
-              }
-          //Clean up the $stmt after use
-          mysqli_stmt_close($stmt);
-        } else {
-          $errorMsg = "<span><p>Unable to execute the query.</p>"
-            . "<p>Error code "
-            . mysqli_errno($DBConnect)
-            . ": "
-            . mysqli_error($DBConnect)
-            . "</p></span>";
-        }
-      }
        ?>
         <nav>
             <div class="wrapper">
@@ -138,7 +113,7 @@
         <span class="textLeftSpace"></span>
       </div>
       <div class="rightTextDiv">
-        <p style="margin-top:-40px;" class="textRight">Svenja: Dimitri Valentine, was it? I’ve read your file… if I remember correctly, there were notes left that described you as “, chatty, inappropriately boisterous, has no regard for personal space, and overly confident in his abilities.” </p>
+        <p style="margin-top:-40px;" class="textRight">Svenja: Dimitri Valentine, was it? I’ve read your file… if I remember correctly, there were notes left that described you as “chatty, inappropriately boisterous, has no regard for personal space, and overly confident in his abilities.” </p>
         <span class="textRightSpace"></span>
       </div>
       <div class="leftTextDiv">

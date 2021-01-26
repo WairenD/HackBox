@@ -2,16 +2,26 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     background-image: url("../images/bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+a, a:active {
+    color: deepskyblue;
+}
+
+p{
+    color: white;
+}
+
 .container {
     width: 40%;
     margin: 0 auto;
-    height: 75vh;
+    height: 85vh;
     background-color: #434343;
     padding: 10px;
 }

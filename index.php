@@ -130,14 +130,7 @@
             </div>
             <div class="middle-lower_right_box">
                 <h1>About the challenges</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent a urna rhoncus, maximus dolor ac, commodo
-                    arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
-                    scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit. A lectus
-                    lacus.
-                    Nulla suscipit ultrices
-                    scelerisque. A lectus lacus. Nulla suscipit ultrices
-                    scelerisque. </p>
+                <p>Step into the world of ethical hacking, learn about various techniques used by hackers like cross site scripting, injection attacks, priviledge escalation and more! Complete all five challenges and get to the top of the leaderboard with record times.<br/> Do you have it in you to become a master ethical hacker?</p>
                 <br>
                 <a href="register.php">
                     <div class="play-bttn">
@@ -157,11 +150,7 @@
         </div>
         <div class="bottom-center_box">
             <h1>FEELING LOST?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent a urna rhoncus, maximus dolor ac, commodo
-                arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
-                scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit.
-                scelerisque. </p>
+            <p>Don't worry, your assistant Dimitri will be there to help you throughout the challenges. Offering hints and guiding your way to the end. Just click on him to recieve a helpful hint. Do you have questions Dimitri can't help you with? Feel free to contact the team, you can find our contact information in the about page.</p>
         </div>
         <div class="bottom-right_box">
             <img src="images/assistant2.png" alt="assistant2">

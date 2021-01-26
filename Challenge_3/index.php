@@ -25,9 +25,6 @@
         $errorMsg = "";
         include("../connection.php");
         session_start();
-        if(!isset($_SESSION['userName'])){
-            header("Location: ../index.php");
-        }
         $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
         if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
             mysqli_stmt_execute($stmt);
@@ -54,6 +51,9 @@
                 . ": "
                 . mysqli_error($DBConnect)
                 . "</p></span>";
+        }
+        if($currentLevel<2 || !isset($_SESSION['userName'])){
+          header("Location: index.php");
         }
             ?>
             <nav>
@@ -129,13 +129,13 @@
         setcookie("user_id", null, -1);
         setcookie("auth_token", null, -1);
 	}
-    
+
     if(isset($_COOKIE["role"]) && isset($_COOKIE["user_id"]) && isset($_COOKIE["auth_token"]) && !isset($_POST['logoutButton'])){
         $role = $_COOKIE["role"];
         $role = strtoLower($role);
         $userId = $_COOKIE["user_id"];
         $authToken = $_COOKIE["auth_token"];
-    
+
         if($userId == $dummyUserId && $authToken == $dummyAuthToken){
             switch($role){
                 case "guest":
@@ -172,13 +172,38 @@
                 echo('<div class="headerItem">
                 <p><a href="../story3.php" class="welcomeText">User Search</a></p>
                 </div>');
+                if($currentLevel==2){
+                 $currentLevel=3;
+                 $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
+                 if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                   $QueryResult = mysqli_stmt_execute($stmt);
+                   if ($QueryResult === FALSE) {
+                     $errorMsg = "<span><p>Unable to execute the query.</p>"
+                       . "<p>Error code "
+                       . mysqli_errno($DBConnect)
+                       . ": "
+                       . mysqli_error($DBConnect)
+                       . "</p></span>";}
+                       else{
+                       }
+                   //Clean up the $stmt after use
+                   mysqli_stmt_close($stmt);
+                 } else {
+                   $errorMsg = "<span><p>Unable to execute the query.</p>"
+                     . "<p>Error code "
+                     . mysqli_errno($DBConnect)
+                     . ": "
+                     . mysqli_error($DBConnect)
+                     . "</p></span>";
+                 }
+               }
 			}
 
             if($currentRole == "guest"){
                 echo('<div class="headerItem">
                 <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
                 </div>');
-                
+
                 echo('<div class="headerItem">
                 <p class="welcomeText">Welcome guest</p>
                 </div>');
@@ -186,13 +211,13 @@
         ?>
     </div>
     <div class="Container">
-        
-        <?php 
+
+        <?php
             if($currentRole == "guest" || $currentRole == "admin"){
                 echo('
                     <div class="selectOneDiv"><h2 class="headerText">User already logged in</h2></div>
                     <form action="index.php" method="POST" class="form">
-                    
+
                         <div class="logout">
                             <div class="optionLogin">
                                 <p class="formDetail">Do you wish to logout?</p>
@@ -205,8 +230,8 @@
 
                 exit();
 			}
-            
-            
+
+
         ?>
         <div class="selectOneDiv"><h2 class="headerText">Select one</h2> </div>
         <form action="index.php" method="POST" class="form">
@@ -220,22 +245,22 @@
                 <input type="password" placeholder="Password" />
                 <p class="formDetail"><input name="adminSubmit" type="submit" value="Sign in as admin" /></p>
             </div>
-            
-            
+
+
         </form>
-        <div class="ErrorMessages">
+        <div class="errorMessages">
             <?php
             if(isset($_POST['adminSubmit'])){
                         echo('<p class="error">Username and password combination incorrect</p>');
 	                }
             if($currentRole == "invalid"){
-                echo('<p class="error">Authorisation token or used id is incorrect</p>'); 
+                echo('<p class="error">Authorisation token or used id is incorrect</p>');
 			}elseif($currentRole == "invalidRole"){
-                echo('<p class="error">Invalid role set</p>'); 
+                echo('<p class="error">Invalid role set</p>');
 			}
             ?>
         </div>
-        
+
     </div>
     <div id="hint"> </div>
         <div id="assistant">

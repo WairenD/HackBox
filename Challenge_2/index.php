@@ -20,9 +20,6 @@
         $errorMsg = "";
         include("../connection.php");
         session_start();
-        if(!isset($_SESSION['userName'])){
-          header("Location: ../index.php");
-        }
         $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
         if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
             mysqli_stmt_execute($stmt);
@@ -49,6 +46,9 @@
                 . ": "
                 . mysqli_error($DBConnect)
                 . "</p></span>";
+        }
+        if($currentLevel<1 || !isset($_SESSION['userName'])){
+          header("Location: ../index.php");
         }
          ?>
           <nav>
@@ -104,6 +104,31 @@
                             $password = $_POST['password'];
                             if (!empty($username) && !empty($password)) {
                                 if ($username == "bruteforce" && $password == "9OXEMTG") {
+                                  if($currentLevel==1){
+                                    $currentLevel=2;
+                                    $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
+                                    if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                                      $QueryResult = mysqli_stmt_execute($stmt);
+                                      if ($QueryResult === FALSE) {
+                                        $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                          . "<p>Error code "
+                                          . mysqli_errno($DBConnect)
+                                          . ": "
+                                          . mysqli_error($DBConnect)
+                                          . "</p></span>";}
+                                          else{
+                                          }
+                                      //Clean up the $stmt after use
+                                      mysqli_stmt_close($stmt);
+                                    } else {
+                                      $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                        . "<p>Error code "
+                                        . mysqli_errno($DBConnect)
+                                        . ": "
+                                        . mysqli_error($DBConnect)
+                                        . "</p></span>";
+                                    }
+                                  }
                                     header("Location: ../story2.php");
                                 } else {
                                     echo '<p class="errorText">Incorrect username or password!</p>';
