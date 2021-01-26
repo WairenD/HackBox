@@ -149,7 +149,7 @@
             }
         }
        ?>
-    </div
+    </div>
     <script type="text/javascript" src="js/item.js"></script>
     <script type="text/javascript" src="js/Challenge4.js"></script>
 </body>
