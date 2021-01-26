@@ -417,6 +417,28 @@ td:hover{
 	font-weight: bold;
 	background-color: #303133;
 }
+
+.startBtn {
+	width: 400px;
+	height: 70px;
+	margin: 10px;
+	margin-left: 100px;
+	color: #242526;
+	font-size: 25px;
+	font-weight: normal;
+	background-color: #f0380e;
+	transition: 0.1s;
+	border-radius: 10px;
+	border: none;
+}
+
+.startBtn:hover {
+	cursor: pointer;
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #e22e0a;
+}
+
 /*END LEADERBOARDS CSS*/
 /*START STORY CSS*/
 .mainText{
@@ -549,10 +571,12 @@ td:hover{
 	color: orangered;
 }
 .aboutUs p{
-	padding: 10px;
+	padding: 20px;
 	color: white;
 	font-size: 25px;
 	text-align: justify;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 .contactList{
 	float: right;
@@ -751,17 +775,18 @@ td:hover{
 	color: black;
 	margin-left: 50px;
 }
-.middle-right_box{
-	float:left;
-	background-color:dodgerblue;
+.middle-right_box {
+	float: left;
+	background-color: #f0592a;
 	width: 25.33%;
-	height:100%;
+	height: 100%;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 .middle-right_box img{
 	width: 100%;
 	height: 100%;
+	object-fit: contain;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -843,13 +868,14 @@ td:hover{
 }
 .bottom-left_box{
 	float: left;
-	background-color:purple;
+	background-color:black;
 	width:33.33%;
 	height:100%;
 }
-.bottom-left_box img{
-	width:100%;
-	height:100%;
+.bottom-left_box img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 .bottom-center_box{
 	background-color: black;
@@ -872,13 +898,14 @@ td:hover{
 }
 .bottom-right_box{
 	float: left;
-	background-color:cadetblue;
+	background-color:black;
 	width:33.33%;
 	height:100%;
 }
-.bottom-right_box img{
-	width:100%;
-	height:100%;
+.bottom-right_box img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -996,11 +1023,11 @@ td:hover{
 		color: black;
 		margin-left: 25px;
 	}
-	.middle-right_box{
-		float:left;
-		background-color:dodgerblue;
+	.middle-right_box {
+		float: left;
+		background-color: #f0592a;
 		width: 32.33%;
-		height:100%;
+		height: 100%;
 		border-top-right-radius: 10px;
 		border-bottom-right-radius: 10px;
 	}
@@ -1086,7 +1113,7 @@ td:hover{
 	}
 	.bottom-left_box{
 		float: left;
-		background-color:purple;
+		background-color:black;
 		width:33.33%;
 		height:100%;
 	}
@@ -1113,11 +1140,11 @@ td:hover{
 		line-height: 25px;
 		color: white;
 	}
-	.bottom-right_box{
+	.bottom-right_box {
 		float: left;
-		background-color:cadetblue;
-		width:33.33%;
-		height:100%;
+		background-color: black;
+		width: 33.33%;
+		height: 100%;
 	}
 	.bottom-right_box img{
 		width:100%;

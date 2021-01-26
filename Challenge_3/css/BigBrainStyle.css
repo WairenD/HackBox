@@ -17,6 +17,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 p, h1, h2,h3{
     color:white;
@@ -28,11 +29,17 @@ p, h1, h2,h3{
     font-size: calc(10px + 6 * ((100vw - 320px) / 680));
     float:left;
 }
-h1, h2,h3{
+.headerText{
     font-family: "Agency FB", "Arial", sans-serif;
     text-align: center;
 }
-h3{
+
+.selectOneDiv{
+    text-align:center;
+    width:75%;
+    
+}
+h3 {
     text-align: left;
     font-size: 25px;
 }
@@ -62,7 +69,17 @@ h2{
     float: left;
     width: 15%;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.backText {
+    width: 15%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .photo{
     padding-top: 5%;
     width: 90%;
@@ -82,19 +99,19 @@ h2{
     margin-left: 15%;
     margin-right: 15%;
     width:70%;
-    height: 120vh;
+    height: 90vh;
     background-color: #434343;
 }
 .Container{
     margin-left: 15%;
     margin-right: 15%;
     width:70%;
-    height: 90vh;
+    height: 70vh;
     background-color: #434343;
 }
 .textInfo{
     margin:0 auto;
-    width: 90%;
+    width: 90%; 
     height:860px;
 }
 .containerBox{
@@ -113,7 +130,7 @@ h2{
 }
 
 .form{
-    height:50%;
+    height:70%;
     float:left;
     width: 100%;
 }

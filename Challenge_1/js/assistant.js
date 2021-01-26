@@ -1,11 +1,7 @@
 const a = [
-    "HINT 1",
-    "HINT 2 Lorem Ipsum",
-    "HINT 3",
-    "HINT 4",
-    "HINT 5.",
-    "HINT 6.",
-    "HINT 7.",
+    "You should look at Dewitt Minerva's profile maybe you can find something there.",
+    "Hmm sometimes people will use a thing that they won't forget as a password.",
+    "The her birthday seems like the right candidate for this."
 ];
 
 var hints=0;

@@ -9,93 +9,121 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Welcome to Project HackBox 2.0</title>
 </head>
-
+<?php include 'header.php';?>
+<?php include 'footer.php';?>
 <body>
-<header>
-    <?php
-    session_start();
-    $errorMsg = "";
-    include("connection.php");
-    if (isset($_SESSION['userName'])) {
-        $SQLstring = "SELECT currentLevel FROM " . $db_table . " WHERE userName='" . $_SESSION['userName'] . "'";
-        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-            mysqli_stmt_execute($stmt);
-            mysqli_stmt_bind_result($stmt, $currentLevel);
-            mysqli_stmt_store_result($stmt);
-            if ($stmt === FALSE) {
-                $errorMsg = "<span><p>Unable to execute the query.</p>"
-                    . "<p>Error code "
-                    . mysqli_errno($DBConnect)
-                    . ": "
-                    . mysqli_error($DBConnect)
-                    . "</p></span>";
-            } else {
-                while (mysqli_stmt_fetch($stmt)) {
-                    $challenge = $currentLevel;
-                }
-            }
-            //Clean up the $stmt after use
-            mysqli_stmt_close($stmt);
-        } else {
-            $errorMsg = "<span><p>Unable to execute the query.</p>"
-                . "<p>Error code "
-                . mysqli_errno($DBConnect)
-                . ": "
-                . mysqli_error($DBConnect)
-                . "</p></span>";
-        }
-    }
-    ?>
-    <nav>
-        <div class="wrapper">
-            <div class="logo"><a href="./">HACKBOX</a></div>
-            <input type="radio" name="slider" id="menu-btn">
-            <input type="radio" name="slider" id="close-btn">
-            <ul class="nav-links">
-                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./about.php">About</a></li>
-                <li>
-                    <a href="#" class="desktop-item">Challenges</a>
-                    <input type="checkbox" id="showDrop">
-                    <label for="showDrop" class="mobile-item">Challenges</label>
-                    <ul class="drop-menu">
-                        <?php
-                        if (isset($currentLevel)) {
-                            for ($i = 0; $i < $currentLevel; $i++) {
-                                echo '<li><a href="./Challenge_' . ($i + 1) . '">Challenge ' . ($i + 1) . '</a></li>';
-                            }
-                        }
-                        ?>
-                    </ul>
-                </li>
-                <li><a href="./leaderboards.php">Leaderboards</a></li>
-                <?php
-                if (isset($_SESSION['userName'])) {
-                    echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
-                     <input type="checkbox" id="showDrop">
-                     <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
-                     <ul class="drop-menu">
-                      <li><a href="./logout.php">Log Out</a></li>
-                     </ul></li>';
-                } else {
-                    echo '<li><a href="./login.php">Login</a></li>
-                <li><a href="./register.php">Register</a></li>';
-                }
-                ?>
-            </ul>
-            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-        </div>
-    </nav>
-</header>
-
-
 <div class="landing-page-body">
     <div class="top-box">
         <div class="top_left-box">
             <h2>Discover new bounderies</h2>
             <h1>ETHICAL HACKING<br>CHALLENGES</h1>
             <p>Learn and gather data, <br>defeat the hacker with exciting tasks.</p>
+            <?php
+            if(isset($_SESSION['userName'])){
+                $errorMsg = "";
+                include("connection.php");
+                session_start();
+                $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
+                if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_bind_result($stmt, $currentLevel);
+                    mysqli_stmt_store_result($stmt);
+                    if ($stmt === FALSE) {
+                        $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";
+                    } else {
+                        while (mysqli_stmt_fetch($stmt)) {
+                            $challenge = $currentLevel;
+                        }
+                    }
+                    //Clean up the $stmt after use
+                    mysqli_stmt_close($stmt);
+                } else {
+                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                        . "<p>Error code "
+                        . mysqli_errno($DBConnect)
+                        . ": "
+                        . mysqli_error($DBConnect)
+                        . "</p></span>";
+                }
+                if($currentLevel == 0){
+                    ?>
+                    <form method="post">
+                    <input class="startBtn" type="submit" name="play" value="Start">
+                    <?php
+                    if(isset($_POST['play'])){
+                        $SQLstring = "UPDATE " . $db_table . " SET currentlevel='0',endTime='0000-00-00 00:00:00' WHERE userName='".$_SESSION['userName']."'";
+                        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                            $QueryResult = mysqli_stmt_execute($stmt);
+                            if ($QueryResult === FALSE) {
+                            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";}
+                            //Clean up the $stmt after use
+                            mysqli_stmt_close($stmt);
+                        } else {
+                            $errorMsg = "<span><p>Unable to execute the query.</p>"
+                            . "<p>Error code "
+                            . mysqli_errno($DBConnect)
+                            . ": "
+                            . mysqli_error($DBConnect)
+                            . "</p></span>";
+                        }
+                        header("Location: story0.php");
+                    }  
+                    echo("</form>");
+                }else{
+                    if($currentLevel < 5){
+                        ?>
+                        <form method="post">
+                        <input class="startBtn" type="submit" name="play" value="Continue">
+                        <?php
+                        if(isset($_POST['play'])){
+                            header("Location: challenge_". ($currentLevel + 1)."/");
+                        }  
+                        echo("</form>");
+                    }else{
+                        ?>
+                        <form method="post">
+                        <input class="startBtn" type="submit" name="play" value="Start anew">
+                        <p>This will reset your progress, your best time will be kept.</p>
+                        <?php
+                        if(isset($_POST['play'])){
+                            $SQLstring = "UPDATE " . $db_table . " SET currentlevel='0',endTime='0000-00-00 00:00:00' WHERE userName='".$_SESSION['userName']."'";
+                            if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                                $QueryResult = mysqli_stmt_execute($stmt);
+                                if ($QueryResult === FALSE) {
+                                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                    . "<p>Error code "
+                                    . mysqli_errno($DBConnect)
+                                    . ": "
+                                    . mysqli_error($DBConnect)
+                                    . "</p></span>";}
+                                    //Clean up the $stmt after use
+                                    mysqli_stmt_close($stmt);
+                                } else {
+                                    $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                    . "<p>Error code "
+                                    . mysqli_errno($DBConnect)
+                                    . ": "
+                                    . mysqli_error($DBConnect)
+                                    . "</p></span>";
+                                }
+                                 header("Location: story0.php");
+                            }
+                        }
+                        echo("</form>");
+                    }      
+            }
+                
+            ?>
         </div>
         <div class="top_right-box">
             <img src="images/hacker-illustration.png" alt="illustration">
@@ -130,14 +158,7 @@
             </div>
             <div class="middle-lower_right_box">
                 <h1>About the challenges</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent a urna rhoncus, maximus dolor ac, commodo
-                    arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
-                    scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit. A lectus
-                    lacus.
-                    Nulla suscipit ultrices
-                    scelerisque. A lectus lacus. Nulla suscipit ultrices
-                    scelerisque. </p>
+                <p>Step into the world of ethical hacking, learn about various techniques used by hackers like cross site scripting, injection attacks, priviledge escalation and more! Complete all five challenges and get to the top of the leaderboard with record times.<br/> Do you have it in you to become a master ethical hacker?</p>
                 <br>
                 <a href="register.php">
                     <div class="play-bttn">
@@ -148,7 +169,6 @@
             </div>
         </div>
     </div>
-    z
     <div class="separate-bar">
     </div>
     <div class="bottom-box">
@@ -157,34 +177,13 @@
         </div>
         <div class="bottom-center_box">
             <h1>FEELING LOST?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent a urna rhoncus, maximus dolor ac, commodo
-                arcu. Nullam<br>a lectus lacus. Nulla suscipit ultrices
-                scelerisque.<br>Nulla non nisi id elit pulvinar dictum, consectetur adipiscing elit.
-                scelerisque. </p>
+            <p>Don't worry, your assistant Dimitri will be there to help you throughout the challenges. Offering hints and guiding your way to the end. Just click on him to recieve a helpful hint. Do you have questions Dimitri can't help you with? Feel free to contact the team, you can find our contact information in the about page.</p>
         </div>
         <div class="bottom-right_box">
             <img src="images/assistant2.png" alt="assistant2">
         </div>
     </div>
 </div>
-<footer>
-    <div class="main-content">
-        <div class="center box">
-            <h2>Location</h2>
-            <div class="content">
-                <div class="place">
-                    <span class="fas fa-map-marker-alt"></span>
-                    <span class="text">NHL Stenden</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bottom">
-        <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-        <span class="far fa-copyright"></span> 2020 All rights reserved.
-        <span><a href="./privacy_policy.php">Privacy Policy</a></span>
-    </div>
-</footer>
+
 </body>
 </html>

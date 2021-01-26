@@ -14,84 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
+<?php include '../header.php';?>
+<?php include '../footer.php';?>
 <body>
-  <header>
-    <?php
-    $errorMsg = "";
-    include("../connection.php");
-    session_start();
-    if(!isset($_SESSION['userName'])){
-      header("Location: ../index.php");
-    }
-    $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
-    if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $currentLevel);
-        mysqli_stmt_store_result($stmt);
-        if ($stmt === FALSE) {
-            $errorMsg = "<span><p>Unable to execute the query.</p>"
-                . "<p>Error code "
-                . mysqli_errno($DBConnect)
-                . ": "
-                . mysqli_error($DBConnect)
-                . "</p></span>";
-        } else {
-            while (mysqli_stmt_fetch($stmt)) {
-                $challenge = $currentLevel;
-            }
-        }
-        //Clean up the $stmt after use
-        mysqli_stmt_close($stmt);
-    } else {
-        $errorMsg = "<span><p>Unable to execute the query.</p>"
-            . "<p>Error code "
-            . mysqli_errno($DBConnect)
-            . ": "
-            . mysqli_error($DBConnect)
-            . "</p></span>";
-    }
-     ?>
-      <nav>
-          <div class="wrapper">
-              <div class="logo"><a href="./">HACKBOX</a></div>
-              <input type="radio" name="slider" id="menu-btn">
-              <input type="radio" name="slider" id="close-btn">
-              <ul class="nav-links">
-                  <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                  <li><a href="../index.php">Home</a></li>
-                  <li><a href="../about.php">About</a></li>
-                  <li>
-                      <a href="#" class="desktop-item">Challenges</a>
-                      <input type="checkbox" id="showDrop">
-                      <label for="showDrop" class="mobile-item">Challenges</label>
-                      <ul class="drop-menu">
-                        <?php
-                        for($i = 0;$i<$currentLevel;$i++){
-                          echo '<li><a href="../Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
-                        }
-                        ?>
-                      </ul>
-                  </li>
-                  <li><a href="../leaderboards.php">Leaderboards</a></li>
-                  <?php
-                  if (isset($_SESSION['userName'])) {
-                      echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
-                       <input type="checkbox" id="showDrop">
-                       <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
-                       <ul class="drop-menu">
-                        <li><a href="../logout.php">Log Out</a></li>
-                       </ul></li>';
-                  }
-                  ?>
-              </ul>
-              <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-          </div>
-      </nav>
-  </header>
     <div class="container">
         <div class="title">
             <h1>Challenge 4</h1>
         </div>
+        <div class="sqlContainer">
         <div id="item-list"></div>
         <div id='search'>
             <div class="search-input">
@@ -113,12 +43,12 @@
                 <div class="target-group-slot">
                     <div class="target-slot item"></div>
                 </div>
+                <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
             </div>
-            <input type="button" name='submit' value="↵" class="submit-button" onclick="submitAnswer()">
         </div>
-
         <?php
         $output = checkAnswer();
+        $rightAnswer = false;
         if(isset($output) && isset($output[0]) && isset($output[1])){
             if($output[0] == 1){
                 $q = $output[1];
@@ -126,7 +56,7 @@
                 $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
                 if ($db->multi_query($q)) {
                     ?>
-                    <table>
+                    <table class="tableOfContent">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -138,8 +68,12 @@
                         if ($result = $db->store_result()) {
                             if(mysqli_num_rows($result)==0)
                             {
-                                echo 'User not found.';
-					        }
+                                if(isset($output[2])){
+                                    echo "<p class='errorTextSql'>'User '. $output[2] .' not found.'";
+                                }else{
+                                    echo "<p class='errorTextSql'>User not found.";
+                                }
+                            }
                             $i = 0;
                             while ($row = $result->fetch_row()) {
                                 if($i>4){break;}
@@ -147,28 +81,56 @@
                                 echo '<td>' . $row[0] . '</td>';
                                 echo '<td>' . $row[1] . '</td>';
                                 echo '<td>' . $row[2] . '</td>';
-                                echo '<td>' . $row[3] . '</td>';
+                                if($row[2] == 2){
+                                    $rightAnswer = true;
+                                    echo '<td><a href="../story4.php">'. $row[3]. '</a></td>';
+                                    if($currentLevel==3){
+                                     $currentLevel=4;
+                                     $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
+                                     if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+                                       $QueryResult = mysqli_stmt_execute($stmt);
+                                       if ($QueryResult === FALSE) {
+                                         $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                           . "<p>Error code "
+                                           . mysqli_errno($DBConnect)
+                                           . ": "
+                                           . mysqli_error($DBConnect)
+                                           . "</p></span>";}
+                                           else{
+                                           }
+                                       //Clean up the $stmt after use
+                                       mysqli_stmt_close($stmt);
+                                     } else {
+                                       $errorMsg = "<span><p>Unable to execute the query.</p>"
+                                         . "<p>Error code "
+                                         . mysqli_errno($DBConnect)
+                                         . ": "
+                                         . mysqli_error($DBConnect)
+                                         . "</p></span>";
+                                     }
+                                 }
+                                }else{
+                                    echo '<td>' . $row[3] . '</td>';
+                                }
+
                                 echo '</tr>';
                                 $i++;
                             }
                             $result->free();
                         }
-                    
+
 
                     } while ($db->next_result());
                     echo '</table>';
                     if ($i>4) {
-                        echo("And 10.000 more rows \n");
+                        echo("<p>And 10.000 more rows</p>");
                     }
                 }
             }
         }
-        
-        
     ?>
-
     </div>
-    
+    </div>
 
     <div id="hint"></div>
     <div id="assistant">
@@ -177,29 +139,17 @@
         if(isset($output[0])){
             if($output[0] == -1){
                 echo '<script>getHintWithInput("' . $output[1] . '"); </script>';
+            }elseif($output[0] == 1){
+                if($rightAnswer){
+                    echo '<script>getHintWithInput("That&#39;s it! The hacker is online, go have a chat with him and see if you can find more about his plans");</script>';
+                }else{
+                    echo '<script>getHintWithInput("That query was valid");</script>';
+                }
+
             }
         }
        ?>
-    </div>
-
-    <footer>
-        <div class="main-content">
-            <div class="center box">
-                <h2>Location</h2>
-                <div class="content">
-                    <div class="place">
-                        <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">NHL Stenden</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom">
-            <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-            <span class="far fa-copyright"></span> 2020 All rights reserved.
-            <span><a href="./privacy_policy.php">Privacy Policy</a></span>
-        </div>
-    </footer>
+    </div
     <script type="text/javascript" src="js/item.js"></script>
     <script type="text/javascript" src="js/Challenge4.js"></script>
 </body>
@@ -248,7 +198,6 @@
                     if($inputArray[$i] != 0)
                     {
                         $error = "Submited answer has dublicate values";
-                        $isValidQuery = false;
                         return array(-1, $error);
 					}
 
@@ -256,9 +205,8 @@
                 //check for invalid values like negative numbers
                 if($inputArray[$i] > MAX_ENTITIES || $inputArray[$i] < 0)
                 {
-                    echo("Submited answer has invalid values");
-                    $isValidQuery = false;
-                    continue;
+                    $error = "Submited answer has invalid values";
+                    return array(-1, $error);
 				}
                 //check how each value will be read by the mock sql command
                 if($inputArray[$i] == 0)
@@ -313,7 +261,7 @@
             //check if the amount of quotes at the end of the query is even or uneven
             if($amountOfQuotes % 2 == 1)
             {
-               $error = "<br> One of the quotes is not properly  closed";
+               $error = "One of the quotes is not properly closed, try adding more quotes or removing the last quote with ;--";
                $isValidQuery = false;
                return array(-1, $error);
 			}
@@ -323,7 +271,7 @@
             {
                 if($inputTypeArray[$positionOfTwo] == "quote")
                 {
-                    $error = "<br> Unclosed bracket";
+                    $error = "Unclosed bracket, try adding or removing one bracket";
                     $isValidQuery = false;
                     return array(-1, $error);
 				}
@@ -350,7 +298,7 @@
                     {
                         if($isOperatorSet)
                         {
-                            $error = "<br> invalid query";
+                            $error = "invalid query";
                             return array(-1, $error);
 						}
                         else
@@ -364,7 +312,7 @@
                     {
                         if(!$isOperatorSet)
                         {
-                            echo("<br> invalid query");
+                            echo("invalid query");
                             //return -1;
 						}
                         else
@@ -389,10 +337,10 @@
                         );
                         break;
                     default:
-                        $error = "<br> invalid query";
+                        $error = "invalid query";
                         return array(-1, $error);
 				}
-                return array(1, $q);
+                return array(1, $q, $searchQuery);
 			}
             /**
             1: ")
@@ -405,4 +353,3 @@
         }
     }
 ?>
-
