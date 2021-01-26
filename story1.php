@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <title>HACKBOX MAIN</title>
+    </head>
     <?php include 'header.php';?>
     <?php include 'footer.php';?>
+    <body>
     <img width="15%" height="15%" class="charImg1" src="images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
       <div class="rightTextDiv">
