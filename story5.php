@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="stylesheet" href="/Hackbox/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="/Hackbox/images/favicon-32x32.png">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>HACKBOX MAIN</title>
     </head>
@@ -12,7 +12,7 @@
     <?php include 'footer.php';?>
   <body>
        <div class="errorDiv"><?php echo $errorMsg ?></div>
-    <img width="15%" height="15%" class="charImg1" src="images/assisstant_full_body.png" alt="char1">
+    <img width="15%" height="15%" class="charImg1" src="/Hackbox/images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
       <div class="rightTextDiv">
         <p style="margin-top:20px; background-color:#CC10BC" class="textRight">Samira: Samira Grace reporting live from just outside Shiny Tech Towers where the scene is something of a chaos. We have confirmation that Mr. Martin Maurice van Braam, CEO of Shiny Tech inc, owner of Shiny Tech Labs and president of Shiny Tech Industries has in fact been murdered this day. The individual responsible for this violent act was found at the scene of the crime and willingly went into police custody. This individual initially identified themselves as Manifest, but later gave the name Addison Blue. This is significant due to Addison Blue being the son of the late Mr. Elliott Blue. Mr. Blue and his wife were found dead in their luxury apartment, an assassination it had seemed, and young Addisson Blue, then only 6 years old, had gone missing… </p>
@@ -109,6 +109,6 @@
         <a href="leaderboards.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="END"></a>
       </div>
     </div>
-    <img width="15%" height="15%" class="charImg2" src="images/detective_full_body.png" alt="char2">
+    <img width="15%" height="15%" class="charImg2" src="/Hackbox/images/detective_full_body.png" alt="char2">
   </body>
 </html>

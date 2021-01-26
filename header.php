@@ -56,7 +56,7 @@
                         ?>
                     </ul>
                 </li>
-                <li><a href="/leaderboards.php">Leaderboards</a></li>
+                <li><a href="/Hackbox/leaderboards.php">Leaderboards</a></li>
                 <?php
                 if (isset($_SESSION['userName'])) {
                     echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
