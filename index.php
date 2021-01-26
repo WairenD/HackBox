@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>HACKBOX MAIN</title>
+    <title>Welcome to Project HackBox 2.0</title>
 </head>
 
 <body>
