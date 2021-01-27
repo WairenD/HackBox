@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
 </head>
-<?php include '../header.php';?>
+<?php include '../header2.php';?>
 <?php include '../footer.php';?>
 <body>
         <div class="container">
@@ -32,7 +32,7 @@
                             $password = $_POST['password'];
                             if (!empty($username) && !empty($password)) {
                                 if ($username == "bruteforce" && $password == "9OXEMTG") {
-                                  if($currentLevel==1){
+                                      if($currentLevel==1){
                                     $currentLevel=2;
                                     $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
                                     if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {

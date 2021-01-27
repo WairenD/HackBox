@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 1</title>
   </head>
-  <?php include '../header.php';?>
+  <?php include '../header2.php';?>
   <?php include '../footer.php';?>
   <body>
     <?php

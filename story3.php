@@ -3,15 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/Hackbox/main.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="/Hackbox/images/favicon-32x32.png">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>HACKBOX MAIN</title>
     </head>
     <?php include 'header.php';?>
     <?php include 'footer.php';?>
   <body>
-    <img width="15%" height="15%" class="charImg1" src="/Hackbox/images/assisstant_full_body.png" alt="char1">
+    <img width="15%" height="15%" class="charImg1" src="./images/assisstant_full_body.png" alt="char1">
     <div class="mainText">
       <div class="leftTextDiv">
         <p style="margin-top:20px;" class="textLeft">Dimitri: Now that’s a funny thing, isn’t it? There’s logged data for Minerva Dewitt in here. You know Minerva Dewitt, don’t you? She was the daughter of Big Brain’s founders. Tragic story really. Her parents’ met a sudden and brutal end one evening, and then Minerva went missing and was never found. After a few years of searching and coming up empty-handed, they declared her legally dead. Spooky they have data for her here, don’t you think?</p>
@@ -77,6 +77,6 @@
         <a href="Challenge_4/index.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="Next Challenge"></a>
       </div>
     </div>
-    <img width="15%" height="15%" class="charImg2" src="/Hackbox/images/detective_full_body.png" alt="char2">
+    <img width="15%" height="15%" class="charImg2" src="./images/detective_full_body.png" alt="char2">
   </body>
 </html>
