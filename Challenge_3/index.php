@@ -71,6 +71,7 @@
         </div>
         <?php
             if($currentRole == "admin"){
+                echo('<script>getHintWithInput("Good job! You&#39;re now logged in as an admin. Go to the user search for the next challenge"</script>');
                 echo('<div class="headerItem">
                 <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
                 </div>');
@@ -133,9 +134,8 @@
                     </form>
                 ');
 
-
-                exit();
-			}
+			}else{
+                
 
 
         ?>
@@ -164,14 +164,20 @@
 			}elseif($currentRole == "invalidRole"){
                 echo('<p class="error">Invalid role set</p>');
 			}
+            }
             ?>
         </div>
 
     </div>
     <div id="hint"> </div>
-        <div id="assistant">
-            <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
-        </div>
+    <div id="assistant">
+        <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+    </div>
+    <?php
+    if($currentRole == 'admin'){
+        echo('<script>getHintWithInput("Good job! You&#39;re now logged in as an admin. Go to the user search for the next challenge")</script>');
+    }
+    ?>
 </body>
 
 </html>

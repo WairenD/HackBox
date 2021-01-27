@@ -67,7 +67,6 @@
         </div>
         <?php
             if($currentRole == "admin"){
-
                 echo('<div class="headerItem">
                 <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
                 </div>');
@@ -86,53 +85,60 @@
                 <p class="welcomeText">Welcome guest</p>
                 </div>');
 			}
-        ?>
-    </div>
-    <div class="main">
-        <?php 
-            if($currentRole == "invalid" || $currentRole == "none" || $currentRole == "invalidRole"){
-                echo('
-                    <h2 class="headerText">User not logged in</h2>
-                    <div class="backText">
-                        <p><a href="index.php" class="welcomeText">Back to role select</a></p>
-                    </div>
+            ?>
+        </div>
+        <div class="main">
+            <?php 
+                if($currentRole == "invalid" || $currentRole == "none" || $currentRole == "invalidRole"){
+                    echo('
+                        <h2 class="headerText">User not logged in</h2>
+                        <div class="backText">
+                            <p><a href="index.php" class="welcomeText">Back to role select</a></p>
+                        </div>
                    
-                ');
-                exit();
-			}
+                    ');
+			    }else{
+
+            
+            ?>
+            <div class="textInfo">
+                <div class="containerBox">
+                    <div class="infoText">
+                        <h3 class="headerText">We're here to help,not harm</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
+                            Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.
+                            Praesent facilisis dignissim iaculis.
+                            Mauris imperdiet finibus sapien, ut laoreet augue ultrices sit amet.</p>
+                    </div>
+                    <div class="image">
+                        <img src="images/code.jpg" class="photo">
+                    </div>
+                </div>
+                <div class="containerBox">
+                    <div class="image">
+                        <img src="images/helpDesk.jpg" class="photo">
+                    </div>
+                    <div class="infoText">
+                        <h3 class="headerText">We're here to help,not harm</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
+                            Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.
+                            Praesent facilisis dignissim iaculis.
+                            Mauris imperdiet finibus sapien, ut laoreet augue ultrices sit amet.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="hint"> </div>
+            <div id="assistant">
+                <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+            </div>
+            <?php
+            if($currentRole == 'admin'){
+                echo('<script>getHintWithInput("Good job! You&#39;re now logged in as an admin. Go to the user search for the next challenge")</script>');
+            }
+        }
         ?>
-        <div class="textInfo">
-            <div class="containerBox">
-                <div class="infoText">
-                    <h3 class="headerText">We're here to help,not harm</h3>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
-                        Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.
-                        Praesent facilisis dignissim iaculis.
-                        Mauris imperdiet finibus sapien, ut laoreet augue ultrices sit amet.</p>
-                </div>
-                <div class="image">
-                    <img src="images/code.jpg" class="photo">
-                </div>
-            </div>
-            <div class="containerBox">
-                <div class="image">
-                    <img src="images/helpDesk.jpg" class="photo">
-                </div>
-                <div class="infoText">
-                    <h3 class="headerText">We're here to help,not harm</h3>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nam vehicula pretium lorem vel venenatis. Aliquam tincidunt diam vel orci tristique scelerisque.
-                        Curabitur elementum arcu id dapibus malesuada. Quisque facilisis condimentum quam in pellentesque.
-                        Praesent facilisis dignissim iaculis.
-                        Mauris imperdiet finibus sapien, ut laoreet augue ultrices sit amet.</p>
-                </div>
-            </div>
-        </div>
-        <div id="hint"> </div>
-        <div id="assistant">
-            <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
-        </div>
     </div>
     
 </body>
