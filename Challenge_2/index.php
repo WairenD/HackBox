@@ -106,7 +106,7 @@
                     <p class="text">find the missing password</p>
                 </div>
                 <div class="images">
-                    <img src="images/keyImage.png" alt="a key ?" id="img-box">
+                    <img src="images/E.png" alt="a key ?" id="img-box">
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
                         <img class="modal-content" id="img01">
