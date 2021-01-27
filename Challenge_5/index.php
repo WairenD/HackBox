@@ -53,15 +53,16 @@ include "../header2.php";
         <form  action="index.php" method="post">
 
             Which xss method can you use to get his IP: <br>
+            <label class="radiobutton">$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+                window.console.log(data)
+                })
+                <input type="radio" name="xxs" value="wrong" required="required"><span class="checkmark"></span><br><br></label>
 
             <label class="radiobutton">getJSON('http://hackbox.serverict.nl/?api_key=<your_api_key>', function(data) {
                     window.console.log(JSON.stringify(data, null, 2));
                     });
                     <input type="radio" name="xxs" value="correct"><span class="checkmark"></span><br> </label>
-            <label class="radiobutton">$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-                window.console.log(data)
-                })
-                <input type="radio" name="xxs" value="wrong" required="required"><span class="checkmark"></span><br><br></label>
+
             <label class="radiobutton">$.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
                 window.console.log(JSON.stringify(data, null, 2));
                 });
@@ -75,7 +76,7 @@ include "../header2.php";
             $xxs = $_POST['xxs'];
             if ($xxs == "correct")
                 echo " <script>
-    document.getElementById('body').onload= setTimeout(Four,6000); setTimeout(button,6500); setTimeout(question,7001); 
+    document.getElementById('body').onload= setTimeout(One,10); setTimeout(Two,10);setTimeout(Three,10);setTimeout(Four,1500); setTimeout(button,2500); setTimeout(question,7001);
     function Four() {
         var x = document.getElementById('4');
         if (x.style.display === 'none') {
@@ -84,6 +85,33 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
+        
+                  function One() {
+        var x = document.getElementById('1');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+        }
+        
+            function Two() {
+        var x = document.getElementById('2');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'block';
+        }
+    }
+
+             function Three() {
+        var x = document.getElementById('3');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'block';
+        }
+    }
         
          function question() {
         var x = document.getElementById('question');
@@ -108,7 +136,7 @@ include "../header2.php";
             else {
 
                 echo " <script>
-    document.getElementById('body').onload= setTimeout(Five,6000); setTimeout(button,6500); setTimeout(question,7001);
+    document.getElementById('body').onload= setTimeout(One,10); setTimeout(Two,10);setTimeout(Three,10);setTimeout(Five,1500); setTimeout(button,2500); setTimeout(question,7001);
     function Five() {
         var x = document.getElementById('5');
         if (x.style.display === 'none') {
@@ -117,6 +145,33 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
+        
+          function One() {
+        var x = document.getElementById('1');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+        }
+        
+            function Two() {
+        var x = document.getElementById('2');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'block';
+        }
+    }
+
+             function Three() {
+        var x = document.getElementById('3');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'block';
+        }
+    }
         
         function question() {
         var x = document.getElementById('question');
@@ -152,7 +207,7 @@ include "../header2.php";
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
-            x.style.display = "none";
+            x.style.display = "block";
         }
     }
 
@@ -161,7 +216,7 @@ include "../header2.php";
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
-            x.style.display = "none";
+            x.style.display = "block";
         }
     }
 
@@ -170,7 +225,7 @@ include "../header2.php";
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
-            x.style.display = "none";
+            x.style.display = "block";
         }
     }
 

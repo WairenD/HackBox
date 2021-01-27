@@ -1,6 +1,6 @@
 const a = [
-    "the website is hosted by hackbox",
-
+    "Consider the server hosting this website",
+    "The data returns in string format",
 ];
 var hints=0;
 function getHint() {
