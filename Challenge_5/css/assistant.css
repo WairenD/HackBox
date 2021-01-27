@@ -10,12 +10,14 @@ body {
 }
 
 #hint {
-    right: 0;
-    bottom: 250px;
-    position: fixed;
-    padding-left: 650px;
-    color: white;
-    margin-right: 10px;
+  margin-left: 76vw;
+  margin-top: -10vh;
+  height: auto;
+  width: 300px;
+  position: fixed;
+  border-radius: 5px;
+  padding: 5px;
+  color:white;
 }
 
 #assistant img {

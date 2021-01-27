@@ -6,7 +6,7 @@
     <title>Big Brain Inc.</title>
     <link rel="stylesheet" href="../main.css">
     <link href="css/BigBrainStyle.css" type="text/css" rel="stylesheet" />
-    
+
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="css/assistant.css">
     <script type="text/javascript" src="js/assistant.js"></script>
@@ -37,7 +37,7 @@
         $role = $_COOKIE["role"];
         $role = strtoLower($role);
         $authToken = $_COOKIE["auth_token"];
-    
+
         if($authToken == $dummyAuthToken){
             switch($role){
                 case "guest":
@@ -80,7 +80,7 @@
                 echo('<div class="headerItem">
                 <p><a href="GuestPage.php" class="welcomeText">Guest page</a></p>
                 </div>');
-                
+
                 echo('<div class="headerItem">
                 <p class="welcomeText">Welcome guest</p>
                 </div>');
@@ -88,18 +88,18 @@
             ?>
         </div>
         <div class="main">
-            <?php 
+            <?php
                 if($currentRole == "invalid" || $currentRole == "none" || $currentRole == "invalidRole"){
                     echo('
                         <h2 class="headerText">User not logged in</h2>
                         <div class="backText">
                             <p><a href="index.php" class="welcomeText">Back to role select</a></p>
                         </div>
-                   
+
                     ');
 			    }else{
 
-            
+
             ?>
             <div class="textInfo">
                 <div class="containerBox">
@@ -129,7 +129,7 @@
                     </div>
                 </div>
             </div>
-            <div id="hint"> </div>
+            <div style="margin-top: -40vh; margin-left:63vw;" id="hint"> </div>
             <div id="assistant">
                 <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
             </div>
@@ -140,7 +140,7 @@
         }
         ?>
     </div>
-    
+
 </body>
 
 </html>

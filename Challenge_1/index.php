@@ -73,7 +73,7 @@
     }
      ?>
      <div class="errorDiv"><?php echo $errorMsg ?></div>
-    <div id="hint"> </div>
+    <div id="hint"></div>
     <div id="assistant">
         <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
     </div>

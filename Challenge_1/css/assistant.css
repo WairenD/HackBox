@@ -9,12 +9,14 @@ body {
 }
 
 #hint {
-    right: 0;
-    bottom: 250px;
+    margin-left: 76vw;
+    margin-top: -10vh;
+    height: auto;
+    width: 300px;
     position: fixed;
-    padding-left: 650px;
+    border-radius: 5px;
+    padding: 5px;
 }
-
 #assistant img {
     width: 120px;
     height: 120px;
