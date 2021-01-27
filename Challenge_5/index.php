@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 5</title>
 </head>
-<?php include '../header.php';?>
+<?php include '../header2.php';?>
 <?php include '../footer.php';?>
 <body id="body" background="bg1.jpg">
 <h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
@@ -62,7 +62,7 @@
 
             Which xss method can you use to get his IP: <br>
 
-            <label class="radiobutton">getJSON('http://hackbox.serverict.nl/?api_key=<your_api_key>', function(data) {
+            <label class="radiobutton">getJSON('http:/..serverict.nl/?api_key=<your_api_key>', function(data) {
                     window.console.log(JSON.stringify(data, null, 2));
                     });
                     <input type="radio" name="xxs" value="correct"><span class="checkmark"></span><br> </label>

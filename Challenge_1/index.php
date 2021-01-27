@@ -14,7 +14,7 @@
     <title>Challenge 1</title>
     <link rel="stylesheet" href="css/challenge1style.css">
   </head>
-  <?php include '../header.php';?>
+  <?php include '../header2.php';?>
   <?php include '../footer.php';?>
   <body>
     <div class="fullpage">

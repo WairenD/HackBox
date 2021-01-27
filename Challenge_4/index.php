@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<?php include '../header.php';?>
+<?php include '../header2.php';?>
 <?php include '../footer.php';?>
 <body>
     <div class="container">

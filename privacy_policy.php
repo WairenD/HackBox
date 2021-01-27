@@ -34,7 +34,7 @@
     <div class="privpolicy">
         <h1>Privacy Policy of Project Hackbox 2.0</h1>
 
-        <p>Project Hackbox 2.0 operates the http://hackbox.serverict.nl website, which provides the SERVICE.</p>
+        <p>Project Hackbox 2.0 operates the http:/..serverict.nl website, which provides the SERVICE.</p>
 
         <p>This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of
             Personal Information if anyone decided to use our Service, the Hackbox website.</p>
@@ -45,7 +45,7 @@
             with the help of the <a href="https://www.privacypolicytemplate.net">Privacy Policy Template</a> and the <a href="https://www.generateprivacypolicy.com">Privacy Policy Generator</a>.</p>
 
         <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at
-            http://hackbox.serverict.nl, unless otherwise defined in this Privacy Policy.</p>
+            http:/..serverict.nl, unless otherwise defined in this Privacy Policy.</p>
 
         <h3>Information Collection and Use</h3>
 

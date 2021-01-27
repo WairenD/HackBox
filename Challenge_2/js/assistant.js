@@ -1,11 +1,7 @@
 const a = [
-    "HINT 1",
-    "HINT 2 Lorem Ipsum",
-    "HINT 3",
-    "HINT 4",
-    "HINT 5.",
-    "HINT 6.",
-    "HINT 7.",
+    "Brute-force is when an attacker submits many passwords passphrases that eventually lead to correct combination",
+    "Check the text,maybe there is something that could help you with the username",
+    "Have you seen the image?A keys for the password could be found ",
 ];
 var hints=0;
 function getHint() {
