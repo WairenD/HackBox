@@ -33,12 +33,12 @@
         setcookie("role", null, -1);
         setcookie("auth_token", null, -1);
 	}
-    isset($_COOKIE["auth_token"]) && !isset($_POST['logoutButton'])){
+    if(isset($_COOKIE["auth_token"]) && !isset($_POST['logoutButton'])){
         $role = $_COOKIE["role"];
         $role = strtoLower($role);
         $authToken = $_COOKIE["auth_token"];
     
-        if($userId == $dummyUserId && $authToken == $dummyAuthToken){
+        if($authToken == $dummyAuthToken){
             switch($role){
                 case "guest":
                     $currentRole = "guest";
