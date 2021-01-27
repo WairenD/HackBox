@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/assistant.css">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="challenge5style.css?v=<?php echo time(); ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
@@ -188,7 +189,16 @@ include "../header2.php";
 
 
 
+
+
 </body>
+<script type="text/javascript" src="js/assistant.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<div id="hint"> </div>
+<div id="assistant">
+    <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
+</div>
 
 <footer>
     <div class="main-content">

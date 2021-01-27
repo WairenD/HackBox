@@ -1,11 +1,6 @@
 const a = [
-    "HINT 1",
-    "HINT 2 Lorem Ipsum",
-    "HINT 3",
-    "HINT 4",
-    "HINT 5.",
-    "HINT 6.",
-    "HINT 7.",
+    "the website is hosted by hackbox",
+
 ];
 var hints=0;
 function getHint() {

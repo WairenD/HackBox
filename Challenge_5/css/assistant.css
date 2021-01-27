@@ -4,8 +4,9 @@ body {
 
 #assistant {
     right: 0;
-    position: absolute;
+    position: fixed;
     bottom: 124px;
+    padding-right: 10px;
 }
 
 #hint {
@@ -14,6 +15,7 @@ body {
     position: fixed;
     padding-left: 650px;
     color: white;
+    margin-right: 10px;
 }
 
 #assistant img {
