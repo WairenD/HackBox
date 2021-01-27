@@ -35,7 +35,7 @@
     ?>
     <nav>
         <div class="wrapper">
-            <div class="logo"><a href="./">HACKBOX</a></div>
+            <div class="logo"><a href="index.php">HACKBOX</a></div>
             <input type="radio" name="slider" id="menu-btn">
             <input type="radio" name="slider" id="close-btn">
             <ul class="nav-links">

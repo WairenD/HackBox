@@ -10,36 +10,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 5</title>
 </head>
-<header>
-    <nav>
-        <div class="wrapper">
-            <div class="logo"><a href="./index.php">HACKBOX</a></div>
-            <input type="radio" name="slider" id="menu-btn">
-            <input type="radio" name="slider" id="close-btn">
-            <ul class="nav-links">
-                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./about.php">About</a></li>
-                <li>
-                    <a href="#" class="desktop-item">Challenges</a>
-                    <input type="checkbox" id="showDrop">
-                    <label for="showDrop" class="mobile-item">Challenges</label>
-                    <ul class="drop-menu">
-                        <li><a href="./Challenge_1/index.php">Challenge 1</a></li>
-                        <li><a href="./Challenge_2/index.php">Challenge 2</a></li>
-                        <li><a href="./Challenge_3/index.php">Challenge 3</a></li>
-                        <li><a href="./Challenge_4/index.php">Challenge 4</a></li>
-                        <li><a href="./Challenge_5/index.php">Challenge 5</a></li>
-                    </ul>
-                </li>
-                <li><a href="./leaderboards.php">Leaderboards</a></li>
-                <li><a href="./login.php">Login</a></li>
-                <li><a href="./register.php">Register</a></li>
-            </ul>
-            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-        </div>
-    </nav>
-</header>
+<?php
+include "../header2.php";
+?>
 
 <body id="body" background="bg1.jpg">
 <h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
@@ -67,6 +40,9 @@
     <div id="5" class="leftTextDiv" style="display: none">
         <p style="margin-top: 5px" class="textRight"><img class="avatarleft" src="logo.png" alt="Avatar"> Listen, punk. Until that vile corporation is nothing but a bad memory, or someone stops me, I won’t stop. Shiny Tech does not care for those they deem insignificant.</p>
         <span class="textRightSpace"></span>
+    </div>
+    <div class="actionTextDiv">
+        <a href="../story5.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="End"></a>
     </div>
 </div>
 <br>
