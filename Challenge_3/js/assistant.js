@@ -1,6 +1,6 @@
 const a = [
     "As a user on this site we cannot do anything, we need to escalate our privileges. Check around the webpage if you can somehow change your role to an Admin",
-    "It seems that to access anything on this site you need a valid authorization token and user id.",
+    "It seems that to access anything on this site you need a valid authorization token.",
     "The website seems to be storing user info on the user's side, press f12 and check around the Storage if you can't use that to your advantage."
 ];
 

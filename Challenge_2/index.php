@@ -13,81 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
 </head>
-
+<?php include '../header.php';?>
+<?php include '../footer.php';?>
 <body>
-      <header>
-        <?php
-        $errorMsg = "";
-        include("../connection.php");
-        session_start();
-        $SQLstring = "SELECT currentLevel FROM " . $db_table." WHERE userName='".$_SESSION['userName']."'";
-        if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-            mysqli_stmt_execute($stmt);
-            mysqli_stmt_bind_result($stmt, $currentLevel);
-            mysqli_stmt_store_result($stmt);
-            if ($stmt === FALSE) {
-                $errorMsg = "<span><p>Unable to execute the query.</p>"
-                    . "<p>Error code "
-                    . mysqli_errno($DBConnect)
-                    . ": "
-                    . mysqli_error($DBConnect)
-                    . "</p></span>";
-            } else {
-                while (mysqli_stmt_fetch($stmt)) {
-                    $challenge = $currentLevel;
-                }
-            }
-            //Clean up the $stmt after use
-            mysqli_stmt_close($stmt);
-        } else {
-            $errorMsg = "<span><p>Unable to execute the query.</p>"
-                . "<p>Error code "
-                . mysqli_errno($DBConnect)
-                . ": "
-                . mysqli_error($DBConnect)
-                . "</p></span>";
-        }
-        if($currentLevel<1 || !isset($_SESSION['userName'])){
-          header("Location: ../index.php");
-        }
-         ?>
-          <nav>
-              <div class="wrapper">
-                  <div class="logo"><a href="./">HACKBOX</a></div>
-                  <input type="radio" name="slider" id="menu-btn">
-                  <input type="radio" name="slider" id="close-btn">
-                  <ul class="nav-links">
-                      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                      <li><a href="../index.php">Home</a></li>
-                      <li><a href="../about.php">About</a></li>
-                      <li>
-                          <a href="#" class="desktop-item">Challenges</a>
-                          <input type="checkbox" id="showDrop">
-                          <label for="showDrop" class="mobile-item">Challenges</label>
-                          <ul class="drop-menu">
-                            <?php
-                            for($i = 0;$i<$currentLevel;$i++){
-                              echo '<li><a href="../Challenge_'. ($i+1) .'">Challenge '. ($i+1) .'</a></li>';
-                            }
-                            ?>
-                          </ul>
-                      </li>
-                      <li><a href="../leaderboards.php">Leaderboards</a></li>
-                      <?php
-                      if (isset($_SESSION['userName'])) {
-                          echo '<li><a href="#" class="desktop-item">' . $_SESSION['userName'] . '</a>
-                           <input type="checkbox" id="showDrop">
-                           <label for="showDrop" class="mobile-item">' . $_SESSION['userName'] . '</label>
-                           <ul class="drop-menu">
-                            <li><a href="../logout.php">Log Out</a></li>
-                           </ul></li>';
-                      }
-                      ?>
-                  </ul>
-                  <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-              </div>
-          </nav>
-      </header>
         <div class="container">
             <div class="loginBox">
                 <div class="imgContainer">
@@ -103,7 +31,7 @@
                             $username = $_POST['username'];
                             $password = $_POST['password'];
                             if (!empty($username) && !empty($password)) {
-                                if ($username == "bruteforce" && $password == "1234") {
+                                if ($username == "bruteforce" && $password == "9OXEMTG") {
                                   if($currentLevel==1){
                                     $currentLevel=2;
                                     $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
@@ -153,6 +81,24 @@
                     I never forgot the <span class="finding">c</span>hronic trauma though, the f<span class="finding">e</span>ar, the grief, and the unbridled rage
                 </p>
             </div>
+            <script>
+                setInterval(makeTextAppear, 15000);
+                function makeTextAppear() {
+                    const span = document.querySelector('span');
+                    var findingElements = document.getElementsByClassName("finding");
+                    var randomNumber = Math.floor(Math.random() * findingElements.length);
+                    findingElements.item(randomNumber).className = "found";
+                    setTimeout(makeTextDisappear, 150);
+                }
+
+                function makeTextDisappear(){
+                    var foundElements = document.getElementsByClassName("found");
+                    for(var i = 0; i < foundElements.length; i++)
+                    {
+                        foundElements.item(i).className = "finding";
+                    }
+                }
+            </script>
             <div class="aboutBox">
                 <div class="toDoList">
                     <h2>To do List:</h2>
@@ -160,7 +106,7 @@
                     <p class="text">find the missing password</p>
                 </div>
                 <div class="images">
-                    <img src="images/logo.png" alt="a key ?" id="img-box">
+                    <img src="images/keyImage.png" alt="a key ?" id="img-box">
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
                         <img class="modal-content" id="img01">
@@ -190,25 +136,6 @@
       <div id="assistant">
           <img src="images/assist-sarcastic.png" alt="assistant" onclick="getHint()">
       </div>
-
-      <footer>
-        <div class="main-content">
-            <div class="center box">
-                <h2>Location</h2>
-                <div class="content">
-                    <div class="place">
-                        <span class="fas fa-map-marker-alt"></span>
-                        <span class="text">NHL Stenden</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom">
-            <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-            <span class="far fa-copyright"></span> 2020 All rights reserved.
-            <span><a href="./privacy_policy.php">Privacy Policy</a></span>
-        </div>
-    </footer>
 </body>
 
 </html>

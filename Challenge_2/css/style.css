@@ -116,22 +116,22 @@ img {
 	border-bottom: 2px solid white;
 }
 
-.finding:hover {
+.finding:hover, .found {
 	color: red;
 	cursor: pointer;
 }
 
+
 .images {
 	width: 100%;
 	float: left;
-	background-color: #1b2c5a;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #img-box {
 	width: 100%;
-	height: 30vh;
+	height: 34.5vh;
 }
 
 

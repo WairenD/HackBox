@@ -3,6 +3,8 @@
   $db_table = "user";
   //assign the connection and selected database to a variable
   $DBConnect = mysqli_connect("localhost", "root", "");
+  // Hosting credentials
+  // $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711");
   if ($DBConnect === FALSE){
     echo "<p>Unable to connect to the database server.</p>"
     . "<p>Error code " . mysqli_connect_errno($DBConnect) . ": "
