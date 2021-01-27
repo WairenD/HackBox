@@ -10,6 +10,9 @@
     </head>
     <?php include 'header.php';?>
     <?php include 'footer.php';?>
+    <?php
+
+    ?>
   <body>
        <div class="errorDiv"><?php echo $errorMsg ?></div>
     <img width="15%" height="15%" class="charImg1" src="./images/assisstant_full_body.png" alt="char1">

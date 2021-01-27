@@ -75,7 +75,7 @@ include "../header2.php";
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $xxs = $_POST['xxs'];
-            if ($xxs == "correct")
+            if ($xxs == "correct"){
                 echo " <script>
     document.getElementById('body').onload= setTimeout(One,10); setTimeout(Two,10);setTimeout(Three,10);setTimeout(Four,1500); setTimeout(button,2500); setTimeout(question,7001);
     function Four() {
@@ -86,7 +86,7 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
+
                   function One() {
         var x = document.getElementById('1');
         if (x.style.display === 'none') {
@@ -95,7 +95,7 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
+
             function Two() {
         var x = document.getElementById('2');
         if (x.style.display === 'none') {
@@ -113,7 +113,7 @@ include "../header2.php";
             x.style.display = 'block';
         }
     }
-        
+
          function question() {
         var x = document.getElementById('question');
         if (x.style.display === 'block') {
@@ -122,7 +122,7 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
+
         function button() {
         var x = document.getElementById('button');
         if (x.style.display === 'none') {
@@ -131,10 +131,31 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
-     </script> ";
 
-            else {
+     </script> ";
+         $SQLstring = "UPDATE " . $db_table . " SET endTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";
+         if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
+           $QueryResult = mysqli_stmt_execute($stmt);
+           if ($QueryResult === FALSE) {
+             $errorMsg = "<span><p>Unable to execute the query.</p>"
+               . "<p>Error code "
+               . mysqli_errno($DBConnect)
+               . ": "
+               . mysqli_error($DBConnect)
+               . "</p></span>";}
+               else{
+               }
+           //Clean up the $stmt after use
+           mysqli_stmt_close($stmt);
+         } else {
+           $errorMsg = "<span><p>Unable to execute the query.</p>"
+             . "<p>Error code "
+             . mysqli_errno($DBConnect)
+             . ": "
+             . mysqli_error($DBConnect)
+             . "</p></span>";
+         }
+   }else {
 
                 echo " <script>
     document.getElementById('body').onload= setTimeout(One,10); setTimeout(Two,10);setTimeout(Three,10);setTimeout(Five,1500); setTimeout(button,2500); setTimeout(question,3500); setTimeout(tryAgain,3500);
@@ -146,7 +167,7 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
+
         function tryAgain() {
         var x = document.getElementById('tryAgain');
         if (x.style.display === 'none') {
@@ -155,8 +176,8 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
-        
+
+
           function One() {
         var x = document.getElementById('1');
         if (x.style.display === 'none') {
@@ -165,7 +186,7 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
-        
+
             function Two() {
         var x = document.getElementById('2');
         if (x.style.display === 'none') {
@@ -183,7 +204,7 @@ include "../header2.php";
             x.style.display = 'block';
         }
     }
-        
+
         function question() {
         var x = document.getElementById('question');
         if (x.style.display === 'none') {
