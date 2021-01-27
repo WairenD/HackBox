@@ -34,7 +34,8 @@
     <?php
     if(isset($_POST['login'])){
       if(!empty($_POST['password'])){
-          if($_POST['password']=="19950525" && $_POST['email']=="minerva.dewitt@oblivion.com"){
+        $password = strtolower($_POST['password']);
+          if($password=="snuggles95" && $_POST['email']=="minerva.dewitt@oblivion.com"){
             if($currentLevel==0){
               $currentLevel=1;
               $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel.", startTime='".date("Y-m-d h:i:s")."' WHERE userName='".$_SESSION['userName']."'";

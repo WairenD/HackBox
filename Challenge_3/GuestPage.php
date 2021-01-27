@@ -98,12 +98,8 @@
                     </div>
                    
                 ');
-
-
                 exit();
 			}
-            
-            
         ?>
         <div class="textInfo">
             <div class="containerBox">

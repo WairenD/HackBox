@@ -29,6 +29,10 @@
             <h3>From: USA,California</h3>
             <h3>Studied at University of California, Berkeley</h3>
             <h4>Last Online: 2021.01.05</h4>
+            <div class="petPhoto">
+                <img src="images/Snuggles.jpg" alt="snuggles"/>
+            </div>
+            <h4>My dearest Snuggles <3</h4>
           </div>
         </div>
       </div>
