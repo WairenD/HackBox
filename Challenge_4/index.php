@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/Challenge4.css" />
+    <link rel="stylesheet" href="css/challenge4.css" />
     <link rel="stylesheet" href="css/assistant.css">
     <script type="text/javascript" src="js/assistant.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
@@ -53,7 +53,7 @@
             if($output[0] == 1){
                 $q = $output[1];
                 //Execute query here
-                $db = new mysqli('127.0.0.1', 'root', '', 'hackbox');
+                $db = new mysqli('localhost', 'hackbox', 'Hckxo_1711', 'hackbox');
                 if ($db->multi_query($q)) {
                     ?>
                     <table class="tableOfContent">

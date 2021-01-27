@@ -22,6 +22,8 @@
 <?php include '../footer2.php';?>
 <body>
     <?php
+
+
     $dummyAuthToken = "d9gdsn0v51gqwezgj";
     $currentRole = "invalid";
 
@@ -79,6 +81,8 @@
                 echo('<div class="headerItem">
                 <p><a href="../story3.php" class="welcomeText">User Search</a></p>
                 </div>');
+                setcookie("role", null, -1);
+                setcookie("auth_token", null, -1);
                 if($currentLevel==2){
                  $currentLevel=3;
                  $SQLstring = "UPDATE " . $db_table . " SET currentlevel=".$currentLevel." WHERE userName='".$_SESSION['userName']."'";
@@ -179,5 +183,7 @@
     }
     ?>
 </body>
+<?php
 
+?>
 </html>

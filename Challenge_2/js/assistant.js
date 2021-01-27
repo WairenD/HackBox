@@ -1,5 +1,5 @@
 const a = [
-    "Brute-force is when an attacker submits many passwords passphrases that eventually lead to correct combination",
+    "Brute-force is when an attacker submits many passwords or passphrases that eventually lead to correct combination",
     "Check the text,maybe there is something that could help you with the username",
     "Have you seen the image?A keys for the password could be found ",
 ];

@@ -28,7 +28,8 @@
   </div>
   <?php
   $errorMsg = "";
-  include("connection.php");
+//  include("connection.php");
+  $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711",'hackbox');
   $taken = false;
   if (isset($_POST['submit'])) {
     if (!empty($_POST['password']) && !empty($_POST['passwordCheck']) && !empty($_POST['email'])) {
@@ -36,7 +37,7 @@
         $userName = htmlentities($_POST['username']);
         $userPass = password_hash(htmlentities($_POST['password']), PASSWORD_BCRYPT);
         $userEmail = htmlentities($_POST['email']);
-        $SQLSelect = "SELECT userName,userEmail FROM " . $db_table;
+        $SQLSelect = "SELECT userName,userEmail FROM user";
         if ($stmt = mysqli_prepare($DBConnect, $SQLSelect)) {
           mysqli_stmt_execute($stmt);
           mysqli_stmt_bind_result($stmt, $nametest, $emailtest);
@@ -68,10 +69,12 @@
         }
         if (!$taken) {
           date_default_timezone_set('Europe/Amsterdam');
-          $datetemp = "0000-00-00 00:00:00";
-          $SQLstring = "INSERT INTO " . $db_table . " VALUES(NULL,?, ?, ?,?,?,?,0)";
+          $startTime = date("Y-m-d h:i:s");
+          $endTime = null;
+          $bestTime = "00:00:00";
+          $SQLstring = "INSERT INTO user VALUES(NULL,?, ?, ?,?,?,?,0)";
           if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
-            mysqli_stmt_bind_param($stmt, 'ssssss', $userEmail, $userName, $userPass, $datetemp, $datetemp, $datetemp);
+            mysqli_stmt_bind_param($stmt, 'ssssss', $userEmail, $userName, $userPass, $startTime, $endTime, $bestTime);
             $QueryResult = mysqli_stmt_execute($stmt);
             header("Location: login.php");
             if ($QueryResult === FALSE) {

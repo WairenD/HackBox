@@ -2,7 +2,7 @@
   $db_name = "hackbox";
   $db_table = "user";
   //assign the connection and selected database to a variable
-  $DBConnect = mysqli_connect("localhost", "root", "");
+  $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711","hackbox");
   // Hosting credentials
   // $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711");
   if ($DBConnect === FALSE){
