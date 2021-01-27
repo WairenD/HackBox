@@ -110,7 +110,7 @@
         <a href="Challenge_3/index.php"><input class="actionText" style="margin-top:20px; background-color:#3a3b3d; border:none; cursor:pointer; color:white;" type="submit" name="end" value="Next Challenge"></a>
       </div>
     </div>
-      <img width="6%" height="6%" style="margin-left: 0;margin-top:30vh;" class="charImg2" src="./images/detective_full_body.png" alt="char2">
-      <img width="11%" height="11%" style="margin-top:30vh;" class="charImg2" src="./images/magnate_full_body.png" alt="char2">
+      <img width="6%" height="6%" style="margin-left: 0;margin-top:30vh;" class="charImg2" src="./images/detective_annoyed.png" alt="char2">
+      <img width="11%" height="11%" style="margin-top:30vh;" class="charImg2" src="./images/magnate_angry.png" alt="char2">
   </body>
 </html>
