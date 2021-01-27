@@ -69,7 +69,7 @@
                             if(mysqli_num_rows($result)==0)
                             {
                                 if(isset($output[2])){
-                                    echo "<p class='errorTextSql'>'User '. $output[2] .' not found.'";
+                                    echo "<p class='errorTextSql'>'User ' $output[2] ' not found.'";
                                 }else{
                                     echo "<p class='errorTextSql'>User not found.";
                                 }

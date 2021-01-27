@@ -10,16 +10,14 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Challenge 5</title>
 </head>
-<?php
-include "../header2.php";
+<?php 
+    include "../header2.php";
+    include "../footer2.php";
 ?>
 
 <body id="body" background="bg1.jpg">
 <h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
 <h3> You have managed to start a conversation with him and need to inject some Cross Site Scripting (Javascript using an api) to acquire the IP address. (Shown Below)</h3>
-
-
-
 <div class="mainChallengeText" style="float: none">
     <div id="1" class="leftTextDiv"  style="display: none">
         <p style="margin-top:20px;" class="textRight"><img class="avatarleft" src="logo.png" alt="Avatar"> What do you think you’re doing? Who are you and why are you interfering in my affairs?</p>
@@ -46,7 +44,6 @@ include "../header2.php";
     </div>
 </div>
 <br>
-
     <div  id="question" class="container question"  style="display: none" >
 
         <form  action="index.php" method="post">
@@ -121,10 +118,6 @@ include "../header2.php";
         ?>
 
     </div>
-<!--</div>-->
-
-
-
 <script>
     document.getElementById("body").onload= setTimeout(One,1500); setTimeout(Two,3000); setTimeout(Three,4500);setTimeout(question,7000);
     function One() {
@@ -162,33 +155,6 @@ include "../header2.php";
             x.style.display = "none";
         }
     }
-
 </script>
-
-<br>
-
-
-
 </body>
-
-<footer>
-    <div class="main-content">
-        <div class="center box">
-            <h2>
-                Location</h2>
-            <div class="content">
-                <div class="place">
-                    <span class="fas fa-map-marker-alt"></span>
-                    <span class="text">NHL Stenden</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bottom">
-        <span class="credit">Created By <a href="#">HACKBOX 2.0</a> | </span>
-        <span class="far fa-copyright"></span> 2020 All rights reserved.
-        <span><a href="./privacy_policy.php">Privacy Policy</a></span>
-    </div>
-</footer>
-
 </html>
