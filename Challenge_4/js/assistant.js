@@ -23,6 +23,5 @@ function getHintWithInput(hintText) {
     setTimeout(function () {
         $('#hint').fadeOut('fast');
     }, 8000);
-
     document.getElementById('hint').innerHTML = (hintText);
 }

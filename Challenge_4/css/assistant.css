@@ -9,11 +9,15 @@ body {
 }
 
 #hint {
-    right: 0;
-    bottom: 250px;
-    position: absolute;
-    padding-left: 650px;
-    color: white;
+  margin-left: 76vw;
+  margin-top: -20vh;
+  height: auto;
+  width: 300px;
+  position: fixed;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #333333;
+  color: white;
 }
 
 #assistant img {
