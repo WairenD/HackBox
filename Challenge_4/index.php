@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <?php include '../header2.php';?>
-<?php include '../footer.php';?>
+<?php include '../footer2.php';?>
 <body>
     <div class="container">
         <div class="title">

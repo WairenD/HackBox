@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
 </head>
     <?php include '../header2.php';?>
-    <?php include '../footer.php';?>
+    <?php include '../footer2.php';?>
 <body>
     <?php
     $dummyAuthToken = "d9gdsn0v51gqwezgj";

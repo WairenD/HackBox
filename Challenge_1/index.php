@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/challenge1style.css">
   </head>
   <?php include '../header2.php';?>
-  <?php include '../footer.php';?>
+  <?php include '../footer2.php';?>
   <body>
     <div class="fullpage">
       <a href="profile.php"><img style="margin: 10px; margin-left:82%;" src="images/minervaimg.png" alt=""></a>

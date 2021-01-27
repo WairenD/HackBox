@@ -11,7 +11,7 @@
     <title>Challenge 1</title>
   </head>
   <?php include '../header2.php';?>
-  <?php include '../footer.php';?>
+  <?php include '../footer2.php';?>
   <body>
     <?php
     include("tw.php");
