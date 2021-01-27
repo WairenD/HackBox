@@ -77,7 +77,7 @@
                             . "</p></span>";
                         }
                         header("Location: story0.php");
-                    }  
+                    }
                     echo("</form>");
                 }else{
                     if($currentLevel < 5){
@@ -87,7 +87,7 @@
                         <?php
                         if(isset($_POST['play'])){
                             header("Location: challenge_". ($currentLevel + 1)."/");
-                        }  
+                        }
                         echo("</form>");
                     }else{
                         ?>
@@ -120,9 +120,9 @@
                             }
                         }
                         echo("</form>");
-                    }      
+                    }
             }
-                
+
             ?>
         </div>
         <div class="top_right-box">
@@ -160,7 +160,7 @@
                 <h1>About the challenges</h1>
                 <p>Step into the world of ethical hacking, learn about various techniques used by hackers like cross site scripting, injection attacks, priviledge escalation and more! Complete all five challenges and get to the top of the leaderboard with record times.<br/> Do you have it in you to become a master ethical hacker?</p>
                 <br>
-                <a href="register.php">
+                <a href="register.php" style="text-decoration:none;">
                     <div class="play-bttn">
                         REGISTER NOW!
                     </div>
