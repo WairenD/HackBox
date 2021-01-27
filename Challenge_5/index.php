@@ -48,10 +48,11 @@ include "../header2.php";
 </div>
 <br>
 
-    <div  id="question" class="container question"  style="display: none" >
+    <div  id="question" class="container question"  style="display: none">
 
         <form  action="index.php" method="post">
-
+            <div id="tryAgain" style="display: none"> Incorrect answer, use the assistant get some Hints!</div>
+            <br>
             Which xss method can you use to get his IP: <br>
             <label class="radiobutton">$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
                 window.console.log(data)
@@ -136,7 +137,7 @@ include "../header2.php";
             else {
 
                 echo " <script>
-    document.getElementById('body').onload= setTimeout(One,10); setTimeout(Two,10);setTimeout(Three,10);setTimeout(Five,1500); setTimeout(button,2500); setTimeout(question,7001);
+    document.getElementById('body').onload= setTimeout(One,10); setTimeout(Two,10);setTimeout(Three,10);setTimeout(Five,1500); setTimeout(button,2500); setTimeout(question,3500); setTimeout(tryAgain,3500);
     function Five() {
         var x = document.getElementById('5');
         if (x.style.display === 'none') {
@@ -145,6 +146,16 @@ include "../header2.php";
             x.style.display = 'none';
         }
         }
+        
+        function tryAgain() {
+        var x = document.getElementById('tryAgain');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+        }
+        
         
           function One() {
         var x = document.getElementById('1');
@@ -175,21 +186,13 @@ include "../header2.php";
         
         function question() {
         var x = document.getElementById('question');
-        if (x.style.display === 'block') {
-            x.style.display = 'none';
-        } else {
-            x.style.display = 'none';
-        }
-        }
-        function button() {
-        var x = document.getElementById('button');
         if (x.style.display === 'none') {
             x.style.display = 'block';
         } else {
-            x.style.display = 'none';
+            x.style.display = 'block';
         }
         }
-        
+
      </script>";
             }
         }
@@ -234,7 +237,7 @@ include "../header2.php";
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
-            x.style.display = "none";
+            x.style.display = "block";
         }
     }
 

@@ -8,7 +8,7 @@ function getHint() {
     setTimeout(function() {
         $('#hint').fadeOut('fast');
     }, 8000);
-    document.getElementById('hint').style.backgroundColor = "#333333";
+
     document.getElementById('hint').innerHTML = (a[this.hints]);
     this.hints = this.hints < a.length - 1? ++this.hints: 0;
 }
