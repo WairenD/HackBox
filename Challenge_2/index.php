@@ -82,13 +82,13 @@
                 </p>
             </div>
             <script>
-                setInterval(makeTextAppear, 15000);
+                setInterval(makeTextAppear, 7500);
                 function makeTextAppear() {
                     const span = document.querySelector('span');
                     var findingElements = document.getElementsByClassName("finding");
                     var randomNumber = Math.floor(Math.random() * findingElements.length);
                     findingElements.item(randomNumber).className = "found";
-                    setTimeout(makeTextDisappear, 150);
+                    setTimeout(makeTextDisappear, 200);
                 }
 
                 function makeTextDisappear(){
