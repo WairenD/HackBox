@@ -96,7 +96,7 @@
          ?>
         <div style="text-align:center;">
           <form method="post">
-              <input class="playAgainBtn" type="submit" name="play" value="Play">
+              <input class="playAgainBtn" type="submit" name="play" value="Play Again">
               <p>This will reset your progress, your best time will be kept.</p>
               <?php
               if(isset($_POST['play'])){
