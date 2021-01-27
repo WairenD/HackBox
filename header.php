@@ -31,6 +31,8 @@
                 . mysqli_error($DBConnect)
                 . "</p></span>";
         }
+    }else{
+      header("Location: index.php");
     }
     ?>
     <nav>
