@@ -50,12 +50,15 @@
 
 
 <div class="response">
+    <button onclick="myFunction()">Replace document</button>
+
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $xxs = $_POST['xxs'];
         if ($xxs == "correct")
-            echo  " Data successfully acquired";
+            echo  " Data successfully acquired ";
+
         else
             echo "Can you believe this? ";
 
