@@ -2,9 +2,9 @@
   $db_name = "hackbox";
   $db_table = "user";
   //assign the connection and selected database to a variable
-  $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711","hackbox");
+  $DBConnect = mysqli_connect("localhost", "root", "","hackbox");
   // Hosting credentials
-  // $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711");
+  // $DBConnect = mysqli_connect("localhost", "root", "");
   if ($DBConnect === FALSE){
     echo "<p>Unable to connect to the database server.</p>"
     . "<p>Error code " . mysqli_connect_errno($DBConnect) . ": "

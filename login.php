@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>HACKBOX MAIN</title>
 </head>
-<?php include 'header.php';?>
+<?php include 'header3.php';?>
 <?php include 'footer.php';?>
 <body>
     <h2 id="regTitle">Please enter your login details!</h2>
@@ -30,7 +30,7 @@
             $db_name = "hackbox";
             $db_table = "user";
             //assign the connection and selected database to a variable
-            $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711");
+            $DBConnect = mysqli_connect("localhost", "root", "");
             if ($DBConnect === FALSE) {
                 $errorMsg = "<span><p>Unable to connect to database.</p>"
                     . "<p>Error code "

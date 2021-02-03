@@ -53,7 +53,7 @@
             if($output[0] == 1){
                 $q = $output[1];
                 //Execute query here
-                $db = new mysqli('localhost', 'hackbox', 'Hckxo_1711', 'hackbox');
+                $db = new mysqli('localhost', 'root', '', 'hackbox');
                 if ($db->multi_query($q)) {
                     ?>
                     <table class="tableOfContent">

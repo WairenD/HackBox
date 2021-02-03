@@ -29,7 +29,7 @@
   <?php
   $errorMsg = "";
 //  include("connection.php");
-  $DBConnect = mysqli_connect("localhost", "hackbox", "Hckxo_1711",'hackbox');
+  $DBConnect = mysqli_connect("localhost", "root", "",'hackbox');
   $taken = false;
   if (isset($_POST['submit'])) {
     if (!empty($_POST['password']) && !empty($_POST['passwordCheck']) && !empty($_POST['email'])) {
@@ -70,7 +70,7 @@
         if (!$taken) {
           date_default_timezone_set('Europe/Amsterdam');
           $startTime = date("Y-m-d h:i:s");
-          $endTime = null;
+          $endTime = "00:00:00";
           $bestTime = "00:00:00";
           $SQLstring = "INSERT INTO user VALUES(NULL,?, ?, ?,?,?,?,0)";
           if ($stmt = mysqli_prepare($DBConnect, $SQLstring)) {
