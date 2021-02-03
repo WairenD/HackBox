@@ -23,6 +23,9 @@
         </form>
     </div>
     <?php
+      if (isset($_SESSION['userName'])) {
+        header("Location: index.php");
+      }
     $errorMsg = "";
     if (isset($_POST['submit'])) {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {

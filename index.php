@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Welcome to Project HackBox 2.0</title>
 </head>
-<?php include 'header.php';?>
+<?php include 'header3.php';?>
 <?php include 'footer.php';?>
 <body>
 <div class="landing-page-body">

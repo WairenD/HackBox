@@ -9,7 +9,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <title>HACKBOX MAIN</title>
 </head>
-<?php include 'header.php';?>
+<?php include 'header3.php';?>
 <?php include 'footer.php';?>
 <body>
   <h2 id="regTitle">Please fill in the form to register!</h2>
@@ -27,6 +27,9 @@
     </form>
   </div>
   <?php
+  if (isset($_SESSION['userName'])) {
+    header("Location: index.php");
+  }
   $errorMsg = "";
 //  include("connection.php");
   $DBConnect = mysqli_connect("localhost", "root", "",'hackbox');

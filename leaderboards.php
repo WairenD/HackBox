@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>HACKBOX MAIN</title>
 </head>
-<?php include 'header.php';?>
+<?php include 'header3.php';?>
 <?php include 'footer.php';?>
 <body>
     <h1>LEADERBOARDS</h1>

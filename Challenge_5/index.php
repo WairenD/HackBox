@@ -14,7 +14,9 @@
 <?php
 include "../header2.php";
 ?>
-
+<?php if($currentLevel<4){
+  header("Location: ../index.php");
+} ?>
 <body id="body" background="bg1.jpg">
 <h3> After completing previous challenges its time to get the location of the terrorist by getting their IP Address</h3>
 <h3> You have managed to start a conversation with him and need to inject some Cross Site Scripting (Javascript using an api) to acquire the IP address. (Shown Below)</h3>

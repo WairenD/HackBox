@@ -15,6 +15,9 @@
 </head>
 <?php include '../header2.php';?>
 <?php include '../footer2.php';?>
+<?php if($currentLevel<1){
+  header("Location: ../index.php");
+} ?>
 <body>
         <div class="container">
             <div class="loginBox">

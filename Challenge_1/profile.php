@@ -12,6 +12,9 @@
   </head>
   <?php include '../header2.php';?>
   <?php include '../footer2.php';?>
+  <?php if($currentLevel<2){
+    header("Location: ../index.php");
+  } ?>
   <body>
     <?php
     include("tw.php");

@@ -32,9 +32,9 @@
                 . "</p></span>";
         }
   }
-//    else{
-//      header("Location: ../index.php");
-//    }
+    else{
+      header("Location: ../index.php");
+    }
     ?>
     <nav>
         <div class="wrapper">
